@@ -71,8 +71,8 @@
     <Content Include="index.aspx" />
     <Content Include="RecruiterLogin.aspx" />
     <Content Include="RecruiterSignUp.aspx" />
-    <Content Include="UserDashboard.aspx" />
     <Content Include="UserLogin.aspx" />
+    <Content Include="UserSignUp.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -98,19 +98,19 @@
     <Compile Include="RecruiterSignUp.aspx.designer.cs">
       <DependentUpon>RecruiterSignUp.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UserDashboard.aspx.cs">
-      <DependentUpon>UserDashboard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserDashboard.aspx.designer.cs">
-      <DependentUpon>UserDashboard.aspx</DependentUpon>
-    </Compile>
     <Compile Include="UserLogin.aspx.cs">
       <DependentUpon>UserLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserLogin.aspx.designer.cs">
       <DependentUpon>UserLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserSignUp.aspx.cs">
+      <DependentUpon>UserSignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserSignUp.aspx.designer.cs">
+      <DependentUpon>UserSignUp.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
