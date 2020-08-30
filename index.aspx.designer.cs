@@ -11,7 +11,7 @@ namespace JobRecommend
 {
 
 
-    public partial class home
+    public partial class index
     {
 
         /// <summary>

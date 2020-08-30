@@ -7,14 +7,9 @@ using System.Web.UI.WebControls;
 
 namespace JobRecommend
 {
-    public partial class home : System.Web.UI.Page
+    public partial class index : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void txtEmail_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -24,5 +19,4 @@ namespace JobRecommend
             Response.Write("<script>alert('Successful for " + txtEmail + "');</script>");
         }
     }
-
 }
