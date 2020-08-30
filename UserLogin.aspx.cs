@@ -7,16 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace JobRecommend
 {
-    public partial class RecruiterLogin : System.Web.UI.Page
+    public partial class UserLogin : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
-        protected void btnLogin_Click(object sender, EventArgs e)
+        protected void btnLogin1_Click(object sender, EventArgs e)
         {
-
+            Response.Write("<script>alert('Successful for " + txtEmail + "');</script>");
         }
     }
 }

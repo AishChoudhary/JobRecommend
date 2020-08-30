@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RecruiterLogin.aspx.cs" Inherits="JobRecommend.RecruiterLogin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RecruiterSignUp.aspx.cs" Inherits="JobRecommend.RecruiterSignUp" %>
+
 
 <!doctype html>
 <html lang="en">
@@ -30,7 +31,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-           <ul class="navbar-nav ml-auto">
+ <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="RecruiterLogin.aspx">Recruiter Login</a>
                 </li>
@@ -48,10 +49,19 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">RECRUITER LOGIN</div>
+                    <div class="card-header">RECRUITER REGISTRATION</div>
                     <div class="card-body">
                         <form action="" method="" runat="server">
-                            <div class="form-group row">
+                           
+                             <div class="form-group row">
+                                <label for="email_address" class="col-md-4 col-form-label text-md-right">Full Name</label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtFullName" runat="server" class="form-control" required autofocus ></asp:TextBox>
+
+                                </div>
+
+                            </div>
+                             <div class="form-group row">
                                 <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
                                 <div class="col-md-6">
                                     <asp:TextBox ID="txtEmail" runat="server" class="form-control" required autofocus ></asp:TextBox>
@@ -66,24 +76,31 @@
                                     <asp:TextBox ID="txtPassword" runat="server" class="form-control" required></asp:TextBox>
                                 </div>
                             </div>
-
-                            <div class="form-group row">
-                                <div class="col-md-6 offset-md-4">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="remember"> Remember Me
-                                        </label>
-                                    </div>
+                               <div class="form-group row">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtConfirmPasssword" runat="server" class="form-control" required></asp:TextBox>
                                 </div>
                             </div>
 
+
+                            
+                               <div class="form-group row">
+                                <label for="email_address" class="col-md-4 col-form-label text-md-right">Mobile No</label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtMobileNo" runat="server" class="form-control" required autofocus ></asp:TextBox>
+
+                                </div>
+
+                            </div>
+
+                            
+
                             <div class="col-md-6 offset-md-4">
 
-                                <asp:Button ID="btnLogin" runat="server" class="btn btn-primary" Text="Login" OnClick="btnLogin_Click"/>
+                                <asp:Button ID="btnLogin" runat="server" class="btn btn-primary" Text="Register" OnClick="btnLogin_Click" />
                         
-                                <a href="RecruiterSignUp.aspx" class="btn btn-link">
-                                  Sign Up
-                                </a>
+                              
                             </div>
                             </div>
                     </form>
