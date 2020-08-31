@@ -13,11 +13,12 @@ GO
 
 CREATE TABLE [dbo].[Recruiter](
 	[id] [int] IDENTITY(1,1) NOT NULL,
+    [FullName] [nvarchar](50) NULL,
 	[Email] [nvarchar](50) NULL,
 	[Password] [nvarchar](10) NULL,
-	[city] [nvarchar](50) NULL,
-	[ContactNo] [nvarchar](10) NULL,
-	[Username] [varchar](50) NULL
+    [ConfirmPassword] [nvarchar](10) NULL,
+	[MobileNo] [nvarchar](10) NULL,
+	
 ) ON [PRIMARY]
 
 GO

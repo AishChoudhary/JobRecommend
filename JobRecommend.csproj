@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database\Recruiter.sql" />
+    <Content Include="Database\User.sql" />
     <Content Include="index.aspx" />
     <Content Include="RecruiterLogin.aspx" />
     <Content Include="RecruiterSignUp.aspx" />

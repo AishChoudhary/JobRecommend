@@ -54,7 +54,7 @@
                         <form action="" method="" runat="server">
                            
                              <div class="form-group row">
-                                <label for="email_address" class="col-md-4 col-form-label text-md-right">Full Name</label>
+                                <label for="full Name" class="col-md-4 col-form-label text-md-right">Full Name</label>
                                 <div class="col-md-6">
                                     <asp:TextBox ID="txtFullName" runat="server" class="form-control" required autofocus ></asp:TextBox>
 
@@ -77,18 +77,25 @@
                                 </div>
                             </div>
                                <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
-                                <div class="col-md-6">
-                                    <asp:TextBox ID="txtConfirmPasssword" runat="server" class="form-control" required></asp:TextBox>
+                                <label for="password" class="col-md-4 col-form-label text-md-right">Confirm Password</label><div class="col-md-6">
+                                    <asp:TextBox ID="txtConfirmPassword" runat="server" class="form-control" required></asp:TextBox>
                                 </div>
                             </div>
 
 
                             
                                <div class="form-group row">
-                                <label for="email_address" class="col-md-4 col-form-label text-md-right">Mobile No</label>
+                                <label for="Mobile No" class="col-md-4 col-form-label text-md-right">Mobile No</label>
                                 <div class="col-md-6">
                                     <asp:TextBox ID="txtMobileNo" runat="server" class="form-control" required autofocus ></asp:TextBox>
+
+                                </div>
+
+                            </div>
+                            <div class="form-group row">
+                                <label for="City" class="col-md-4 col-form-label text-md-right">City</label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtCity" runat="server" class="form-control" required autofocus ></asp:TextBox>
 
                                 </div>
 
