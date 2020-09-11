@@ -5,6 +5,7 @@ body {
     margin: 0;
     font-size: .9rem;
     font-weight: 400;
+    font:bolder;
     line-height: 1.6;
     background-image: url(/Background/background1.jpg);
     color:ActiveBorder;
@@ -17,7 +18,7 @@ body {
     border-width: thick;
     font-family: Raleway, sans-serif;
     font-weight: 600;
-    
+    font:bolder;
     color: #282726;
     background-color: #fff;
     border-radius: 2rem;
@@ -41,9 +42,11 @@ body {
 
 .login-form {
     border:none;
+    font:bolder;
 }
 
     .login-form .row {
         margin-left: 0;
         margin-right: 0;
+        font:bolder;
     }
