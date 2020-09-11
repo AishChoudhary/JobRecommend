@@ -11,8 +11,7 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="mystyle.css">
     <link rel="icon" href="Favicon.png">
 
     <!-- Bootstrap CSS -->
@@ -30,10 +29,9 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="RecruiterLogin.aspx">Recruiter Login</a>
-                </li>
+            <ul class="navbar-nav ml-auto" style="-moz-text-decoration-color:#4cff00">
+                <li class="nav-item" >
+                    <a class="nav-link" href="RecruiterLogin.aspx">Recruiter Login</a></li>
                 <li class="nav-item">
                     <a class="nav-link" href="UserLogin.aspx">User Login</a>
                 </li>
@@ -44,3 +42,4 @@
 </nav>
 </body>
 </html>
+

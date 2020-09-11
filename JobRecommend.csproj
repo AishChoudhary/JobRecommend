@@ -67,9 +67,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Background\background1.jpg" />
     <Content Include="Database\Recruiter.sql" />
     <Content Include="Database\User.sql" />
     <Content Include="index.aspx" />
+    <Content Include="mystyle.css" />
     <Content Include="RecruiterLogin.aspx" />
     <Content Include="RecruiterSignUp.aspx" />
     <Content Include="UserLogin.aspx" />

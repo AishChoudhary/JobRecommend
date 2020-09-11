@@ -11,7 +11,7 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="mystyle.css">
 
     <link rel="icon" href="Favicon.png">
 
@@ -31,7 +31,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                <li class="nav-item" onclick="color:#4cff00">
                     <a class="nav-link" href="RecruiterLogin.aspx">Recruiter Login</a>
                 </li>
                 <li class="nav-item">
@@ -66,17 +66,8 @@
                                     <asp:TextBox ID="txtPassword" runat="server" class="form-control" required></asp:TextBox>
                                 </div>
                             </div>
-
                             <div class="form-group row">
-                                <div class="col-md-6 offset-md-4">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="remember"> Remember Me
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
+                                
                             <div class="col-md-6 offset-md-4">
 
                                 <asp:Button ID="btnLogin" runat="server" class="btn btn-primary" Text="Login" OnClick="btnLogin_Click"/>
