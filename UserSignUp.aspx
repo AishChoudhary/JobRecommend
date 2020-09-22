@@ -79,7 +79,7 @@
                                 <label for="password" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
                                 <div class="col-md-6">
                                     <asp:TextBox ID="txtConfirmPassword" runat="server" class="form-control" required OnTextChanged="txtConfirmPassword_TextChanged" TextMode="Password"></asp:TextBox> 
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Minimum 8 characters atleast 1 Alphabet, 1 Number and 1 Special Character" ControlToValidate="txtConfirmPassword" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{8,}$"></asp:RegularExpressionValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Minimum 8 characters,1 Alphabet,1 Num,1 Special Character" ControlToValidate="txtConfirmPassword" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{8,15}$"></asp:RegularExpressionValidator>
                                 </div>
                             </div>
 
@@ -98,7 +98,6 @@
                                 <div class="col-md-6">
                                     <asp:TextBox ID="txtCity" runat="server" class="form-control" required autofocus ></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ErrorMessage="Enter Valid City Name" ControlToValidate="txtCity" ValidationExpression="[a-zA-Z][a-zA-Z\\s]+$" ForeColor="Red"></asp:RegularExpressionValidator>
-
                                 </div>
 
                             </div>
