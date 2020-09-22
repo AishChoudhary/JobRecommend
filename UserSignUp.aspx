@@ -24,7 +24,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
     <div class="container">
-        <a class="navbar-brand" href="#">Welcome</a>
+        <a class="navbar-brand" href="#">&nbsp&nbsp Welcome &nbsp&nbsp</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,8 +32,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
  <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="RecruiterLogin.aspx">Recruiter Login</a>
-                </li>
+                    <a class="nav-link" href="RecruiterLogin.aspx"> Recruiter Login </a>
+                </li> &nbsp &nbsp
                 <li class="nav-item">
                     <a class="nav-link" href="UserLogin.aspx">User Login</a>
                 </li>
@@ -48,7 +48,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">USER REGISTRATION</div>
+                    <div class="card-header" style="font:bolder">USER REGISTRATION</div>
                     <div class="card-body">
                         <form action="" method="" runat="server">
                            
@@ -116,8 +116,7 @@
             </div>
         </div>
     </div>
-    </div>
-
+    
 </main>
 
 
