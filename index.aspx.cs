@@ -19,6 +19,11 @@ namespace JobRecommend
 
         }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //protected void btnLogin_Click(object sender, EventArgs e)
         //  {
         //     Response.Write("<script>alert('Successful for " + txtEmail + "');</script>");
