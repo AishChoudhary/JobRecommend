@@ -16,12 +16,7 @@ namespace JobRecommend
 
         protected void txtConfirmPassword_TextChanged(object sender, EventArgs e)
         {
-            Response.Write("<Script>alert('Check Password');</Script>");
-        }
-
-        protected void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
+            
         }
 
         protected void txtMobileNo_TextChanged(object sender, EventArgs e)
@@ -55,9 +50,9 @@ namespace JobRecommend
                 SqlCommand sqlcommand = new SqlCommand(sql, connection);
                 int x = sqlcommand.ExecuteNonQuery();
 
-                //if (txtPassword.Equals(txtConfirmPassword))
+                if (txtPassword.Equals(txtConfirmPassword))
                     Response.Write("<Script>alert('Correct Password'); </Script >");
-                if (x > 0)
+                else if (x > 0)
                     Response.Write("<Script>alert('User registered successfully');window.location='UserLogin.aspx'</Script>");
                 else if (txtPassword != txtConfirmPassword)
                     Response.Write("<Script>alert('Check Password');</Script>");

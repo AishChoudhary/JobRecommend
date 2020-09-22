@@ -12,7 +12,7 @@ CREATE TABLE [dbo].[User](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[Fullname] [nvarchar](50) NULL,
 	[Email] [nvarchar](50) NULL,
-	[Password] [nvarchar](20) NULL,
+	[Password] [nvarchar](10) NULL,
 	[MobileNo] [nvarchar](10) NULL,
 	[city] [nvarchar](50) NULL
 ) ON [PRIMARY]
