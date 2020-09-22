@@ -73,14 +73,15 @@
                             <div class="form-group row">
                                 <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
                                 <div class="col-md-6">
-                                    <asp:TextBox ID="txtPassword" runat="server" class="form-control" required></asp:TextBox>
+                                    <asp:TextBox ID="txtPassword" runat="server" class="form-control" required TextMode="Password"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Minimum 8 characters,1 Alphabet,1 Num,1 Special Character" ControlToValidate="txtPassword" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{8,15}$"></asp:RegularExpressionValidator>                                    
                                 </div>
                             </div>
                                <div class="form-group row">
                                 <label for="password" class="col-md-4 col-form-label text-md-right">Confirm Password</label><div class="col-md-6">
-                                    <asp:TextBox ID="txtConfirmPassword" runat="server" class="form-control" required></asp:TextBox>
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Minimum 8 characters,1 Alphabet,1 Num,1 Special Character" ControlToValidate="txtPassword" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{8,15}$"></asp:RegularExpressionValidator>                                    
+                                    <asp:TextBox ID="txtConfirmPassword" runat="server" class="form-control" required TextMode="Password"></asp:TextBox>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Minimum 8 characters,1 Alphabet,1 Num,1 Special Character" ControlToValidate="txtPassword" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{8,15}$"></asp:RegularExpressionValidator> 
+                                    <asp:CompareValidator id="comparePasswords" runat="server" ControlToCompare="txtPassword"          ControlToValidate="txtConfirmPassword"            ErrorMessage="Your passwords do not match up!"         ForeColor="Red"  />
                                 </div>
                             </div>
                                <div class="form-group row">
