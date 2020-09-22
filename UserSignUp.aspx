@@ -80,10 +80,9 @@
                                 <div class="col-md-6">
                                     <asp:TextBox ID="txtConfirmPassword" runat="server" class="form-control" required OnTextChanged="txtConfirmPassword_TextChanged" TextMode="Password"></asp:TextBox> 
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Minimum 8 characters,1 Alphabet,1 Num,1 Special Character" ControlToValidate="txtConfirmPassword" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{8,15}$"></asp:RegularExpressionValidator>
-                                </div>
+                                <asp:CompareValidator id="comparePasswords" runat="server" ControlToCompare="txtPassword"          ControlToValidate="txtConfirmPassword"  ErrorMessage="Your passwords do not match up!" ForeColor="Red"  /></div>
                             </div>
-
-
+                            
                             
                                <div class="form-group row">
                                 <label for="Mobile No" class="col-md-4 col-form-label text-md-right">Mobile No</label>

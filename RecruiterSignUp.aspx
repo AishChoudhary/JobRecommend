@@ -51,7 +51,7 @@
                 <div class="card">
                     <div class="card-header">RECRUITER REGISTRATION</div>
                     <div class="card-body">
-                        <form action="" method="" runat="server">
+                        <form id="form1" runat="server">
                            
                              <div class="form-group row">
                                 <label for="full Name" class="col-md-4 col-form-label text-md-right">Full Name</label>
@@ -80,7 +80,7 @@
                                <div class="form-group row">
                                 <label for="password" class="col-md-4 col-form-label text-md-right">Confirm Password</label><div class="col-md-6">
                                     <asp:TextBox ID="txtConfirmPassword" runat="server" class="form-control" required></asp:TextBox>
-                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Minimum 8 characters atleast 1 Alphabet, 1 Number and 1 Special Character" ControlToValidate="txtConfirmPassword" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{8,15}$"></asp:RegularExpressionValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Minimum 8 characters,1 Alphabet,1 Num,1 Special Character" ControlToValidate="txtPassword" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{8,15}$"></asp:RegularExpressionValidator>                                    
                                 </div>
                             </div>
                                <div class="form-group row">
@@ -108,6 +108,7 @@
                         
                               
                             </div>
+                            </form>
                             </div>
                     </form>
                 </div>
