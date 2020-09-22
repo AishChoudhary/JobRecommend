@@ -9,11 +9,11 @@
 </head>
 <body> 
    
-    <form id="form2" runat="server">
+    <form id="form2" runat="server"> 
         <div>
             Welcome <asp:Label ID="lblEmail" runat="server" Text="Label"></asp:Label>
         &nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Logout" />
-        </div>
+        </div> 
     </form>
 
 
