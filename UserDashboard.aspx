@@ -10,9 +10,10 @@
 <body> 
    
     <form id="form2" runat="server">    
-        <div>
-            Welcome <asp:Label ID="lblEmail" runat="server" Text="Label"></asp:Label>
-        &nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Logout" />
+        <div style="font-size: xx-large">
+            Welcome <asp:Label ID=lblEmail runat="server" Text="username" Font-Bold="True" Font-Size="XX-Large" ></asp:Label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp; 
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Logout" BorderColor="#999966" Font-Bold="True" Font-Size="X-Large" Width="137px"  />
         </div> 
     </form>
 
