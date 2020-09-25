@@ -1,4 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RecruiterSignUp.aspx.cs" Inherits="JobRecommend.RecruiterSignUp" %>
+﻿
+
+
+
+
+
+
+
+
+
+
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RecruiterSignUp.aspx.cs" Inherits="JobRecommend.RecruiterSignUp" %>
 
 
 <!doctype html>
@@ -73,7 +85,7 @@
                             <div class="form-group row">
                                 <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
                                 <div class="col-md-6">
-                                    <asp:TextBox ID="txtPassword" runat="server" class="form-control" required TextMode="Password"></asp:TextBox>
+                                    <asp:TextBox ID="txtPassword" runat="server" class="form-control" required TextMode="Password" OnTextChanged="txtPassword_TextChanged"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Minimum 8 characters,1 Alphabet,1 Num,1 Special Character" ControlToValidate="txtPassword" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{8,15}$"></asp:RegularExpressionValidator>                                    
                                 </div>
                             </div>

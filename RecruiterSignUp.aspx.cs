@@ -13,6 +13,12 @@ namespace JobRecommend
         SqlConnection connection = new SqlConnection("Server=(Local);Database=JobRecommenderDb;Integrated Security=true");
 
         string Fullname, Email, Password, MobileNo,City;
+
+        protected void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
