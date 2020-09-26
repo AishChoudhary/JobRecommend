@@ -13,11 +13,11 @@ namespace JobRecommend
         {
             string email, username;
             email = (string) Session["email"];
-            username = (string) Session["username"];
+            username = (string) Session["uname"];
             if (email == null)
                 Response.Redirect("UserLogin.aspx");
             else
-                lblEmail.Text = email;
+                lblEmail.Text = username;
 
         }
 

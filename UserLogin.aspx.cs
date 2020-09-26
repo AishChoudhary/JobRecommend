@@ -49,7 +49,8 @@ namespace JobRecommend
                 {
                     string uname = dt.Rows[0].ItemArray[1].ToString();
                     Session["email"] = txtEmail.Text;
-                    Response.Write("<script>alert('Login Successfull Click Ok to Proceed');window.location='UserDashboard.aspx?uname="+uname+"';</script>");
+                    Session["uname"] = uname;
+                    Response.Write("<script>alert('Login Successfull Click Ok to Proceed');window.location='NewUserDashboard.aspx?uname="+uname+"';</script>");
                 }
                 //Response.Redirect("UserDashboard.aspx");
                 else
