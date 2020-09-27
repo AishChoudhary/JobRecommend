@@ -271,12 +271,29 @@
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Update Profile Settings Example</h6>
             </div>
-<form class="user"></form>
+<form class="user" runat="server">
             <div class="card-body">
               <div class="table-responsive">
               
 <div class="form-group row">
-                                <label for="email_address" class="col-md-4 col-form-label text-md-right">Address</label>
+                                <label for="address" class="col-md-4 col-form-label text-md-right">Address</label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="TextBox1" runat="server" class="form-control form-control-user " required="" autofocus="">
+</asp:TextBox>
+
+                                </div>
+
+                            </div>
+
+<div class="form-group row">
+                                <label for="email_address" class="col-md-4 col-form-label text-md-right">10th Marks (%)</label>
+                                <div class="col-md-6">
+                                    <input name="txtEmail" type="text" id="txtEmail" class="form-control form-control-user" required="" autofocus="">
+
+                                </div>
+
+                            </div><div class="form-group row">
+                                <label for="email_address" class="col-md-4 col-form-label text-md-right">12th/Diploma Marks(%)</label>
                                 <div class="col-md-6">
                                     <input name="txtEmail" type="text" id="txtEmail" class="form-control form-control-user" required="" autofocus="">
 
@@ -284,15 +301,14 @@
 
                             </div>
 <div class="form-group row">
-                                <label for="email_address" class="col-md-4 col-form-label text-md-right">Add Past Qualification</label>
+                                <label for="email_address" class="col-md-4 col-form-label text-md-right">Current Qualification</label>
                                 <div class="col-md-6">
                                     <input name="txtEmail" type="text" id="txtEmail" class="form-control form-control-user" required="" autofocus="">
 
                                 </div>
 
-                            </div>
-<div class="form-group row">
-                                <label for="email_address" class="col-md-4 col-form-label text-md-right">Current Education</label>
+                            </div><div class="form-group row">
+                                <label for="email_address" class="col-md-4 col-form-label text-md-right">Higest Qualification</label>
                                 <div class="col-md-6">
                                     <input name="txtEmail" type="text" id="txtEmail" class="form-control form-control-user" required="" autofocus="">
 
@@ -308,14 +324,14 @@
 
                             </div>
 <div class="form-group row">
-                                <label for="email_address" class="col-md-4 col-form-label text-md-right">Add Certifications</label>
+                                <label for="email_address" class="col-md-4 col-form-label text-md-right">&nbsp;Certifications</label>
                                 <div class="col-md-6">
                                     <input name="txtEmail" type="text" id="txtEmail" class="form-control form-control-user" required="" autofocus="">
 
                                 </div>
 
                             </div><div class="form-group row">
-                                <label for="email_address" class="col-md-4 col-form-label text-md-right">Add Skills/Hobbies/Interests</label>
+                                <label for="email_address" class="col-md-4 col-form-label text-md-right">Skills/Hobbies/Interests</label>
                                 <div class="col-md-6">
                                     <input name="txtEmail" type="text" id="txtEmail" class="form-control form-control-user" required="" autofocus="">
 
@@ -328,11 +344,10 @@
  
               </div>
             </div>
-          </div>
-                   </div>
+         </form>
 
 
-            <!-- Area Chart -->
+         
             <div class="col-xl-8 col-lg-7">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
@@ -358,22 +373,8 @@
               </div>
             </div>
 
-            <!-- Pie Chart -->
-            
-          </div>
-
-
-
-          <!-- Content Row -->
-          
-
-        </div>
-        <!-- /.container-fluid -->
-
-      </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
+           
+        
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
