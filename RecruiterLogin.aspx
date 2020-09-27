@@ -54,7 +54,7 @@
                             <div class="form-group row">
                                 <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
                                 <div class="col-md-6">
-                                    <asp:TextBox ID="txtEmail" runat="server" class="form-control" required autofocus ></asp:TextBox>
+                                    <asp:TextBox ID="txtEmail" runat="server" class="form-control" required autofocus TextMode="Email" ></asp:TextBox>
 
                                 </div>
 
@@ -63,7 +63,7 @@
                             <div class="form-group row">
                                 <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
                                 <div class="col-md-6">
-                                    <asp:TextBox ID="txtPassword" runat="server" class="form-control" required></asp:TextBox>
+                                    <asp:TextBox ID="txtPassword" runat="server" class="form-control" required TextMode="Password"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -74,6 +74,9 @@
                         
                                 <a href="RecruiterSignUp.aspx" class="btn btn-link">
                                   Sign Up
+                                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="RecForgotPassword.aspx" class="btn btn-link">
+                                  Forgot Password?
                                 </a>
                             </div>
                             </div>
