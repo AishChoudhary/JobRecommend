@@ -1,16 +1,4 @@
-﻿
-
-
-
-
-
-
-
-
-
-
-
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RecruiterSignUp.aspx.cs" Inherits="JobRecommend.RecruiterSignUp" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RecruiterSignUp.aspx.cs" Inherits="JobRecommend.RecruiterSignUp" %>
 
 
 <!doctype html>

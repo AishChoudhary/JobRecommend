@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserProfile.aspx.cs" Inherits="JobRecommend.UserProfile" %>
 
+<!DOCTYPE html>
 <html lang="en"><head>
 
   <meta charset="utf-8">
@@ -278,68 +279,56 @@
 <div class="form-group row">
                                 <label for="address" class="col-md-4 col-form-label text-md-right">Address</label>
                                 <div class="col-md-6">
-                                    <asp:TextBox ID="TextBox1" runat="server" class="form-control form-control-user " required="" autofocus="">
-</asp:TextBox>
-
+                                    <asp:TextBox ID="txtAddress" runat="server" class="form-control form-control-user " required="" autofocus=""></asp:TextBox>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Please Enter Valid Address" ControlToValidate="txtAddress" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{50,50}$"></asp:RegularExpressionValidator>
                                 </div>
 
                             </div>
 
 <div class="form-group row">
-                                <label for="email_address" class="col-md-4 col-form-label text-md-right">10th Marks (%)</label>
+      <label for="10th_marks" class="col-md-4 col-form-label text-md-right">10th Marks (%)</label>
                                 <div class="col-md-6">
-                                    <input name="txtEmail" type="text" id="txtEmail" class="form-control form-control-user" required="" autofocus="">
-
-                                </div>
-
+           <asp:TextBox ID="txtMarks" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
+                               <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Please Enter Marks in %" ControlToValidate="txtMarks" ForeColor="Red" ValidationExpression="^(100([\.][0]{1,})?$|[0-9]{1,2}([\.][0-9]{1,})?)$"></asp:RegularExpressionValidator>
+ </div>
                             </div><div class="form-group row">
-                                <label for="email_address" class="col-md-4 col-form-label text-md-right">12th/Diploma Marks(%)</label>
+                                <label for="12th_marks" class="col-md-4 col-form-label text-md-right">12th/Diploma Marks(%)</label>
                                 <div class="col-md-6">
-                                    <input name="txtEmail" type="text" id="txtEmail" class="form-control form-control-user" required="" autofocus="">
-
+                                    <asp:TextBox ID="txtMarks1" runat="server" Class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Please Enter Marks in %" ControlToValidate="txtMarks1" ForeColor="Red" ValidationExpression="^(100([\.][0]{1,})?$|[0-9]{1,2}([\.][0-9]{1,})?)$"></asp:RegularExpressionValidator>
                                 </div>
-
                             </div>
 <div class="form-group row">
-                                <label for="email_address" class="col-md-4 col-form-label text-md-right">Current Qualification</label>
+                                <label for="current_qualification" class="col-md-4 col-form-label text-md-right">Current Qualification</label>
                                 <div class="col-md-6">
-                                    <input name="txtEmail" type="text" id="txtEmail" class="form-control form-control-user" required="" autofocus="">
-
+                                    <asp:TextBox ID="txtCurrentQualification" runat="server" class="form-control form-control-user"  required="" autofocus=""></asp:TextBox>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Please Enter Qualification" ControlToValidate="txtCurrentQualification" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{50,50}$"></asp:RegularExpressionValidator>
                                 </div>
-
                             </div><div class="form-group row">
-                                <label for="email_address" class="col-md-4 col-form-label text-md-right">Higest Qualification</label>
+                                <label for="highest_qualification" class="col-md-4 col-form-label text-md-right">Highest Qualification</label>
                                 <div class="col-md-6">
-                                    <input name="txtEmail" type="text" id="txtEmail" class="form-control form-control-user" required="" autofocus="">
-
-                                </div>
-
+                                    <asp:TextBox ID="txtHighestQualification" runat="server" class="form-control form-control-user"  required="" autofocus=""></asp:TextBox>
+                               <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ErrorMessage="Please Enter Qualification" ControlToValidate="txtHighestQualification" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{50,50}$"></asp:RegularExpressionValidator> </div>
                             </div>
 <div class="form-group row">
-                                <label for="email_address" class="col-md-4 col-form-label text-md-right">Desired Work Location</label>
+                                <label for="work_location" class="col-md-4 col-form-label text-md-right">Desired Work Location</label>
                                 <div class="col-md-6">
-                                    <input name="txtEmail" type="text" id="txtEmail" class="form-control form-control-user" required="" autofocus="">
-
+                                   <asp:TextBox ID="txtLocation" runat="server" class="form-control form-control-user"  required="" autofocus=""></asp:TextBox>
+                              <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Please Enter Desired Work Location" ControlToValidate="txtLocation" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{50,50}$"></asp:RegularExpressionValidator>  </div>
                                 </div>
-
-                            </div>
 <div class="form-group row">
-                                <label for="email_address" class="col-md-4 col-form-label text-md-right">&nbsp;Certifications</label>
+                                <label for="certifications" class="col-md-4 col-form-label text-md-right">&nbsp;Certifications</label>
                                 <div class="col-md-6">
-                                    <input name="txtEmail" type="text" id="txtEmail" class="form-control form-control-user" required="" autofocus="">
-
+                                  <asp:TextBox ID="txtCertifications" runat="server" class="form-control form-control-user" autofocus=""></asp:TextBox>
                                 </div>
-
-                            </div><div class="form-group row">
-                                <label for="email_address" class="col-md-4 col-form-label text-md-right">Skills/Hobbies/Interests</label>
+                                </div><div class="form-group row">
+                                <label for="interests" class="col-md-4 col-form-label text-md-right">Skills/Hobbies/Interests</label>
                                 <div class="col-md-6">
-                                    <input name="txtEmail" type="text" id="txtEmail" class="form-control form-control-user" required="" autofocus="">
-
+                                   <asp:TextBox ID="txtInterests" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
+                               <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ErrorMessage="Please Enter your Skills/Hobbies/Interests" ControlToValidate="txtInterests" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{50,50}$"></asp:RegularExpressionValidator> </div>
                                 </div>
-    </div><div class="col-md-6 offset-md-4">
-                            <input type="submit" name="btnLogin" value="Add" id="btnLogin" class="btn btn-primary" style="height:35px;width:63px;">
-                        
-                                
+                  <div class="col-md-6 offset-md-4">
+                    <asp:Button ID="btnSubmit" runat="server" class="btn btn-primary" Text="Submit" />       
                             </div>
  
               </div>
@@ -378,7 +367,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright © Your Website 2020</span>
+            <span>Copyright © JobRecom 2020</span>
           </div>
         </div>
       </footer>

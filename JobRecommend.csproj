@@ -83,7 +83,9 @@
     <Content Include="Logout.aspx" />
     <Content Include="mystyle.css" />
     <Content Include="NewUserDashboard.aspx" />
+    <Content Include="RecruiterDashboard.aspx" />
     <Content Include="RecruiterLogin.aspx" />
+    <Content Include="RecruiterProfile.aspx" />
     <Content Include="RecruiterSignUp.aspx" />
     <Content Include="UserDashboard.aspx" />
     <Content Include="UserLogin.aspx" />
@@ -1771,12 +1773,26 @@
       <DependentUpon>NewUserDashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecruiterDashboard.aspx.cs">
+      <DependentUpon>RecruiterDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecruiterDashboard.aspx.designer.cs">
+      <DependentUpon>RecruiterDashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RecruiterLogin.aspx.cs">
       <DependentUpon>RecruiterLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="RecruiterLogin.aspx.designer.cs">
       <DependentUpon>RecruiterLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecruiterProfile.aspx.cs">
+      <DependentUpon>RecruiterProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecruiterProfile.aspx.designer.cs">
+      <DependentUpon>RecruiterProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="RecruiterSignUp.aspx.cs">
       <DependentUpon>RecruiterSignUp.aspx</DependentUpon>

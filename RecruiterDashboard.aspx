@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NewUserDashboard.aspx.cs" Inherits="JobRecommend.NewUserDashboard" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RecruiterDashboard.aspx.cs" Inherits="JobRecommend.RecruiterDashboard" %>
 
 <!DOCTYPE html>
 
@@ -417,7 +417,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright © JobRecom 2020</span>
+            <span>Copyright © Your Website 2020</span>
           </div>
         </div>
       </footer>
