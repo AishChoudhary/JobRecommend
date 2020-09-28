@@ -43,6 +43,45 @@
         </div>
     </div>
 </nav>
+  <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">RECRUITER LOGIN</div>
+                    <div class="card-body">
+ <form id="form1" runat="server">
+                        <div class="form-group row">
+                                <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                                <div class="col-md-6">
+                                    <input name="txtEmail" type="email" id="txtEmail" class="form-control" required="" autofocus="">
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                <div class="col-md-6">
+                                    <input name="txtPassword" type="password" id="txtPassword" class="form-control" required="">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                
+                            <div class="col-md-6 offset-md-4">
+
+                               <a href="RecruiterLogin.aspx" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary lin</a>
+
+                                <button type="button" class="btn btn-primary btn-lg">Large button</button>
+                                <a href="RecruiterSignUp.aspx" class="btn btn-link">
+                                  Sign Up
+                                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="RecForgotPassword.aspx" class="btn btn-link">
+                                  Forgot Password?
+                                </a>
+                            </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 </body>
 </html>
 

@@ -327,8 +327,20 @@
                                    <asp:TextBox ID="txtInterests" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
                                <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ErrorMessage="Please Enter your Skills/Hobbies/Interests" ControlToValidate="txtInterests" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{50,50}$"></asp:RegularExpressionValidator> </div>
                                 </div>
+
+
+                                 </div><div class="form-group row">
+                                <label for="interests" class="col-md-4 col-form-label text-md-right">Skills/Hobbies/Interests</label>
+                                <div class="col-md-6">
+                                    <asp:DropDownList ID="DropDownList1" runat="server" class="form-control form-control-user" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                                        <asp:ListItem>Fresher</asp:ListItem>
+                                        <asp:ListItem>Experienced</asp:ListItem>
+                                    </asp:DropDownList>
+                               <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ErrorMessage="Please Enter your Skills/Hobbies/Interests" ControlToValidate="txtInterests" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{50,50}$"></asp:RegularExpressionValidator> </div>
+                                </div>
+
                   <div class="col-md-6 offset-md-4">
-                    <asp:Button ID="btnSubmit" runat="server" class="btn btn-primary" Text="Submit" />       
+                    <asp:Button ID="btnSubmit" runat="server" class="btn btn-primary" Text="Submit" OnClick="btnSubmit_Click" />       
                             </div>
  
               </div>
