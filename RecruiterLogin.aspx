@@ -28,12 +28,12 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         </button>
         
-         &nbsp; Welcome To India's Job Site!&nbsp;&nbsp;&nbsp;&nbsp;<div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+         &nbsp; Welcome To India's Job Site!&nbsp;&nbsp;&nbsp;&nbsp;     <div  class        ="collapse navbar-collapse" id="navbarSupportedContent"> 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
  <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="RecruiterLogin.aspx" style="font-size: medium"> Recruiter Login </a>
-                </li> &nbsp &nbsp
+                </li> &nbsp; &nbsp;
                 <li class="nav-item">
                     <a class="nav-link" href="UserLogin.aspx" style="font-size: medium">User Login</a>
                 </li>

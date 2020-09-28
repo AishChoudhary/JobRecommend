@@ -72,7 +72,7 @@
                             <div class="col-md-6 offset-md-4">
                             <asp:Button ID="btnLogin" runat="server" class="btn btn-primary" Text="Login" OnClick="btnLogin_Click" Height="35px" Width="63px" />
                         
-                                &nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;<a href="UserSignUp.aspx" class="btn btn-link">Sign Up
+                                &nbsp;&nbsp;or<a href="UserSignUp.aspx" class="btn btn-link">Sign Up
                                 </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <a href="ForgotPassword.aspx" class="btn btn-link">
                                   Forgot Password?

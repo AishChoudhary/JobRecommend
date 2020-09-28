@@ -23,21 +23,20 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
-    <div class="container">
-        <a class="navbar-brand" href="#">Welcome</a>
+    <div class="container" style="font-family: 'Arial Black'; font-size: x-large; color: #33CCFF;">
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="navbar-toggler-icon" style="padding: 30px; background-position: center center; background-image: url('Background/d22eed19-8b41-41ca-b6b8-35522608a8b6_200x200.png'); background-repeat: no-repeat;"></span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
         </button>
-
+        
+         &nbsp; Welcome To India's Job Site!&nbsp;&nbsp;&nbsp;&nbsp;     <div  class        ="collapse navbar-collapse" id="navbarSupportedContent"> 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-           <ul class="navbar-nav ml-auto">
+ <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="RecruiterLogin.aspx">Recruiter Login</a>
+                    <a class="nav-link" href="RecruiterLogin.aspx" style="font-size: medium"> Recruiter Login </a>
+                </li> &nbsp; &nbsp;
+                <li class="nav-item">
+                    <a class="nav-link" href="UserLogin.aspx" style="font-size: medium">User Login</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="UserLogin.aspx">User Login</a></li>
-                <li class="nav-item">
-                    &nbsp;</li>
             </ul>
 
         </div>
@@ -53,12 +52,17 @@
                     <div class="card-body">
                         <form id="form1" runat="server">
                             <div class="form-group row">
-                                <label for="New PAssword" class="col-md-4 col-form-label text-md-right">New Password</label>
+                                <label for="Email" class="col-md-4 col-form-label text-md-right">Email</label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtEmail" runat="server" class="form-control" required autofocus TextMode="Email" ></asp:TextBox>
+
+                                    </div> </div>
+                                    <div class="form-group row">
+                                <label for="New Password" class="col-md-4 col-form-label text-md-right">New Password</label>
                                 <div class="col-md-6">
                                     <asp:TextBox ID="txtNewPwd" runat="server" class="form-control" required autofocus TextMode="Password" ></asp:TextBox>
 
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtNewPwd" ErrorMessage="Minimum 8 Characters Required " ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{8,15}$"></asp:RegularExpressionValidator>
-
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtNewPwd" ErrorMessage="Minimum 8 Characters Required " ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{8,15}$"></asp:RegularExpressionValidator>
                                 </div>
 
                             </div>

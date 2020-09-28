@@ -11,13 +11,14 @@ namespace JobRecommend
     public partial class RecForgotPassword : System.Web.UI.Page
     {
         SqlConnection connection = new SqlConnection("Server=(Local);Database=JobRecommenderDb;Integrated Security=true");
-        string Password, NewPassword;
+        string Email, Password, NewPassword;
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
         private void readvalue()
         {
+            Email = txtEmail.Text;
             Password = txtNewPwd.Text;
             NewPassword = txtNewPwd1.Text;
 
@@ -29,7 +30,7 @@ namespace JobRecommend
             {
 
                 readvalue();
-                string sql = "insert into UserInfo(Password) values('" + Password + "')";
+                string sql = "insert into Recruiter(Email,Password) values('"+ Email+"','" + Password + "')";
                 SqlCommand sqlcommand = new SqlCommand(sql, connection);
                 int x = sqlcommand.ExecuteNonQuery();
                 Password = NewPassword;

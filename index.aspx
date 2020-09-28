@@ -33,7 +33,7 @@
         <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="RecruiterLogin.aspx" style="font-size: medium">Recruiter Login</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </li>&nbsp &nbsp;
+                <%--</li>&nbsp &nbsp;--%>
                 <li class="nav-item">
                     <a class="nav-link" href="UserLogin.aspx" style="font-size: medium">User Login</a> </li>
                 <li class="nav-item">
