@@ -16,14 +16,6 @@ namespace JobRecommend
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void btnSubmit_Click(object sender, EventArgs e)
-        {
-          /*  connection.Open();
-            if (connection.State == System.Data.ConnectionState.Open)
-            {
-
                 string uid = (string) Session["uid"];
 
                
@@ -45,10 +37,17 @@ namespace JobRecommend
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (DropDownList1.SelectedIndex == 1)
-                txtAddress.Visible = true;
+            {
+                txtCompName.Visible = true;
+                txtWorkDur.Visible = true;
+                txtSal.Visible = true;
+            }
             else
-                txtAddress.Visible = false;
-
+            {
+                txtCompName.Visible = false;
+                txtWorkDur.Visible = false;
+                txtSal.Visible = false;
+            }
         }
     }
 }

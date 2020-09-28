@@ -281,8 +281,8 @@
                                 <div class="form-group row">
                                 <label for="address" class="col-md-4 col-form-label text-md-right">Address</label>
                                 <div class="col-md-6">
-                                    <asp:TextBox ID="txtAddress" runat="server" class="form-control form-control-user " required="" autofocus="" AutoPostBack="True"></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Please Enter Valid Address" ControlToValidate="txtAddress" ForeColor="Red" ValidationExpression="^[#.0-9a-zA-Z\s,-]+$"></asp:RegularExpressionValidator>
+                                    <asp:TextBox ID="txtAddress" runat="server" class="form-control form-control-user " required="" autofocus=""></asp:TextBox>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Please Enter Valid Address" ControlToValidate="txtAddress" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{50,50}$"></asp:RegularExpressionValidator>
                                 </div>
 
                             </div>
@@ -327,39 +327,8 @@
                                 <label for="interests" class="col-md-4 col-form-label text-md-right">Skills/Hobbies/Interests</label>
                                 <div class="col-md-6">
                                    <asp:TextBox ID="txtInterests" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-                               <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ErrorMessage="Please Enter your Skills/Hobbies/Interests" ControlToValidate="txtInterests" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{2,80}$"></asp:RegularExpressionValidator> </div>
+                               <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ErrorMessage="Please Enter your Skills/Hobbies/Interests" ControlToValidate="txtInterests" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{50,50}$"></asp:RegularExpressionValidator> </div>
                                 </div>
-
-                                <div class="form-group row">
-                                <label for="work" class="col-md-4 col-form-label text-md-right">Fresher/Experienced?</label>
-                                <div class="col-md-6">
-                                    <asp:DropDownList ID="DropDownList1" runat="server" class="form-control form-control-user" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
-                                        <asp:ListItem>Fresher</asp:ListItem>
-                                        <asp:ListItem>Experienced</asp:ListItem>
-                                    </asp:DropDownList>
-                               <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ErrorMessage="Please Select " ControlToValidate="DropDownList1" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{50,50}$"></asp:RegularExpressionValidator> </div>
-                                </div>
-                                <div class="form-group row">
-                                <label for="company_name" class="col-md-4 col-form-label text-md-right">Comapny Name</label>
-                                <div class="col-md-6">
-                                   <asp:TextBox ID="txtCompName" runat="server" class="form-control form-control-user" required="" autofocus="" AutoPostBack="True"></asp:TextBox>
-                               <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ErrorMessage="Please Give Company Name" ControlToValidate="txtCompName" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{2,80}$"></asp:RegularExpressionValidator> </div>
-                                </div>
-                                <div class="form-group row">
-                                <label for="work_duration" class="col-md-4 col-form-label text-md-right">Work Duration</label>
-                                <div class="col-md-6">
-                                   <asp:TextBox ID="txtWorkDur" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-                               <asp:RegularExpressionValidator ID="RegularExpressionValidator10" runat="server" ErrorMessage="Please Give Work Duration" ControlToValidate="txtWorkDur" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{2,50}$"></asp:RegularExpressionValidator> </div>
-                                </div>
-                                 <div class="form-group row">
-                                <label for="salary" class="col-md-4 col-form-label text-md-right">Salary</label>
-                                <div class="col-md-6">
-                                    <asp:TextBox ID="txtSal" runat="server" class="form-control form-control-user " required="" autofocus="" AutoPostBack="True"></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator11" runat="server" ErrorMessage="Please Enter Salary" ControlToValidate="txtSal" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{50,50}$"></asp:RegularExpressionValidator>
-                                </div>
-
-                                 </div>
-
                   <div class="col-md-6 offset-md-4">
                     <asp:Button ID="btnSubmit" runat="server" class="btn btn-primary" Text="Submit" OnClick="btnSubmit_Click" />       
                             </div>
