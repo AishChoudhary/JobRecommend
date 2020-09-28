@@ -45,17 +45,10 @@ namespace JobRecommend
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (DropDownList1.SelectedIndex == 1)
-            {
-                txtCompName.Visible = true;
-                txtWorkDur.Visible = true;
-                txtSal.Visible = true;
-            }
+                txtAddress.Visible = true;
             else
-            {
-                txtCompName.Visible = false;
-                txtWorkDur.Visible = false;
-                txtSal.Visible = false;
-            }
+                txtAddress.Visible = false;
+
         }
     }
 }
