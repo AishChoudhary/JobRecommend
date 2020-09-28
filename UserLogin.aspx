@@ -23,22 +23,22 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
-    <div class="container">
-        <a class="navbar-brand" href="#">Welcome</a>
+    <div class="container" style="font-family: 'Arial Black'; font-size: x-large; color: #33CCFF;">
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="navbar-toggler-icon" style="padding: 30px; background-position: center center; background-image: url('Background/d22eed19-8b41-41ca-b6b8-35522608a8b6_200x200.png'); background-repeat: no-repeat;"></span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
         </button>
-
+        
+         &nbsp; Welcome To India's Job Site!&nbsp;&nbsp;&nbsp;&nbsp;<div class="collapse navbar-collapse" id="navbarSupportedContent"> 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-           <ul class="navbar-nav ml-auto">
+ <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="RecruiterLogin.aspx">Recruiter Login</a>
+                    <a class="nav-link" href="RecruiterLogin.aspx" style="font-size: medium"> Recruiter Login </a>
+                </li> &nbsp &nbsp
+                <li class="nav-item">
+                    <a class="nav-link" href="UserLogin.aspx" style="font-size: medium">User Login</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="UserLogin.aspx">User Login</a></li>
-                <li class="nav-item">
-                    &nbsp;</li>
             </ul>
+
 
         </div>
     </div>
@@ -55,7 +55,7 @@
                             <div class="form-group row">
                                 <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
                                 <div class="col-md-6">
-                                    <asp:TextBox ID="txtEmail" runat="server" class="form-control" required autofocus ></asp:TextBox>
+                                    <asp:TextBox ID="txtEmail" runat="server" class="form-control" required autofocus TextMode="Email" ></asp:TextBox>
 
                                 </div>
 
@@ -64,7 +64,7 @@
                             <div class="form-group row">
                                 <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
                                 <div class="col-md-6">
-                                    <asp:TextBox ID="txtPassword" runat="server" class="form-control" required></asp:TextBox>
+                                    <asp:TextBox ID="txtPassword" runat="server" class="form-control" required TextMode="Password"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -72,10 +72,11 @@
                             <div class="col-md-6 offset-md-4">
                             <asp:Button ID="btnLogin" runat="server" class="btn btn-primary" Text="Login" OnClick="btnLogin_Click" Height="35px" Width="63px" />
                         
-                                <a href="UserSignUp.aspx" class="btn btn-link">
-                                  Sign Up
-                                </a>
-                            </div>
+                                &nbsp;&nbsp;or<a href="UserSignUp.aspx" class="btn btn-link">Sign Up
+                                </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="ForgotPassword.aspx" class="btn btn-link">
+                                  Forgot Password?
+                                </a></div>
                             </div>
                     </form>
                 </div>

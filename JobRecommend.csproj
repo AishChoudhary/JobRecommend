@@ -68,10 +68,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Background\background1.jpg" />
+    <Content Include="Background\d22eed19-8b41-41ca-b6b8-35522608a8b6_200x200.png" />
     <Content Include="css\sb-admin-2.css" />
     <Content Include="css\sb-admin-2.min.css" />
     <Content Include="Database\Recruiter.sql" />
     <Content Include="Database\UserInfo.sql" />
+    <Content Include="Database\UserProfile.sql" />
+    <Content Include="ForgotPassword.aspx" />
     <Content Include="img\undraw_posting_photo.svg" />
     <Content Include="index.aspx" />
     <Content Include="js\demo\chart-area-demo.js" />
@@ -83,6 +86,7 @@
     <Content Include="Logout.aspx" />
     <Content Include="mystyle.css" />
     <Content Include="NewUserDashboard.aspx" />
+    <Content Include="RecForgotPassword.aspx" />
     <Content Include="RecruiterLogin.aspx" />
     <Content Include="RecruiterSignUp.aspx" />
     <Content Include="UserDashboard.aspx" />
@@ -1749,6 +1753,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1771,6 +1782,13 @@
       <DependentUpon>NewUserDashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecForgotPassword.aspx.cs">
+      <DependentUpon>RecForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecForgotPassword.aspx.designer.cs">
+      <DependentUpon>RecForgotPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RecruiterLogin.aspx.cs">
       <DependentUpon>RecruiterLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
