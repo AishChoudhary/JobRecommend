@@ -20,7 +20,7 @@ namespace JobRecommend
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            connection.Open();
+          /*  connection.Open();
             if (connection.State == System.Data.ConnectionState.Open)
             {
 
@@ -44,10 +44,10 @@ namespace JobRecommend
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (DropDownList1.SelectedIndex == 1)
-              //  txtAddress.Visible = true;
-            //else
-               // txtAddress.Visible = false;
+            if (DropDownList1.SelectedIndex == 1)
+                txtAddress.Visible = true;
+            else
+                txtAddress.Visible = false;
 
         }
     }
