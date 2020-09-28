@@ -24,19 +24,19 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
-    <div class="container">
-        <a class="navbar-brand" href="#">Welcome</a>
+    <div class="container" style="font-family: 'Arial Black'; font-size: x-large; color: #33CCFF;">
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="navbar-toggler-icon" style="padding: 30px; background-position: center center; background-image: url('Background/d22eed19-8b41-41ca-b6b8-35522608a8b6_200x200.png'); background-repeat: no-repeat;"></span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
         </button>
-
+        
+         &nbsp; Welcome To India's Job Site!&nbsp;&nbsp;&nbsp;&nbsp;<div class="collapse navbar-collapse" id="navbarSupportedContent"> 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
  <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="RecruiterLogin.aspx">Recruiter Login</a>
-                </li>
+                    <a class="nav-link" href="RecruiterLogin.aspx" style="font-size: medium"> Recruiter Login </a>
+                </li> &nbsp &nbsp
                 <li class="nav-item">
-                    <a class="nav-link" href="UserLogin.aspx">User Login</a>
+                    <a class="nav-link" href="UserLogin.aspx" style="font-size: medium">User Login</a>
                 </li>
             </ul>
 

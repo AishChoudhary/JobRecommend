@@ -34,7 +34,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Job Recommender<sup>TM</sup></div>
+        <div class="sidebar-brand-text mx-3">Careers.com<sup>TM</sup></div>
       </a>
 
       <!-- Divider -->
@@ -270,17 +270,17 @@
                <div class="container-fluid">
                 <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Update Profile Settings Example</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Update Profile Settings</h6>
             </div>
-<form class="user" runat="server">
-            <div class="card-body">
-              <div class="table-responsive">
+                    <form class="user" runat="server">
+                        <div class="card-body">
+                            <div class="table-responsive">
               
-<div class="form-group row">
+                                <div class="form-group row">
                                 <label for="address" class="col-md-4 col-form-label text-md-right">Address</label>
                                 <div class="col-md-6">
                                     <asp:TextBox ID="txtAddress" runat="server" class="form-control form-control-user " required="" autofocus=""></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Please Enter Valid Address" ControlToValidate="txtAddress" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{50,50}$"></asp:RegularExpressionValidator>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Please Enter Valid Address" ControlToValidate="txtAddress" ForeColor="Red" ValidationExpression="^[#.0-9a-zA-Z\s,-]+$"></asp:RegularExpressionValidator>
                                 </div>
 
                             </div>
