@@ -24,13 +24,7 @@ namespace JobRecommend
             Email = txtEmail.Text;
             Password = txtPassword.Text;
         }
-        protected void btnLogin1_Click(object sender, EventArgs e)
-        {
-            //Response.Write("<script>alert('Login Successful');</script>");
-
-
-
-        }
+        
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
@@ -55,7 +49,7 @@ namespace JobRecommend
 
                     Response.Write("<script>alert('Login Successfull Click Ok to Proceed');window.location='NewUserDashboard.aspx?uname="+uname+"';</script>");
                 }
-                //Response.Redirect("UserDashboard.aspx");
+                
                 else
                     Response.Write("<script>alert('Invalid Credentials');</script>");
 

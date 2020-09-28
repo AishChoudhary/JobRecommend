@@ -88,6 +88,7 @@
     <Content Include="NewUserDashboard.aspx" />
     <Content Include="RecForgotPassword.aspx" />
     <Content Include="RecruiterLogin.aspx" />
+    <Content Include="RecruiterProfile.aspx" />
     <Content Include="RecruiterSignUp.aspx" />
     <Content Include="UserDashboard.aspx" />
     <Content Include="UserLogin.aspx" />
@@ -1795,6 +1796,13 @@
     </Compile>
     <Compile Include="RecruiterLogin.aspx.designer.cs">
       <DependentUpon>RecruiterLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecruiterProfile.aspx.cs">
+      <DependentUpon>RecruiterProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecruiterProfile.aspx.designer.cs">
+      <DependentUpon>RecruiterProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="RecruiterSignUp.aspx.cs">
       <DependentUpon>RecruiterSignUp.aspx</DependentUpon>
