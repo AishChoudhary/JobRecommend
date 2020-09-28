@@ -216,7 +216,9 @@
             <!-- Nav Item - Messages -->
             
 
-            <div class="topbar-divider d-none d-sm-block"></div>
+            <div class="topbar-divider d-none d-sm-block">
+
+            </div>
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
@@ -302,19 +304,19 @@
                                 <label for="current_qualification" class="col-md-4 col-form-label text-md-right">Current Qualification</label>
                                 <div class="col-md-6">
                                     <asp:TextBox ID="txtCurrentQualification" runat="server" class="form-control form-control-user"  required="" autofocus=""></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Please Enter Qualification" ControlToValidate="txtCurrentQualification" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{50,50}$"></asp:RegularExpressionValidator>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Please Enter Qualification" ControlToValidate="txtCurrentQualification" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{2,30}$"></asp:RegularExpressionValidator>
                                 </div>
                             </div><div class="form-group row">
                                 <label for="highest_qualification" class="col-md-4 col-form-label text-md-right">Highest Qualification</label>
                                 <div class="col-md-6">
                                     <asp:TextBox ID="txtHighestQualification" runat="server" class="form-control form-control-user"  required="" autofocus=""></asp:TextBox>
-                               <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ErrorMessage="Please Enter Qualification" ControlToValidate="txtHighestQualification" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{50,50}$"></asp:RegularExpressionValidator> </div>
+                               <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ErrorMessage="Please Enter Qualification" ControlToValidate="txtHighestQualification" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{2,30}$"></asp:RegularExpressionValidator> </div>
                             </div>
 <div class="form-group row">
                                 <label for="work_location" class="col-md-4 col-form-label text-md-right">Desired Work Location</label>
                                 <div class="col-md-6">
                                    <asp:TextBox ID="txtLocation" runat="server" class="form-control form-control-user"  required="" autofocus=""></asp:TextBox>
-                              <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Please Enter Desired Work Location" ControlToValidate="txtLocation" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{50,50}$"></asp:RegularExpressionValidator>  </div>
+                              <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Please Enter Desired Work Location" ControlToValidate="txtLocation" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{2,30}$"></asp:RegularExpressionValidator>  </div>
                                 </div>
 <div class="form-group row">
                                 <label for="certifications" class="col-md-4 col-form-label text-md-right">&nbsp;Certifications</label>
