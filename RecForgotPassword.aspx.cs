@@ -1,59 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data.SqlClient;
 using System.Linq;
+using System.Data.SqlClient;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace JobRecommend
 {
-    public partial class UserSignUp : System.Web.UI.Page
+    public partial class RecForgotPassword : System.Web.UI.Page
     {
-        SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
-
-        string Fullname, Email, Password, MobileNo, City;
-
-        protected void txtConfirmPassword_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        protected void txtMobileNo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        SqlConnection connection = new SqlConnection("Server=(Local);Database=JobRecommenderDb;Integrated Security=true");
+        string Email, Password, NewPassword;
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
         private void readvalue()
         {
-            Fullname = txtFullName.Text;
             Email = txtEmail.Text;
-            Password = txtPassword.Text;
-            MobileNo = txtMobileNo.Text;
-            City = txtCity.Text;
+            Password = txtNewPwd.Text;
+            NewPassword = txtNewPwd1.Text;
 
         }
-
-        protected void btnLogin_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
         {
-            
             connection.Open();
             if (connection.State == System.Data.ConnectionState.Open)
             {
-               
+
                 readvalue();
-                string sql = "insert into UserInfo(Fullname,Email,Password,MobileNo,city) values('" + Fullname + "','" + Email + "','" + Password + "','" + MobileNo + "','" + City + "')";
+                string sql = "insert into Recruiter(Email,Password) values('"+ Email+"','" + Password + "')";
                 SqlCommand sqlcommand = new SqlCommand(sql, connection);
                 int x = sqlcommand.ExecuteNonQuery();
-                                
+                Password = NewPassword;
+                Response.Write("<Script>alert('Password changed Successfully');</Script>");
                 if (x > 0)
                     Response.Write("<Script>alert('User registered successfully');window.location='UserLogin.aspx'</Script>");
-               
+
                 else
                     Response.Write("<Script>alert('Unable to connect');</Script>");
             }
