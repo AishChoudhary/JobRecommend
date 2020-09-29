@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace JobRecommend
 {
-    public partial class RecruiterProfile : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+	public partial class RecruiterProfile : System.Web.UI.Page
+	{
+		protected void Page_Load(object sender, EventArgs e)
+		{
 
-        }
-    }
+		}
+	}
 }
