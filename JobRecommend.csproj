@@ -90,6 +90,7 @@
     <Content Include="RecruiterLogin.aspx" />
     <Content Include="RecruiterProfile.aspx" />
     <Content Include="RecruiterSignUp.aspx" />
+    <Content Include="TestPage.aspx" />
     <Content Include="UserDashboard.aspx" />
     <Content Include="UserLogin.aspx" />
     <Content Include="UserProfile.aspx" />
@@ -1810,6 +1811,13 @@
     </Compile>
     <Compile Include="RecruiterSignUp.aspx.designer.cs">
       <DependentUpon>RecruiterSignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestPage.aspx.cs">
+      <DependentUpon>TestPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestPage.aspx.designer.cs">
+      <DependentUpon>TestPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserDashboard.aspx.cs">
       <DependentUpon>UserDashboard.aspx</DependentUpon>
