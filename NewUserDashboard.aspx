@@ -86,14 +86,15 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="Test.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Test New Skills</span></a>
+          <span>
+              Test<span></a>
       </li>
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="ForgotPassword.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Forgot Password</span></a>
       </li>
@@ -304,7 +305,7 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Test New Skills</div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> <asp:Label ID="lblJava" runat="server" Text="Label"></asp:Label></div>
                       
                     </div>
                     
@@ -380,25 +381,27 @@
               <!-- Illustrations -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Approach to Job Search</h6>
                 </div>
                 <div class="card-body">
                   <div class="text-center">
                     <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="img/undraw_posting_photo.svg" alt="">
                   </div>
-                  <p>Add some quality, svg illustrations to your project courtesy of <a target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a constantly updated collection of beautiful svg images that you can use completely free and without attribution!</p>
-                  <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on unDraw →</a>
+                    <div style="text-align: justify;">
+                        <span style="font-size: 10pt; font-family: verdana, geneva, sans-serif;">The search for a job has a lifecycle of its own starting with the desire to make a move to finding the right job that will contribute to an individual’s larger goals in life. The fact is that job hunting is an anxiety ridden and often lengthy process, always riddled with uncertainty. Careers.com acts as an advisory and helps you formulate better career decisions by offering numerous career tips till a job is locked; the offer received and the appointment accepted. But before the champagne is popped, a job search requires a systematic and strategic process of scouting with reasonable time and energy investment.&nbsp;</span></div>
+                    <div style="text-align: justify;">
+                    </div>
+                    
                 </div>
               </div>
 
               <!-- Approach -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Online Job Hunting</h6>
                 </div>
                 <div class="card-body">
-                  <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce CSS bloat and poor page performance. Custom CSS classes are used to create custom components and custom utility classes.</p>
-                  <p class="mb-0">Before working with this theme, you should become familiar with the Bootstrap framework, especially the utility classes.</p>
+                  <p><span style="font-size: 10pt; font-family: verdana, geneva, sans-serif;">It is recommended to register and build profiles with popular job portals like Careers.com. These help in making a seeker’s updated profile a personalised experience to the recruiter with the right key words for better visibility. Using the multitude of online apps and tools for specific needs or instant notifications also helps. They go a long way in pushing a seeker’s profile amongst the first reviewed in the online abyss of millions.&nbsp;</span></p>
                 </div>
               </div>
 
@@ -415,7 +418,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright © JobRecom 2020</span>
+            <span>Copyright © Careers.com 2020</span>
           </div>
         </div>
       </footer>

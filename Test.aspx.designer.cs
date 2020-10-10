@@ -11,7 +11,7 @@ namespace JobRecommend
 {
 
 
-    public partial class RecruiterProfile
+    public partial class Test
     {
 
         /// <summary>
@@ -24,58 +24,58 @@ namespace JobRecommend
         protected global::System.Web.UI.WebControls.Label lblUname;
 
         /// <summary>
-        /// txtCompanyNm control.
+        /// lblSerial control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCompanyNm;
+        protected global::System.Web.UI.WebControls.Label lblSerial;
 
         /// <summary>
-        /// RegularExpressionValidator1 control.
+        /// lblQuestion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        protected global::System.Web.UI.WebControls.Label lblQuestion;
 
         /// <summary>
-        /// txtWorking control.
+        /// rdOption1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtWorking;
+        protected global::System.Web.UI.WebControls.RadioButton rdOption1;
 
         /// <summary>
-        /// RegularExpressionValidator2 control.
+        /// rdOption2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
+        protected global::System.Web.UI.WebControls.RadioButton rdOption2;
 
         /// <summary>
-        /// txtCompLoc control.
+        /// rdOption3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCompLoc;
+        protected global::System.Web.UI.WebControls.RadioButton rdOption3;
 
         /// <summary>
-        /// RegularExpressionValidator3 control.
+        /// rdOption4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
+        protected global::System.Web.UI.WebControls.RadioButton rdOption4;
 
         /// <summary>
         /// btnSubmit control.

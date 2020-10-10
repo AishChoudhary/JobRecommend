@@ -57,7 +57,7 @@
                                 <label for="full Name" class="col-md-4 col-form-label text-md-right">Full Name</label>
                                 <div class="col-md-6">
                                     <asp:TextBox ID="txtFullName" runat="server" class="form-control" required autofocus ></asp:TextBox>
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Enter Charecters only" ForeColor="Red" ControlToValidate="txtFullName" ValidationExpression="[a-zA-Z\s]{10,30}$"></asp:RegularExpressionValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Enter Characters only" ForeColor="Red" ControlToValidate="txtFullName" ValidationExpression="[a-zA-Z\s]{10,30}$"></asp:RegularExpressionValidator>
                                 </div>
 
                             </div>

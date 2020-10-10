@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserProfile.aspx.cs" Inherits="JobRecommend.UserProfile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NewRecruiterDashboard.aspx.cs" Inherits="JobRecommend.NewRecruiterDashboard" %>
 
 <!DOCTYPE html>
 <html lang="en"><head>
@@ -59,20 +59,7 @@
       <li class="nav-item">
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Recommended Jobs</span></a>
-      </li>
-
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Saved Jobs</span></a>
-      </li>
-
-<li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Applied Jobs</span></a>
+          <span>Add/Post New Jobs </span></a>
       </li>
 
       <!-- Divider -->
@@ -82,17 +69,9 @@
       <div class="sidebar-heading">
         Addons
       </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
+       
       <li class="nav-item">
-        <a class="nav-link" href="Test.aspx">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Test New Skills</span></a>
-      </li>
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="RecForgotPassword.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Forgot Password</span></a>
       </li>
@@ -114,9 +93,7 @@
 
     </ul>
     <!-- End of Sidebar -->
-
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
+<div id="content-wrapper" class="d-flex flex-column">
 
       <!-- Main Content -->
       <div id="content">
@@ -147,7 +124,7 @@
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw" style="height: 16px"></i>
+                <i class="fas fa-search fa-fw"></i>
               </a>
               <!-- Dropdown - Messages -->
               <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
@@ -216,19 +193,17 @@
             <!-- Nav Item - Messages -->
             
 
-            <div class="topbar-divider d-none d-sm-block">
-
-            </div>
+            <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><asp:Label ID="lblUname" runat="server" Text="Label"></asp:Label></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"> <asp:Label ID="lblUname" runat="server" Text="Label"></asp:Label></span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="RecruiterProfile.aspx">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
@@ -241,7 +216,7 @@
                   Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="Logout.aspx" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="RecLogout.aspx" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
@@ -258,7 +233,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">User Profile</h1>
+            <h1 class="h3 mb-0 text-gray-800">Recruiter Dashboard</h1>
             
           </div>
 
@@ -269,117 +244,12 @@
 
           <div class="row">
 
-               <div class="container-fluid">
-                <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">User Profile Settings</h6>
-            </div>
-<form class="user" runat="server">
-            <div class="card-body">
-              <div class="table-responsive">
-              
-<div class="form-group row">
-                                <label for="address" class="col-md-4 col-form-label text-md-right">Address</label>
-                                <div class="col-md-6">
-                                    <asp:TextBox ID="txtAddress" runat="server" class="form-control form-control-user " required="" autofocus=""></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Please Enter Valid Address" ControlToValidate="txtAddress" ForeColor="Red" ValidationExpression="^[0-9a-zA-Z #,-]+$"></asp:RegularExpressionValidator>
-                                </div>
-
-                            </div>
-
-<div class="form-group row">
-      <label for="10th_marks" class="col-md-4 col-form-label text-md-right">10th Marks (%)</label>
-                                <div class="col-md-6">
-           <asp:TextBox ID="txtMarks" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-                               <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Please Enter Marks in %" ControlToValidate="txtMarks" ForeColor="Red" ValidationExpression="^(100([\.][0]{1,})?$|[0-9]{1,2}([\.][0-9]{1,})?)$"></asp:RegularExpressionValidator>
- </div>
-                            </div><div class="form-group row">
-                                <label for="12th_marks" class="col-md-4 col-form-label text-md-right">12th/Diploma Marks(%)</label>
-                                <div class="col-md-6">
-                                    <asp:TextBox ID="txtMarks1" runat="server" Class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Please Enter Marks in %" ControlToValidate="txtMarks1" ForeColor="Red" ValidationExpression="^(100([\.][0]{1,})?$|[0-9]{1,2}([\.][0-9]{1,})?)$"></asp:RegularExpressionValidator>
-                                </div>
-                            </div>
-<div class="form-group row">
-                                <label for="current_qualification" class="col-md-4 col-form-label text-md-right">Current Qualification</label>
-                                <div class="col-md-6">
-                                    <asp:TextBox ID="txtCurrentQualification" runat="server" class="form-control form-control-user"  required="" autofocus=""></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Please Enter Qualification" ControlToValidate="txtCurrentQualification" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{2,30}$"></asp:RegularExpressionValidator>
-                                </div>
-                            </div><div class="form-group row">
-                                <label for="highest_qualification" class="col-md-4 col-form-label text-md-right">Highest Qualification</label>
-                                <div class="col-md-6">
-                                    <asp:TextBox ID="txtHighestQualification" runat="server" class="form-control form-control-user"  required="" autofocus=""></asp:TextBox>
-                               <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ErrorMessage="Please Enter Qualification" ControlToValidate="txtHighestQualification" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{2,30}$"></asp:RegularExpressionValidator> </div>
-                            </div>
-<div class="form-group row">
-                                <label for="work_location" class="col-md-4 col-form-label text-md-right">Desired Work Location</label>
-                                <div class="col-md-6">
-                                   <asp:TextBox ID="txtLocation" runat="server" class="form-control form-control-user"  required="" autofocus=""></asp:TextBox>
-                              <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Please Enter Desired Work Location" ControlToValidate="txtLocation" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{2,30}$"></asp:RegularExpressionValidator>  </div>
-                                </div>
-<div class="form-group row">
-                                <label for="certifications" class="col-md-4 col-form-label text-md-right">&nbsp;Certifications</label>
-                                <div class="col-md-6">
-                                  <asp:TextBox ID="txtCertifications" runat="server" class="form-control form-control-user" autofocus=""></asp:TextBox>
-                                </div>
-                                </div><div class="form-group row">
-                                <label for="interests" class="col-md-4 col-form-label text-md-right">Skills/Hobbies/Interests</label>
-                                <div class="col-md-6">
-                                   <asp:TextBox ID="txtInterests" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-                                </div>
-                                </div>
-                  <div class="form-group row">
-                                <label for="work" class="col-md-4 col-form-label text-md-right">Fresher/Experienced?</label>
-                                <div class="col-md-6">
-                                    <asp:DropDownList ID="DropDownList1" runat="server" class="btn btn-secondary dropdown-toggle" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
-                                        <asp:ListItem>Fresher</asp:ListItem>
-                                        <asp:ListItem>Experienced</asp:ListItem>
-                                    </asp:DropDownList>
-                                </div>
-                                </div>
-                                <div class="form-group row">
-                                <label for="company_name" class="col-md-4 col-form-label text-md-right">Company Name</label>
-                                <div class="col-md-6">
-                                   <asp:TextBox ID="txtCompName" runat="server" class="form-control form-control-user" required="" autofocus="" AutoPostBack="True"></asp:TextBox>
-                               <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ErrorMessage="Please Give Company Name" ControlToValidate="txtCompName" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{2,80}$"></asp:RegularExpressionValidator> </div>
-                                </div>
-                                <div class="form-group row">
-                                <label for="work_duration" class="col-md-4 col-form-label text-md-right">Work Duration</label>
-                                <div class="col-md-6">
-                                   <asp:TextBox ID="txtWorkDur" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-                               <asp:RegularExpressionValidator ID="RegularExpressionValidator10" runat="server" ErrorMessage="Please Give Work Duration" ControlToValidate="txtWorkDur" ForeColor="Red" ValidationExpression="^.*[0-9] (year|years|Years|Year|Months|Month|month|months)[s]?.*$"></asp:RegularExpressionValidator> </div>
-                                </div>
-                                 <div class="form-group row">
-                                <label for="Job title" class="col-md-4 col-form-label text-md-right">Job Title</label>
-                                <div class="col-md-6">
-                                    <asp:TextBox ID="txtJobTitle" runat="server" class="form-control form-control-user " required="" autofocus="" AutoPostBack="True"></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator11" runat="server" ErrorMessage="Please Enter Job title" ControlToValidate="txtJobTitle" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{3,20}$"></asp:RegularExpressionValidator>
-                                </div>
-                                     
-                                 </div>
-                  <div class="form-group row">
-                                <label for="salary" class="col-md-4 col-form-label text-md-right">Salary</label>
-                                <div class="col-md-6">
-                                    <asp:TextBox ID="txtSal" runat="server" class="form-control form-control-user " required="" autofocus="" AutoPostBack="True"></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ErrorMessage="Please Enter Salary" ControlToValidate="txtSal" ForeColor="Red" ValidationExpression="^\d{1,6}(?:\.\d{1,10})?$"></asp:RegularExpressionValidator>
-                                </div></div>
-
-                  <div class="col-md-6 offset-md-4">
-                    <asp:Button ID="btnSubmit" runat="server" class="btn btn-primary" Text="Submit" OnClick="btnSubmit_Click" />       
-                            </div>
- 
-              </div>
-            </div>
-         </form>
-
-
-         
+            <!-- Area Chart -->
             <div class="col-xl-8 col-lg-7">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Update Profile</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Jobs posted</h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
@@ -400,8 +270,83 @@
               </div>
             </div>
 
-           
-        
+            <!-- Pie Chart -->
+            
+          </div>
+
+<div class="row">
+
+            <!-- Earnings (Monthly) Card Example 
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      
+                    
+                  </div>
+                </div>
+              </div>
+            </div> -->            <!-- Earnings (Monthly) Card Example -->
+            
+
+            <!-- Earnings (Monthly) Card Example -->
+            
+
+            <!-- Pending Requests Card Example 
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            
+
+            <div class="col-lg-6 mb-4">
+
+              <!-- Illustrations -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Approach to&nbsp; Seek Employees</h6>
+                </div>
+                <div class="card-body">
+                  <div class="text-center">
+                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="img/undraw_posting_photo.svg" alt="">
+                  </div>
+                  <p>E-recruitment has become ever more popular web-based recruiting systems automates the process of publishing positions and receiving resumes electronically. Though this improvement in process has had a vastly positive impact on electronic human resource management and e-recruitment however causes a large number of applicants who do not match the specific job requirements to apply for a posted position.</p>
+                </div>
+              </div>
+
+              <!-- Approach -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">&nbsp;</h6>
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
@@ -418,7 +363,7 @@
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top" style="display: inline;">
+  <a class="scroll-to-top rounded" href="#page-top" style="display: none;">
     <i class="fas fa-angle-up"></i>
   </a>
 
@@ -435,7 +380,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="Logout.aspx">Logout</a>
+          <a class="btn btn-primary" href="RecLogout.aspx">Logout</a>
         </div>
       </div>
     </div>

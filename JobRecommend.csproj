@@ -72,9 +72,12 @@
     <Content Include="css\sb-admin-2.css" />
     <Content Include="css\sb-admin-2.min.css" />
     <Content Include="Database\Recruiter.sql" />
+    <Content Include="Database\RecruiterProfile.sql" />
     <Content Include="Database\UserInfo.sql" />
     <Content Include="Database\UserProfile.sql" />
     <Content Include="ForgotPassword.aspx" />
+    <Content Include="img\check.png" />
+    <Content Include="img\close.png" />
     <Content Include="img\undraw_posting_photo.svg" />
     <Content Include="index.aspx" />
     <Content Include="js\demo\chart-area-demo.js" />
@@ -85,11 +88,14 @@
     <Content Include="js\sb-admin-2.min.js" />
     <Content Include="Logout.aspx" />
     <Content Include="mystyle.css" />
+    <Content Include="NewRecruiterDashboard.aspx" />
     <Content Include="NewUserDashboard.aspx" />
     <Content Include="RecForgotPassword.aspx" />
+    <Content Include="RecLogout.aspx" />
     <Content Include="RecruiterLogin.aspx" />
     <Content Include="RecruiterProfile.aspx" />
     <Content Include="RecruiterSignUp.aspx" />
+    <Content Include="Test.aspx" />
     <Content Include="TestPage.aspx" />
     <Content Include="UserDashboard.aspx" />
     <Content Include="UserLogin.aspx" />
@@ -1776,6 +1782,13 @@
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NewRecruiterDashboard.aspx.cs">
+      <DependentUpon>NewRecruiterDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewRecruiterDashboard.aspx.designer.cs">
+      <DependentUpon>NewRecruiterDashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="NewUserDashboard.aspx.cs">
       <DependentUpon>NewUserDashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1790,6 +1803,13 @@
     </Compile>
     <Compile Include="RecForgotPassword.aspx.designer.cs">
       <DependentUpon>RecForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecLogout.aspx.cs">
+      <DependentUpon>RecLogout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecLogout.aspx.designer.cs">
+      <DependentUpon>RecLogout.aspx</DependentUpon>
     </Compile>
     <Compile Include="RecruiterLogin.aspx.cs">
       <DependentUpon>RecruiterLogin.aspx</DependentUpon>
@@ -1811,6 +1831,13 @@
     </Compile>
     <Compile Include="RecruiterSignUp.aspx.designer.cs">
       <DependentUpon>RecruiterSignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="TestPage.aspx.cs">
       <DependentUpon>TestPage.aspx</DependentUpon>

@@ -21,6 +21,7 @@ namespace JobRecommend
 
         protected void Page_Load(object sender, EventArgs e)
         {
+           
 
         }
         private void readvalue()

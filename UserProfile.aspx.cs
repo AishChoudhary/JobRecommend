@@ -24,7 +24,7 @@ namespace JobRecommend
                 email = (string)Session["email"];
                 username = (string)Session["uname"];
                 if (email == null)
-                    Response.Redirect("UserLogin.aspx");
+                    Response.Redirect("NewUserDashboard.aspx");
                 else
                 {
                     lblUname.Text = username;
@@ -40,15 +40,19 @@ namespace JobRecommend
             {
 
                 string uid = (string) Session["uid"];
+                int sal = 0;
 
-               
+                if (DropDownList1.SelectedIndex == 1)
+                    sal = Convert.ToInt32(txtSal.Text);
+
                 string sql = "insert into UserProfile(uid,Address,Marks10,Marks12,CurrentQual,HighestQual,DesiredLoc,Certifications,Interests,CompanyName,WorkDuration,JobTitle,Salary)"+ 
-"values("+uid+",'"+txtAddress.Text+"', "+txtMarks.Text+","+txtMarks1.Text+", '"+txtCurrentQualification.Text+"', '"+txtHighestQualification.Text+"', '"+txtLocation.Text+"', '"+txtCertifications.Text+"', '"+txtInterests.Text+"', '"+txtCompName.Text+"', '"+txtWorkDur.Text+"', '"+txtJobTitle.Text+"', "+txtSal.Text+")";
+"values("+uid+",'"+txtAddress.Text+"', "+txtMarks.Text+","+txtMarks1.Text+", '"+txtCurrentQualification.Text+"', '"+txtHighestQualification.Text+"', '"+txtLocation.Text+"', '"+txtCertifications.Text+"', '"+txtInterests.Text+"', '"+txtCompName.Text+"', '"+txtWorkDur.Text+"', '"+txtJobTitle.Text+"', "+sal+")";
+                System.Diagnostics.Debug.Print(sql);
                 SqlCommand sqlcommand = new SqlCommand(sql, connection);
                 int x = sqlcommand.ExecuteNonQuery();
 
                 if (x > 0)
-                    Response.Write("<Script>alert('User Profile Created successfully');window.location='UserLogin.aspx'</Script>");
+                    Response.Write("<Script>alert('User Profile Created successfully');window.location='NewUserDashboard.aspx'</Script>");
 
                 else
                     Response.Write("<Script>alert('Unable to create');</Script>");
@@ -63,18 +67,31 @@ namespace JobRecommend
             if (DropDownList1.SelectedIndex == 1)
             {
                 
-                txtCompName.Visible = true;
-                txtWorkDur.Visible = true;
-                txtJobTitle.Visible = true;
-                txtSal.Visible = true;
+                txtCompName.Enabled = true;
+                txtWorkDur.Enabled = true;
+                txtJobTitle.Enabled = true;
+                txtSal.Enabled = true;
+
+                bool flag = true;
+                RegularExpressionValidator7.Enabled = flag;
+                RegularExpressionValidator9.Enabled = flag;
+                RegularExpressionValidator10.Enabled = flag;
+                RegularExpressionValidator11.Enabled = flag;
+
 
             }
             else
             {
-                txtCompName.Visible = false;
-                txtWorkDur.Visible = false;
-                txtJobTitle.Visible = false;
-                txtSal.Visible = false;
+                txtCompName.Enabled = false;
+                txtWorkDur.Enabled = false;
+                txtJobTitle.Enabled = false;
+                txtSal.Enabled = false;
+                bool flag = false;
+                RegularExpressionValidator7.Enabled = flag;
+                RegularExpressionValidator9.Enabled = flag;
+                RegularExpressionValidator10.Enabled = flag;
+                RegularExpressionValidator11.Enabled = flag;
+
 
             }
             DropDownList1.Focus();

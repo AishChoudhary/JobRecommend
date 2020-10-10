@@ -19,6 +19,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
     <title>JobRecommender</title>
+    <style type="text/css">
+        .auto-style1 {
+            left: 15px;
+            top: -423px;
+        }
+    </style>
 </head>
 <body>
 
@@ -55,10 +61,16 @@
                             <div class="form-group row">
                                 <label for="Email" class="col-md-4 col-form-label text-md-right">Email</label>
                                 <div class="col-md-6">
-                                    <asp:TextBox ID="txtEmail" runat="server" class="form-control" required autofocus TextMode="Email" ></asp:TextBox>
-
+                                    <asp:TextBox ID="txtEmail" runat="server" class="form-control" required autofocus TextMode="Email" AutoPostBack="True" OnTextChanged="txtEmail_TextChanged" ></asp:TextBox>
+                                    <asp:Image ID="Image1" runat="server" ImageUrl="~/img/check.png"/>
                                     </div> </div>
                                     <div class="form-group row">
+                                <label for="OTP" class="col-md-4 col-form-label text-md-right">OTP</label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtOtp" runat="server" class="form-control" required autofocus TextMode="Password" AutoPostBack="True" OnTextChanged="txtOtp_TextChanged" ></asp:TextBox>
+
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtOtp" ErrorMessage="Enter Valid OTP" ForeColor="Red" ValidationExpression="[0-9]{4}$"></asp:RegularExpressionValidator>
+                                </div> </div>     <div class="form-group row">
                                 <label for="New Password" class="col-md-4 col-form-label text-md-right">New Password</label>
                                 <div class="col-md-6">
                                     <asp:TextBox ID="txtNewPwd" runat="server" class="form-control" required autofocus TextMode="Password" ></asp:TextBox>
@@ -81,7 +93,7 @@
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 
                             
-                                <asp:Button ID="Button1" runat="server" Text="Save Password" OnClick="Button1_Click" />
+                                <asp:Button ID="btnSavePwd" runat="server" Text="Save Password" OnClick="Button1_Click" />
                                 
                             
                             </div>

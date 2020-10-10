@@ -41,11 +41,13 @@ namespace JobRecommend
                 if (recordCount > 0)
                 {
                     string uname = dt.Rows[0].ItemArray[1].ToString();
+                    string uid = dt.Rows[0].ItemArray[0].ToString();
                     Session["email"] = txtEmail.Text;
                     Session["uname"] = uname;
-                    Response.Write("<script>alert('Login Successfull Click Ok to Proceed');window.location='NewUserDashboard.aspx?uname=" + uname + "';</script>");
+                    Session["uid"] = uid;
+                    Response.Write("<script>alert('Login Successfull Click Ok to Proceed');window.location='NewRecruiterDashboard.aspx?uname=" + uname + "';</script>");
                 }
-                //Response.Redirect("RecruiterDashboard.aspx");
+                
                 else
                     Response.Write("<script>alert('Invalid Credentials');</script>");
             }
