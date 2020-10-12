@@ -73,6 +73,8 @@
     <Content Include="css\sb-admin-2.min.css" />
     <Content Include="Database\Recruiter.sql" />
     <Content Include="Database\RecruiterProfile.sql" />
+    <Content Include="Database\TestInfo.sql" />
+    <Content Include="Database\TestResultInfo.sql" />
     <Content Include="Database\UserInfo.sql" />
     <Content Include="Database\UserProfile.sql" />
     <Content Include="ForgotPassword.aspx" />
