@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -10,7 +11,7 @@ namespace JobRecommend
 {
     public partial class RecruiterSignUp : System.Web.UI.Page
     {
-        SqlConnection connection = new SqlConnection("Server=(Local);Database=JobRecommenderDb;Integrated Security=true");
+        SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
 
         string Fullname, Email, Password, MobileNo,City;
 
