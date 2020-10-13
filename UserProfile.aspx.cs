@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -29,8 +30,23 @@ namespace JobRecommend
                 {
                     lblUname.Text = username;
                     DropDownList1.SelectedIndex = 0;
+                    loadkeySkills();
                 }
             }
+        }
+        private void loadkeySkills()
+        {
+            connection.Open();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select * from KeySkills ", connection);
+            DataSet ds = new DataSet();
+            sqlDataAdapter.Fill(ds);
+            connection.Close();
+
+            DataTable dt = ds.Tables[0];
+            lstKeySkills.DataSource = dt;
+            lstKeySkills.DataTextField = "Keyskill";
+            lstKeySkills.DataValueField = "id";
+            lstKeySkills.DataBind();
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -51,6 +67,22 @@ namespace JobRecommend
                 SqlCommand sqlcommand = new SqlCommand(sql, connection);
                 int x = sqlcommand.ExecuteNonQuery();
 
+                foreach(ListItem li in lstKeySkills.Items)
+                {
+                    if(li.Selected)
+                    {
+                        string key_skill_id = li.Value;
+
+                        sql = "insert into KeySkillInfo(uid,key_skill_id)" +
+        "values(" + uid + "," + key_skill_id + ")";
+
+                        sqlcommand = new SqlCommand(sql, connection);
+                         x = sqlcommand.ExecuteNonQuery();
+
+
+                    }
+                }
+                connection.Close();
                 if (x > 0)
                     Response.Write("<Script>alert('User Profile Created successfully');window.location='NewUserDashboard.aspx'</Script>");
 

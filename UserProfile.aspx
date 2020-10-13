@@ -338,6 +338,12 @@
                                     </asp:DropDownList>
                                 </div>
                                 </div>
+                  <div class="form-group row">
+                                <label for="company_name" class="col-md-4 col-form-label text-md-right">Select Key Skills</label>
+                                <div class="col-md-6">
+                                    <asp:ListBox ID="lstKeySkills" runat="server" SelectionMode="Multiple"></asp:ListBox>
+                               <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ErrorMessage="Please Give Company Name" ControlToValidate="txtCompName" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{2,80}$"></asp:RegularExpressionValidator> </div>
+                                </div>
                                 <div class="form-group row">
                                 <label for="company_name" class="col-md-4 col-form-label text-md-right">Company Name</label>
                                 <div class="col-md-6">

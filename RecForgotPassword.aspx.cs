@@ -8,13 +8,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Net.Mail;
 using System.Net;
-
+using System.Configuration;
 
 namespace JobRecommend
 {
     public partial class RecForgotPassword : System.Web.UI.Page
     {
-        SqlConnection connection = new SqlConnection("Server=(Local);Database=JobRecommenderDb;Integrated Security=true");
+        SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
 
         string Email, Password, NewPassword;
 
