@@ -71,6 +71,8 @@
     <Content Include="Background\d22eed19-8b41-41ca-b6b8-35522608a8b6_200x200.png" />
     <Content Include="css\sb-admin-2.css" />
     <Content Include="css\sb-admin-2.min.css" />
+    <Content Include="Database\KeySkillInfo.sql" />
+    <Content Include="Database\KeySkills.sql" />
     <Content Include="Database\Recruiter.sql" />
     <Content Include="Database\RecruiterProfile.sql" />
     <Content Include="Database\TestInfo.sql" />
