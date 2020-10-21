@@ -23,6 +23,8 @@ namespace JobRecommend
 
         //static string uid=;
 
+       
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,7 +35,7 @@ namespace JobRecommend
                 connection.Open();
                 if (connection.State == System.Data.ConnectionState.Open)
                 {
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select * from TestInfo where questiontype='java'", connection);
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select * from TestInfo where key_skill_id=" + Session["ksi"], connection);
                     DataSet ds = new DataSet();
                     sqlDataAdapter.Fill(ds);
 
@@ -110,6 +112,17 @@ namespace JobRecommend
             }
         }
 
+        private void updateMarksPercentage()
+        {
+            connection.Open();
+            string sql = "update KeySkillInfo set marks=" (correctAnswers*10) + " where uid="
+                + Session["uid"] + " and key_skill_id=" + correctAnswers + ")";
+            SqlCommand sqlcommand = new SqlCommand(sql, connection);
+            int x = sqlcommand.ExecuteNonQuery();
+            connection.Close();
+
+        }
+
         private int getUserAns()
         {
             
@@ -146,6 +159,7 @@ namespace JobRecommend
                 + Session["uid"] + ",'java'," + correctAnswers+ ")";
             SqlCommand sqlcommand = new SqlCommand(sql, connection);
             int x = sqlcommand.ExecuteNonQuery();
+            connection.Close();
 
         }
     }

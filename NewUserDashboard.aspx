@@ -1,5 +1,18 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NewUserDashboard.aspx.cs" Inherits="JobRecommend.NewUserDashboard" %>
 
+
+<% 
+    System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
+    connection.Open();
+     System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select (select KeySkill from KeySkills where id=ksi.key_skill_id)as 'Key_skill_Name',marks from KeySkillInfo ksi where uid=" + Session["uid"], connection);
+                System.Data.DataSet ds = new System.Data.DataSet();
+                sqlDataAdapter.Fill(ds);
+                connection.Close();
+
+                System.Data.DataTable dt = ds.Tables[0];
+
+
+    %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -348,26 +361,14 @@
                   <h6 class="m-0 font-weight-bold text-primary">Ranking Based On Skills Tested</h6>
                 </div>
                 <div class="card-body">
-                  <h4 class="small font-weight-bold">c <span class="float-right">20%</span></h4>
+                    
+                                     <% for (int i = 0; i < dt.Rows.Count; i++)
+                        { %>
+                  <h4 class="small font-weight-bold"><% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %> <span class="float-right"><% Response.Write(dt.Rows[i].ItemArray[1].ToString()+"%");%></span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" style="width: <% Response.Write(dt.Rows[i].ItemArray[1].ToString()+"%");%>" aria-valuenow=" <% Response.Write(dt.Rows[i].ItemArray[1].ToString()+"%");%>" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <h4 class="small font-weight-bold">c++ <span class="float-right">40%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">java <span class="float-right">60%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">Python <span class="float-right">80%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">Account Setup <span class="float-right">Complete!</span></h4>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
+                 <%} %>
                 </div>
               </div>
 

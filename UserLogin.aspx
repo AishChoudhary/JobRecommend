@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserLogin.aspx.cs" Inherits="JobRecommend.UserLogin" %>
 
+
 <!doctype html>
 <html lang="en">
 <head>
