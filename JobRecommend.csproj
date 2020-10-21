@@ -100,6 +100,7 @@
     <Content Include="RecruiterProfile.aspx" />
     <Content Include="RecruiterSignUp.aspx" />
     <Content Include="Test.aspx" />
+    <Content Include="TestOptions.aspx" />
     <Content Include="TestPage.aspx" />
     <Content Include="UserDashboard.aspx" />
     <Content Include="UserLogin.aspx" />
@@ -1842,6 +1843,13 @@
     </Compile>
     <Compile Include="Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestOptions.aspx.cs">
+      <DependentUpon>TestOptions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestOptions.aspx.designer.cs">
+      <DependentUpon>TestOptions.aspx</DependentUpon>
     </Compile>
     <Compile Include="TestPage.aspx.cs">
       <DependentUpon>TestPage.aspx</DependentUpon>

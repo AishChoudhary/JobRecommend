@@ -105,6 +105,7 @@ namespace JobRecommend
                 if (ptr >= 10)
                 {
                     submitResultToDb();
+                    updateMarksPercentage();
                     Response.Write("<script>alert('Press Ok Too see result:" + correctAnswers + "');window.location='NewUserDashboard.aspx';</script>");
                 }
                 else
@@ -115,8 +116,8 @@ namespace JobRecommend
         private void updateMarksPercentage()
         {
             connection.Open();
-            string sql = "update KeySkillInfo set marks=" (correctAnswers*10) + " where uid="
-                + Session["uid"] + " and key_skill_id=" + correctAnswers + ")";
+            string sql = "update KeySkillInfo set marks=" + (correctAnswers * 10) + ",status='ATTENDED' where uid="
+                + Session["uid"] + " and key_skill_id=" + correctAnswers;
             SqlCommand sqlcommand = new SqlCommand(sql, connection);
             int x = sqlcommand.ExecuteNonQuery();
             connection.Close();

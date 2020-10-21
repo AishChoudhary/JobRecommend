@@ -1,18 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NewUserDashboard.aspx.cs" Inherits="JobRecommend.NewUserDashboard" %>
-
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TestOptions.aspx.cs" Inherits="JobRecommend.TestOptions" %>
 <% 
-    System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
-    connection.Open();
-     System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select (select KeySkill from KeySkills where id=ksi.key_skill_id)as 'Key_skill_Name',marks from KeySkillInfo ksi where uid=" + Session["uid"], connection);
-                System.Data.DataSet ds = new System.Data.DataSet();
-                sqlDataAdapter.Fill(ds);
-                connection.Close();
+    
 
-                System.Data.DataTable dt = ds.Tables[0];
 
 
     %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,7 +92,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="TestOptions.aspx">
+        <a class="nav-link" href="Test.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>
               Test<span></a>
@@ -265,154 +258,40 @@
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-        <div class="container-fluid">
 
-          <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-            
-          </div>
-
-          <!-- Content Row -->
-          
-
-          <!-- Content Row -->
-
-          <div class="row">
-
-            <!-- Area Chart -->
-            <div class="col-xl-8 col-lg-7">
-              <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Jobs Recommended</h6>
-                  <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                  
-                </div>
-              </div>
-            </div>
-
-            <!-- Pie Chart -->
-            
-          </div>
-
-<div class="row">
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> <asp:Label ID="lblJava" runat="server" Text="Label"></asp:Label></div>
-                      
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-            
-
-            <!-- Earnings (Monthly) Card Example -->
-            
-
-            <!-- Pending Requests Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Your Key Skills</div>
-                      
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Content Row -->
-          <div class="row">
-
-            <!-- Content Column -->
-            <div class="col-lg-6 mb-4">
-
-              <!-- Project Card Example -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Ranking Based On Skills Tested</h6>
-                </div>
-                <div class="card-body">
-                    
-                                     <% for (int i = 0; i < dt.Rows.Count; i++)
-                        { %>
-                  <h4 class="small font-weight-bold"><% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %> <span class="float-right"><% Response.Write(dt.Rows[i].ItemArray[1].ToString()+"%");%></span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar" role="progressbar" style="width: <% Response.Write(dt.Rows[i].ItemArray[1].ToString()+"%");%>" aria-valuenow=" <% Response.Write(dt.Rows[i].ItemArray[1].ToString()+"%");%>" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                 <%} %>
-                </div>
-              </div>
-
-              <!-- Color System -->
+          <form id="form2" class="user" runat="server">
+            <div class="card-body">
               
 
+       <div class="form-group row" >
+    
+    <div class="container-fluid">
+        
+    <asp:Label ID="lblSerial" class="col-md-4 col-form-label text-md-right" runat="server" Text="Label"></asp:Label>
+    </div>
+    <div class="container-fluid">
+        
+    <asp:Label ID="lblQuestion" class="col-md-4 col-form-label text-md-right" runat="server" Text="Label"></asp:Label>
+    </div>
+        
+    <div class="container"><asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+                                <div class="col-md-6" >
+                                    <label class="btn btn-default" >
+                                        
             </div>
 
-            <div class="col-lg-6 mb-4">
-
-              <!-- Illustrations -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Approach to Job Search</h6>
-                </div>
-                <div class="card-body">
-                  <div class="text-center">
-                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="img/undraw_posting_photo.svg" alt="">
-                  </div>
-                    <div style="text-align: justify;">
-                        <span style="font-size: 10pt; font-family: verdana, geneva, sans-serif;">The search for a job has a lifecycle of its own starting with the desire to make a move to finding the right job that will contribute to an individual’s larger goals in life. The fact is that job hunting is an anxiety ridden and often lengthy process, always riddled with uncertainty. Careers.com acts as an advisory and helps you formulate better career decisions by offering numerous career tips till a job is locked; the offer received and the appointment accepted. But before the champagne is popped, a job search requires a systematic and strategic process of scouting with reasonable time and energy investment.&nbsp;</span></div>
-                    <div style="text-align: justify;">
-                    </div>
+</div>
+        
+          <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+                <div class="align-content-center" style="align-self: center;" >
                     
-                </div>
-              </div>
+                    <asp:Button ID="btnSubmit" class="align-content-center" runat="server" Text="Next" OnClick="btnSubmit_Click" />
+                           
+                  
+                     </div></div></div></form><!-- /.container-fluid -->
 
-              <!-- Approach -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Online Job Hunting</h6>
-                </div>
-                <div class="card-body">
-                  <p><span style="font-size: 10pt; font-family: verdana, geneva, sans-serif;">It is recommended to register and build profiles with popular job portals like Careers.com. These help in making a seeker’s updated profile a personalised experience to the recruiter with the right key words for better visibility. Using the multitude of online apps and tools for specific needs or instant notifications also helps. They go a long way in pushing a seeker’s profile amongst the first reviewed in the online abyss of millions.&nbsp;</span></p>
-                </div>
-              </div>
 
-            </div>
-          </div>
-
-        </div>
-        <!-- /.container-fluid -->
-
-      </div>
       <!-- End of Main Content -->
 
       <!-- Footer -->
@@ -429,7 +308,7 @@
     <!-- End of Content Wrapper -->
 
   </div>
-  <!-- End of Page Wrapper -->
+ </form> <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top" style="display: none;">
