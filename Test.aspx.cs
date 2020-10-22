@@ -35,7 +35,8 @@ namespace JobRecommend
                 connection.Open();
                 if (connection.State == System.Data.ConnectionState.Open)
                 {
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select * from TestInfo where key_skill_id=" + Session["ksi"], connection);
+                    string sql = "select * from TestInfo where key_skill_id=" + Session["ksi"];
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sql, connection);
                     DataSet ds = new DataSet();
                     sqlDataAdapter.Fill(ds);
 
@@ -106,7 +107,14 @@ namespace JobRecommend
                 {
                     submitResultToDb();
                     updateMarksPercentage();
+
                     Response.Write("<script>alert('Press Ok Too see result:" + correctAnswers + "');window.location='NewUserDashboard.aspx';</script>");
+                    ptr = 0;
+
+                    listNumbers.Clear();
+                    correctAnswers = 0;
+                    ansFromDb = 0;
+
                 }
                 else
                     loadQuestion();
@@ -117,7 +125,7 @@ namespace JobRecommend
         {
             connection.Open();
             string sql = "update KeySkillInfo set marks=" + (correctAnswers * 10) + ",status='ATTENDED' where uid="
-                + Session["uid"] + " and key_skill_id=" + correctAnswers;
+                + Session["uid"] + " and key_skill_id=" + Session["ksi"];
             SqlCommand sqlcommand = new SqlCommand(sql, connection);
             int x = sqlcommand.ExecuteNonQuery();
             connection.Close();
@@ -155,12 +163,15 @@ namespace JobRecommend
         }
         private void submitResultToDb()
         {
+
             connection.Open();
             string sql = "insert into TestResultInfo(uid,questiontype,correctans) values(" 
                 + Session["uid"] + ",'java'," + correctAnswers+ ")";
             SqlCommand sqlcommand = new SqlCommand(sql, connection);
             int x = sqlcommand.ExecuteNonQuery();
             connection.Close();
+
+           
 
         }
     }

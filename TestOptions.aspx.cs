@@ -27,13 +27,14 @@ namespace JobRecommend
             DropDownList1.DataBind();
 
             if (dt.Rows.Count == 0)
-                Response.Write("<script>alert('You have completed all the tests';window.location='NewUserDashboard.aspx');</script>");
+                Response.Write("<script>alert('You have completed all the tests');window.location='NewUserDashboard.aspx';</script>");
 
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             Session["ksi"] = DropDownList1.SelectedValue;
+
             Response.Redirect("Test.aspx");
         }
     }
