@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddJobPost.aspx" />
     <Content Include="Background\background1.jpg" />
     <Content Include="Background\d22eed19-8b41-41ca-b6b8-35522608a8b6_200x200.png" />
     <Content Include="css\sb-admin-2.css" />
@@ -1766,6 +1767,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddJobPost.aspx.cs">
+      <DependentUpon>AddJobPost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddJobPost.aspx.designer.cs">
+      <DependentUpon>AddJobPost.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

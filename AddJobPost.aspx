@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RecruiterProfile.aspx.cs" Inherits="JobRecommend.RecruiterProfile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddJobPost.aspx.cs" Inherits="JobRecommend.AddJobPost" %>
 
 <!DOCTYPE html>
 <html lang="en"><head>
@@ -201,7 +201,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"> <asp:Label ID="lblUname" runat="server" Text="Label"></asp:Label></span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                <img class="img-profile rounded-circle" src="https://www.flaticon.com/svg/static/icons/svg/403/403554.svg">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -235,7 +235,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Recruiter Profile</h1>
+            <h1 class="h3 mb-0 text-gray-800">Post New Jobs</h1>
             
           </div>
 
@@ -249,38 +249,70 @@
                <div class="container-fluid">
                 <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Profile Settings</h6>
+              <h6 class="m-0 font-weight-bold text-primary"></h6>
             </div>
 <form class="user" runat="server">
             <div class="card-body">
               <div class="table-responsive">
               
 <div class="form-group row">
-                                <label for="company_name" class="col-md-4 col-form-label text-md-right">Company Name</label>
+                                <label for="jobtitle" class="col-md-4 col-form-label text-md-right">Job Title / Designation</label>
                                 <div class="col-md-6">
-                                    <asp:TextBox ID="txtCompanyNm" runat="server" class="form-control form-control-user " required="" autofocus=""></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Please Enter Valid Company Name" ControlToValidate="txtCompanyNm" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{3,30}$"></asp:RegularExpressionValidator>
+                                    <asp:TextBox ID="txtJobTitle" runat="server" class="form-control form-control-user " required="" autofocus=""></asp:TextBox>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Please Enter Valid Job Title" ControlToValidate="txtJobTitle" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{3,40}$"></asp:RegularExpressionValidator>
                                 </div>
 
                             </div>
 
 <div class="form-group row">
-      <label for="working_as" class="col-md-4 col-form-label text-md-right">Working As</label>
+      <label for="JobDescription" class="col-md-4 col-form-label text-md-right">Job Description</label>
                                 <div class="col-md-6">
-           <asp:TextBox ID="txtWorking" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Please Enter Valid Working Post" ControlToValidate="txtWorking" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{3,30}$"></asp:RegularExpressionValidator>
+           <asp:TextBox ID="txtJobDescription" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Please Enter Valid Job Description" ControlToValidate="txtJobDescription" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{3,1000}$"></asp:RegularExpressionValidator>
 </div>
                             </div>
+
 <div class="form-group row">
-      <label for="Company Location" class="col-md-4 col-form-label text-md-right">Company Location</label>
+      <label for="Skills Required" class="col-md-4 col-form-label text-md-right">Skills Required</label>
                                 <div class="col-md-6">
-           <asp:TextBox ID="txtCompLoc" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Please Enter Valid Company Location" ControlToValidate="txtCompLoc" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{3,30}$"></asp:RegularExpressionValidator>
+           <asp:TextBox ID="txtSkillsRequired" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ErrorMessage="Please Enter Valid Required skills" ControlToValidate="txtSkillsRequired" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{1,50}$"></asp:RegularExpressionValidator>
+</div>
+                            </div>                  
+
+<div class="form-group row">
+      <label for="Work Experiance" class="col-md-4 col-form-label text-md-right">Work Experiance</label>
+                                <div class="col-md-6">
+           <asp:TextBox ID="txtworkexp" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Please Enter Valid experiance years" ControlToValidate="txtworkexp" ForeColor="Red" ValidationExpression="^[0-9]{4}$"></asp:RegularExpressionValidator>
+</div>
+                            </div>
+                  <div class="form-group row">
+      <label for="JobLocation" class="col-md-4 col-form-label text-md-right">Job Location</label>
+                                <div class="col-md-6">
+           <asp:TextBox ID="txtJobLocation" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Please Enter Valid Job Location" ControlToValidate="txtJobLocation" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{3,30}$"></asp:RegularExpressionValidator>
+</div>
+                            </div>
+
+                  <div class="form-group row">
+      <label for="Roles" class="col-md-4 col-form-label text-md-right">Roles and responsibilities</label>
+                                <div class="col-md-6">
+           <asp:TextBox ID="txtRoles" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ErrorMessage="Please Enter Valid Roles" ControlToValidate="txtRoles" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{3,500}$"></asp:RegularExpressionValidator>
+</div>
+                            </div>
+
+                  <div class="form-group row">
+      <label for="minimum Qualification" class="col-md-4 col-form-label text-md-right">minimum Qualification</label>
+                                <div class="col-md-6">
+           <asp:TextBox ID="txtminQual" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Please Enter Valid Qualification" ControlToValidate="txtminQual" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{3,30}$"></asp:RegularExpressionValidator>
 </div>
                             </div>
 
                   <div class="col-md-6 offset-md-4">
-                    <asp:Button ID="btnSubmit" runat="server" class="btn btn-primary" Text="Submit" OnClick="btnSubmit_Click" />       
+                    <asp:Button ID="btnSubmit" runat="server" class="btn btn-primary" Text="Add Job" OnClick="btnSubmit_Click" />       
                             </div>
  
               </div>
@@ -292,21 +324,7 @@
             <div class="col-xl-8 col-lg-7">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Update Profile</h6>
-                  <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </div>
-                </div>
+                
                 <!-- Card Body -->
                 <div class="card-body">
                   
@@ -319,7 +337,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright © JobRecom 2020</span>
+            <span>Copyright © Careers.com</span>
           </div>
         </div>
       </footer>
