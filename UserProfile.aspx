@@ -371,6 +371,12 @@
 <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ErrorMessage="Please Enter Salary" ControlToValidate="txtSal" ForeColor="Red" ValidationExpression="^\d{1,6}(?:\.\d{1,10})?$"></asp:RegularExpressionValidator>
                                 </div></div>
 
+                     <div class="form-group row">
+                                <label for=resume" class="col-md-4 col-form-label text-md-right">Salary</label>
+                                <div class="col-md-6">
+                                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                                </div></div>
+
                   <div class="col-md-6 offset-md-4">
                     <asp:Button ID="btnSubmit" runat="server" class="btn btn-primary" Text="Submit" OnClick="btnSubmit_Click" />       
                             </div>

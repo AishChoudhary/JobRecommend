@@ -100,6 +100,13 @@
                                 </div>
 
                             </div>
+                            <div class="form-group row">
+                                <label for="State" class="col-md-4 col-form-label text-md-right">State</label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtState" runat="server" class="form-control" required autofocus ></asp:TextBox>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ErrorMessage="Enter Valid State Name" ControlToValidate="txtState" ValidationExpression="[a-zA-Z][a-zA-Z\\s]+$" ForeColor="Red"></asp:RegularExpressionValidator>
+                                </div>
+                                </div>
 
                             
 

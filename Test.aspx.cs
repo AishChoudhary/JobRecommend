@@ -23,8 +23,8 @@ namespace JobRecommend
 
         //static string uid=;
 
-       
 
+        static int attempts = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,6 +32,7 @@ namespace JobRecommend
             {
               //  uid = (string)Session["uid"];
 
+                attempts= Convert.ToInt32( (string) Session["attempts"]);
                 connection.Open();
                 if (connection.State == System.Data.ConnectionState.Open)
                 {
@@ -123,8 +124,9 @@ namespace JobRecommend
 
         private void updateMarksPercentage()
         {
+            attempts++;
             connection.Open();
-            string sql = "update KeySkillInfo set marks=" + (correctAnswers * 10) + ",status='ATTENDED' where uid="
+            string sql = "update KeySkillInfo set marks=" + (correctAnswers * 10) + ",status='ATTENDED' , attempts= "+ attempts + " where uid="
                 + Session["uid"] + " and key_skill_id=" + Session["ksi"];
             SqlCommand sqlcommand = new SqlCommand(sql, connection);
             int x = sqlcommand.ExecuteNonQuery();

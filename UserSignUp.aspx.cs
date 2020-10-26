@@ -13,7 +13,7 @@ namespace JobRecommend
     {
         SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
 
-        string Fullname, Email, Password, MobileNo, City;
+        string Fullname, Email, Password, MobileNo, City,State;
 
         protected void txtConfirmPassword_TextChanged(object sender, EventArgs e)
         {
@@ -36,7 +36,7 @@ namespace JobRecommend
             Password = txtPassword.Text;
             MobileNo = txtMobileNo.Text;
             City = txtCity.Text;
-
+            State = txtState.Text;
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace JobRecommend
             {
                
                 readvalue();
-                string sql = "insert into UserInfo(Fullname,Email,Password,MobileNo,city) values('" + Fullname + "','" + Email + "','" + Password + "','" + MobileNo + "','" + City + "')";
+                string sql = "insert into UserInfo(Fullname,Email,Password,MobileNo,city,state) values('" + Fullname + "','" + Email + "','" + Password + "','" + MobileNo + "','" + City + "','" + State + "')";
                 SqlCommand sqlcommand = new SqlCommand(sql, connection);
                 int x = sqlcommand.ExecuteNonQuery();
                                 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -61,9 +62,18 @@ namespace JobRecommend
                 if (DropDownList1.SelectedIndex == 1)
                     sal = Convert.ToInt32(txtSal.Text);
 
-                string sql = "insert into UserProfile(uid,Address,Marks10,Marks12,CurrentQual,HighestQual,DesiredLoc,Certifications,Interests,CompanyName,WorkDuration,JobTitle,Salary)"+ 
-"values("+uid+",'"+txtAddress.Text+"', "+txtMarks.Text+","+txtMarks1.Text+", '"+txtCurrentQualification.Text+"', '"+txtHighestQualification.Text+"', '"+txtLocation.Text+"', '"+txtCertifications.Text+"', '"+txtInterests.Text+"', '"+txtCompName.Text+"', '"+txtWorkDur.Text+"', '"+txtJobTitle.Text+"', "+sal+")";
-                System.Diagnostics.Debug.Print(sql);
+
+                if (FileUpload1.HasFile)
+                {
+                    try
+                    {
+                        string filename = Path.GetFileName(FileUpload1.FileName);
+                        FileUpload1.SaveAs(Server.MapPath("~/files/") + filename);
+                        
+                   
+            string sql = "insert into UserProfile(uid,Address,Marks10,Marks12,CurrentQual,HighestQual,DesiredLoc,Certifications,Interests,CompanyName,WorkDuration,JobTitle,Salary,ResumePath)" + 
+"values("+uid+",'"+txtAddress.Text+"', "+txtMarks.Text+","+txtMarks1.Text+", '"+txtCurrentQualification.Text+"', '"+txtHighestQualification.Text+"', '"+txtLocation.Text+"', '"+txtCertifications.Text+"', '"+txtInterests.Text+"', '"+txtCompName.Text+"', '"+txtWorkDur.Text+"', '"+txtJobTitle.Text+"', "+sal+",'"+filename + "')";
+               // System.Diagnostics.Debug.Print(sql);
                 SqlCommand sqlcommand = new SqlCommand(sql, connection);
                 int x = sqlcommand.ExecuteNonQuery();
 
@@ -88,6 +98,16 @@ namespace JobRecommend
 
                 else
                     Response.Write("<Script>alert('Unable to create');</Script>");
+
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Response.Write("<script>alert('The file could not be uploaded');</script>");
+                    }
+                }
+
             }
 
 
