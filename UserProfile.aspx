@@ -87,7 +87,7 @@
       <li class="nav-item">
         <a class="nav-link" href="Test.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Test New Skills</span></a>
+          <span>Test</span></a>
       </li>
 
       <!-- Nav Item - Charts -->
@@ -224,7 +224,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><asp:Label ID="lblUname" runat="server" Text="Label"></asp:Label></span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                <img class="img-profile rounded-circle" src="https://www.flaticon.com/svg/static/icons/svg/403/403554.svg">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -341,9 +341,10 @@
                   <div class="form-group row">
                                 <label for="company_name" class="col-md-4 col-form-label text-md-right">Select Key Skills</label>
                                 <div class="col-md-6">
-                                    <asp:ListBox ID="lstKeySkills" runat="server" SelectionMode="Multiple"></asp:ListBox>
-                               <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ErrorMessage="Please Give Company Name" ControlToValidate="txtCompName" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{2,80}$"></asp:RegularExpressionValidator> </div>
+                                    <asp:ListBox ID="lstKeySkills" runat="server" SelectionMode="Multiple" required="" autofocus=""></asp:ListBox>
                                 </div>
+                                </div>
+
                                 <div class="form-group row">
                                 <label for="company_name" class="col-md-4 col-form-label text-md-right">Company Name</label>
                                 <div class="col-md-6">
@@ -372,7 +373,7 @@
                                 </div></div>
 
                      <div class="form-group row">
-                                <label for=resume" class="col-md-4 col-form-label text-md-right">Salary</label>
+                                <label for="resume" class="col-md-4 col-form-label text-md-right">Upload Resume</label>
                                 <div class="col-md-6">
                                     <asp:FileUpload ID="FileUpload1" runat="server" />
                                 </div></div>

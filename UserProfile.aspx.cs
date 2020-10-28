@@ -104,6 +104,7 @@ namespace JobRecommend
                     }
                     catch (Exception ex)
                     {
+                        System.Diagnostics.Debug.Print(ex.ToString());
                         Response.Write("<script>alert('The file could not be uploaded');</script>");
                     }
                 }

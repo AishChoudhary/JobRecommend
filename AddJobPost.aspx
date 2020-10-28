@@ -205,7 +205,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="RecruiterProfile.aspx">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
@@ -268,30 +268,29 @@
       <label for="JobDescription" class="col-md-4 col-form-label text-md-right">Job Description</label>
                                 <div class="col-md-6">
            <asp:TextBox ID="txtJobDescription" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Please Enter Valid Job Description" ControlToValidate="txtJobDescription" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{3,1000}$"></asp:RegularExpressionValidator>
+
 </div>
                             </div>
 
 <div class="form-group row">
-      <label for="Skills Required" class="col-md-4 col-form-label text-md-right">Skills Required</label>
+                                <label for="skills" class="col-md-4 col-form-label text-md-right">Select Key Skills</label>
                                 <div class="col-md-6">
-           <asp:TextBox ID="txtSkillsRequired" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ErrorMessage="Please Enter Valid Required skills" ControlToValidate="txtSkillsRequired" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{1,50}$"></asp:RegularExpressionValidator>
-</div>
-                            </div>                  
+                                    <asp:ListBox ID="lstKeySkills" runat="server" SelectionMode="Multiple" autofocus="" required="" ></asp:ListBox>
+                               </div>
+                                </div>                
 
 <div class="form-group row">
       <label for="Work Experiance" class="col-md-4 col-form-label text-md-right">Work Experiance</label>
                                 <div class="col-md-6">
            <asp:TextBox ID="txtworkexp" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Please Enter Valid experiance years" ControlToValidate="txtworkexp" ForeColor="Red" ValidationExpression="^[0-9]{4}$"></asp:RegularExpressionValidator>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Please Enter Valid experiance years" ControlToValidate="txtworkexp" ForeColor="Red" ValidationExpression="[0-9_\-\s]{3,30}$"></asp:RegularExpressionValidator>
 </div>
                             </div>
                   <div class="form-group row">
       <label for="JobLocation" class="col-md-4 col-form-label text-md-right">Job Location</label>
                                 <div class="col-md-6">
            <asp:TextBox ID="txtJobLocation" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Please Enter Valid Job Location" ControlToValidate="txtJobLocation" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{3,30}$"></asp:RegularExpressionValidator>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Please Enter Valid Job Location" ControlToValidate="txtJobLocation" ForeColor="Red" ValidationExpression="[a-zA-Z\,\s]{3,30}$"></asp:RegularExpressionValidator>
 </div>
                             </div>
 
@@ -299,7 +298,7 @@
       <label for="Roles" class="col-md-4 col-form-label text-md-right">Roles and responsibilities</label>
                                 <div class="col-md-6">
            <asp:TextBox ID="txtRoles" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ErrorMessage="Please Enter Valid Roles" ControlToValidate="txtRoles" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{3,500}$"></asp:RegularExpressionValidator>
+
 </div>
                             </div>
 
@@ -307,11 +306,12 @@
       <label for="minimum Qualification" class="col-md-4 col-form-label text-md-right">minimum Qualification</label>
                                 <div class="col-md-6">
            <asp:TextBox ID="txtminQual" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Please Enter Valid Qualification" ControlToValidate="txtminQual" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{3,30}$"></asp:RegularExpressionValidator>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Please Enter Valid Qualification" ControlToValidate="txtminQual" ForeColor="Red" ValidationExpression="[a-zA-Z\,\-\s]{3,30}$"></asp:RegularExpressionValidator>
 </div>
                             </div>
 
                   <div class="col-md-6 offset-md-4">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnSubmit" runat="server" class="btn btn-primary" Text="Add Job" OnClick="btnSubmit_Click" />       
                             </div>
  

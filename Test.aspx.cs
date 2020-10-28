@@ -30,9 +30,9 @@ namespace JobRecommend
         {
             if (!IsPostBack)
             {
-              //  uid = (string)Session["uid"];
+                //  uid = (string)Session["uid"];
 
-                attempts= Convert.ToInt32( (string) Session["attempts"]);
+                attempts = Convert.ToInt32((string)Session["attempts"]);
                 connection.Open();
                 if (connection.State == System.Data.ConnectionState.Open)
                 {
