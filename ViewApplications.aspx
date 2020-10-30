@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyPosts.aspx.cs" Inherits="JobRecommend.MyPosts" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewApplications.aspx.cs" Inherits="JobRecommend.ViewApplications" %>
 
 <!DOCTYPE html>
 <html lang="en"><head>
@@ -320,7 +320,7 @@
                       <td><%Response.Write(dt.Rows[i].ItemArray[8].ToString()); %></td>
                       <td><%Response.Write(dt.Rows[i].ItemArray[9].ToString()); %></td>
                       <td><a href="DeletePost.aspx?pid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Delete</a></td>
-                      <td><a href="ViewApplications.aspx?pid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">View</a></td>
+                      <td><a href="DownloadResume.aspx?pid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Download Resume</a></td>
                       
                     </tr>
                       <%} %>

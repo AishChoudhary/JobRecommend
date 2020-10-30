@@ -73,14 +73,18 @@
     <Content Include="Background\d22eed19-8b41-41ca-b6b8-35522608a8b6_200x200.png" />
     <Content Include="css\sb-admin-2.css" />
     <Content Include="css\sb-admin-2.min.css" />
+    <Content Include="Database\ApplyJob.sql" />
     <Content Include="Database\KeySkillInfo.sql" />
     <Content Include="Database\KeySkills.sql" />
+    <Content Include="Database\NewRequirement.sql" />
     <Content Include="Database\Recruiter.sql" />
     <Content Include="Database\RecruiterProfile.sql" />
+    <Content Include="Database\Requirementkeyskill.sql" />
     <Content Include="Database\TestInfo.sql" />
     <Content Include="Database\TestResultInfo.sql" />
     <Content Include="Database\UserInfo.sql" />
     <Content Include="Database\UserProfile.sql" />
+    <Content Include="DeletePost.aspx" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="img\check.png" />
     <Content Include="img\close.png" />
@@ -1767,6 +1771,7 @@
     <Content Include="vendor\jquery\jquery.min.js" />
     <Content Include="vendor\jquery\jquery.slim.js" />
     <Content Include="vendor\jquery\jquery.slim.min.js" />
+    <Content Include="ViewApplications.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1783,6 +1788,13 @@
     </Compile>
     <Compile Include="ApplyJob.aspx.designer.cs">
       <DependentUpon>ApplyJob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeletePost.aspx.cs">
+      <DependentUpon>DeletePost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeletePost.aspx.designer.cs">
+      <DependentUpon>DeletePost.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
@@ -1917,6 +1929,13 @@
     </Compile>
     <Compile Include="UserSignUp.aspx.designer.cs">
       <DependentUpon>UserSignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewApplications.aspx.cs">
+      <DependentUpon>ViewApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewApplications.aspx.designer.cs">
+      <DependentUpon>ViewApplications.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
