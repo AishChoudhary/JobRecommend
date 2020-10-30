@@ -7,20 +7,24 @@ using System.Web.UI.WebControls;
 
 namespace JobRecommend
 {
-    public partial class NewRecruiterDashboard : System.Web.UI.Page
+    public partial class jobrecommended : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             string email, username;
             email = (string)Session["email"];
             username = (string)Session["uname"];
+            
+
             if (email == null)
-                Response.Redirect("RecruiterLogin.aspx");
+                Response.Redirect("UserLogin.aspx");
             else
+            {
                 lblUname.Text = username;
+                
 
+                
+            }
         }
-
-       
     }
 }

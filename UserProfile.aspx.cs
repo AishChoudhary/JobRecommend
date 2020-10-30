@@ -17,7 +17,11 @@ namespace JobRecommend
         SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
         string Address,Marks10,Marks12,CurrentQual,HighestQual,DesiredLoc,Certifications,Interests,WorkDuration,JobTitle,CompanyName,Salary;
 
-        
+        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -48,6 +52,8 @@ namespace JobRecommend
             lstKeySkills.DataTextField = "Keyskill";
             lstKeySkills.DataValueField = "id";
             lstKeySkills.DataBind();
+
+            
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)

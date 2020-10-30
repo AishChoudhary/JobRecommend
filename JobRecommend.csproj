@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddJobPost.aspx" />
+    <Content Include="ApplyJob.aspx" />
     <Content Include="Background\background1.jpg" />
     <Content Include="Background\d22eed19-8b41-41ca-b6b8-35522608a8b6_200x200.png" />
     <Content Include="css\sb-admin-2.css" />
@@ -85,6 +86,7 @@
     <Content Include="img\close.png" />
     <Content Include="img\undraw_posting_photo.svg" />
     <Content Include="index.aspx" />
+    <Content Include="jobrecommended.aspx" />
     <Content Include="js\demo\chart-area-demo.js" />
     <Content Include="js\demo\chart-bar-demo.js" />
     <Content Include="js\demo\chart-pie-demo.js" />
@@ -92,6 +94,7 @@
     <Content Include="js\sb-admin-2.js" />
     <Content Include="js\sb-admin-2.min.js" />
     <Content Include="Logout.aspx" />
+    <Content Include="MyPosts.aspx" />
     <Content Include="mystyle.css" />
     <Content Include="NewRecruiterDashboard.aspx" />
     <Content Include="NewUserDashboard.aspx" />
@@ -1774,6 +1777,13 @@
     <Compile Include="AddJobPost.aspx.designer.cs">
       <DependentUpon>AddJobPost.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ApplyJob.aspx.cs">
+      <DependentUpon>ApplyJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplyJob.aspx.designer.cs">
+      <DependentUpon>ApplyJob.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1788,12 +1798,26 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="jobrecommended.aspx.cs">
+      <DependentUpon>jobrecommended.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jobrecommended.aspx.designer.cs">
+      <DependentUpon>jobrecommended.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Logout.aspx.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyPosts.aspx.cs">
+      <DependentUpon>MyPosts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyPosts.aspx.designer.cs">
+      <DependentUpon>MyPosts.aspx</DependentUpon>
     </Compile>
     <Compile Include="NewRecruiterDashboard.aspx.cs">
       <DependentUpon>NewRecruiterDashboard.aspx</DependentUpon>

@@ -13,7 +13,7 @@ namespace JobRecommend
     public partial class AddJobPost : System.Web.UI.Page
     {
         SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
-        string Jobtitle, JobDescription, SkillsRequired, WorkExperiance, JobLocation, Roles, MinQual;
+        string Jobtitle, JobDescription, SkillsRequired, WorkExperiance, JobLocation, Roles, MinQual,OpeningDate,ClosingDate;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -66,8 +66,8 @@ namespace JobRecommend
                 string uid = (string)Session["uid"];
 
 
-                string sql = "insert into NewRequirement(rid,Jobtitle, JobDescription,  WorkExperiance, JobLocation, Roles, MinQual)" +
-                "values(" + uid + ",'" + txtJobTitle.Text + "', '" + txtJobDescription.Text + "','" + txtworkexp.Text + "','" + txtJobLocation.Text + "','" + txtRoles.Text + "','" + txtminQual.Text + "')";
+                string sql = "insert into NewRequirement(rid,Jobtitle, JobDescription,  WorkExperiance, JobLocation, Roles, MinQual, OpeningDate, ClosingDate)" +
+                "values(" + uid + ",'" + txtJobTitle.Text + "', '" + txtJobDescription.Text + "','" + txtworkexp.Text + "','" + txtJobLocation.Text + "','" + txtRoles.Text + "','" + txtminQual.Text + "','" + txtDate.Text + "','" + TxtClosingDate.Text + "')";
                 SqlCommand sqlcommand = new SqlCommand(sql, connection);
                 int x = sqlcommand.ExecuteNonQuery();
 

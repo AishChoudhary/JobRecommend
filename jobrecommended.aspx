@@ -1,7 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddJobPost.aspx.cs" Inherits="JobRecommend.AddJobPost" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="jobrecommended.aspx.cs" Inherits="JobRecommend.jobrecommended" %>
 
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+
+<head>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +11,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>JobRecom</title>
+  <title>Careers.com</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -18,10 +20,11 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
-<style type="text/css">/* Chart.js */
-@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style></head>
+</head>
 
 <body id="page-top">
+
+    <form id="form1" runat="server">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -57,16 +60,24 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="jobRecommended.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Add/Post New Jobs </span></a>
+          <span>Recommended Jobs</span></a>
       </li>
 
-        <li class="nav-item">
-        <a class="nav-link" href="MyPosts.aspx">
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>My Posts </span></a>
+          <span>Saved Jobs</span></a>
       </li>
+
+<li class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Applied Jobs</span></a>
+      </li>
+
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -74,7 +85,16 @@
       <div class="sidebar-heading">
         Addons
       </div>
-       
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link" href="TestOptions.aspx">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>
+              Test<span></a>
+      </li>
+
+      <!-- Nav Item - Charts -->
       <li class="nav-item">
         <a class="nav-link" href="ForgotPassword.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
@@ -83,7 +103,7 @@
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="RecLogout.aspx">
+        <a class="nav-link" href="Logout.aspx">
           <i class="fa fa-power-off" aria-hidden="true"></i>
           <span>Logout</span></a>
       </li>
@@ -97,10 +117,8 @@
       </div>
 
     </ul>
-    <!-- End of Sidebar -->
-
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
+    
+      <div id="content-wrapper" class="d-flex flex-column">
 
       <!-- Main Content -->
       <div id="content">
@@ -114,7 +132,6 @@
           </button>
 
           <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
@@ -123,7 +140,6 @@
                 </button>
               </div>
             </div>
-          </form>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -135,7 +151,6 @@
               </a>
               <!-- Dropdown - Messages -->
               <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                <form class="form-inline mr-auto w-100 navbar-search">
                   <div class="input-group">
                     <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                     <div class="input-group-append">
@@ -144,13 +159,12 @@
                       </button>
                     </div>
                   </div>
-                </form>
               </div>
             </li>
 
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="left: -2px; top: 0px">
                 <i class="fas fa-bell fa-fw"></i>
                 <!-- Counter - Alerts -->
                 <span class="badge badge-danger badge-counter">3+</span>
@@ -210,7 +224,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="RecruiterProfile.aspx">
+                <a class="dropdown-item" href="UserProfile.aspx">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
@@ -240,7 +254,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Post New Jobs</h1>
+            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
             
           </div>
 
@@ -251,131 +265,111 @@
 
           <div class="row">
 
-               <div class="container-fluid">
-                <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary"></h6>
-            </div>
-<form class="user" runat="server">
-            <div class="card-body">
-              <div class="table-responsive">
-              
-<div class="form-group row">
-                                <label for="jobtitle" class="col-md-4 col-form-label text-md-right">Job Title / Designation<asp:Label ID="Label2" runat="server" ForeColor="Red" Text="*"></asp:Label>
-                                </label>
-                                &nbsp;<div class="col-md-6">
-                                    <asp:TextBox ID="txtJobTitle" runat="server" class="form-control form-control-user " required="" autofocus=""></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Please Enter Valid Job Title" ControlToValidate="txtJobTitle" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{3,40}$"></asp:RegularExpressionValidator>
-                                </div>
-
-                            </div>
-
-                  <div class="form-group row">
-      <label for="Company Name" class="col-md-4 col-form-label text-md-right">Company Name <asp:Label ID="Label1" runat="server" Text="*" ForeColor="Red"></asp:Label></label>
-                                <div class="col-md-6">
-           <asp:TextBox ID="TxtCompName" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-
-</div>
-                            </div>
-
-
-<div class="form-group row">
-      <label for="JobDescription" class="col-md-4 col-form-label text-md-right">Job Description<asp:Label ID="Label3" runat="server" ForeColor="Red" Text="*"></asp:Label>
-      </label>
-                                &nbsp;<div class="col-md-6">
-           <asp:TextBox ID="txtJobDescription" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-
-</div>
-                            </div>
-
-<div class="form-group row">
-                                <label for="skills" class="col-md-4 col-form-label text-md-right">Select Key Skills<asp:Label ID="Label4" runat="server" ForeColor="Red" Text="*"></asp:Label>
-                                </label>
-                                &nbsp;<div class="col-md-6">
-                                    <asp:ListBox ID="lstKeySkills" runat="server" SelectionMode="Multiple" autofocus="" required="" ></asp:ListBox>
-                               </div>
-                                </div>                
-
-<div class="form-group row">
-      <label for="Work Experiance" class="col-md-4 col-form-label text-md-right">Work Experiance<asp:Label ID="Label5" runat="server" ForeColor="Red" Text="*"></asp:Label>
-      </label>
-                                &nbsp;<div class="col-md-6">
-           <asp:TextBox ID="txtworkexp" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Please Enter Valid experiance years" ControlToValidate="txtworkexp" ForeColor="Red" ValidationExpression="[0-9_\-\s]{3,30}$"></asp:RegularExpressionValidator>
-</div>
-                            </div>
-                  <div class="form-group row">
-      <label for="JobLocation" class="col-md-4 col-form-label text-md-right">Job Location<asp:Label ID="Label6" runat="server" ForeColor="Red" Text="*"></asp:Label>
-                      </label>
-                                &nbsp;<div class="col-md-6">
-           <asp:TextBox ID="txtJobLocation" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Please Enter Valid Job Location" ControlToValidate="txtJobLocation" ForeColor="Red" ValidationExpression="[a-zA-Z\,\s]{3,30}$"></asp:RegularExpressionValidator>
-</div>
-                            </div>
-
-                  <div class="form-group row">
-      <label for="Roles" class="col-md-4 col-form-label text-md-right">Roles and responsibilities<asp:Label ID="Label7" runat="server" ForeColor="Red" Text="*"></asp:Label>
-                      </label>
-                                &nbsp;<div class="col-md-6">
-           <asp:TextBox ID="txtRoles" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-
-</div>
-                            </div>
-
-                  <div class="form-group row">
-      <label for="minimum Qualification" class="col-md-4 col-form-label text-md-right">minimum Qualification<asp:Label ID="Label8" runat="server" ForeColor="Red" Text="*"></asp:Label>
-                      </label>
-                                &nbsp;<div class="col-md-6">
-           <asp:TextBox ID="txtminQual" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Please Enter Valid Qualification" ControlToValidate="txtminQual" ForeColor="Red" ValidationExpression="[a-zA-Z\,\-\s]{3,30}$"></asp:RegularExpressionValidator>
-</div>
-                            </div>
-                  <div class="form-group row">
-      <label for="Opening Date" class="col-md-4 col-form-label text-md-right">Opening Date<asp:Label ID="Label9" runat="server" ForeColor="Red" Text="*"></asp:Label>
-                      </label>
-                                &nbsp;<div class="col-md-6">
-           <asp:TextBox ID="txtDate" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ErrorMessage="Please Enter Valid opening date" ControlToValidate="txtDate" ForeColor="Red" ValidationExpression="(((0|1)[0-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/((19|20)\d\d))$"></asp:RegularExpressionValidator>
-</div>
-                            </div>
-                  <div class="form-group row">
-      <label for="Closing Date" class="col-md-4 col-form-label text-md-right">Closing Date<asp:Label ID="Label10" runat="server" ForeColor="Red" Text="*"></asp:Label>
-                      </label>
-                                &nbsp;<div class="col-md-6">
-           <asp:TextBox ID="TxtClosingDate" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Please Enter Valid closing date" ControlToValidate="txtClosingDate" ForeColor="Red" ValidationExpression="(((0|1)[0-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/((19|20)\d\d))$"></asp:RegularExpressionValidator>
-</div>
-                            </div>
-                  
-
-                  <div class="col-md-6 offset-md-4">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="btnSubmit" runat="server" class="btn btn-primary" Text="Add Job" OnClick="btnSubmit_Click" />       
-                            </div>
- 
-              </div>
-            </div>
-         </form>
-
-
-         
+            <!-- Area Chart -->
             <div class="col-xl-8 col-lg-7">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
-                
-                <!-- Card Body -->
-                <div class="card-body">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Jobs Recommended</h6>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                      <div class="dropdown-header">Dropdown Header:</div>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
                   
+                  
+                      
+
+                  </div>
+                </div>
+                <!-- Card Body -->
+
+                    <% 
+                        System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
+                        connection.Open();
+                        System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select (select id from NewRequirement where id =rks.pid)as'pid',(select jobtitle from NewRequirement where id =rks.pid)as'jobtitle',(select JobDescription from NewRequirement where id =rks.pid)as'Jd',(select WorkExperiance from NewRequirement where id =rks.pid)as'WorkExp' from Requirementkeyskill rks where key_skill_id in (select   key_skill_id  from KeySkillInfo where uid="+Session["uid"]+") order by  pid desc " , connection);
+                        System.Data.DataSet ds = new System.Data.DataSet();
+                        sqlDataAdapter.Fill(ds);
+                        connection.Close();
+
+                        System.Data.DataTable dt = ds.Tables[0];
+
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                        %>
+                <div class="card-body">
+                             <div class="card shadow mb-8" style="width: 40rem; margin-bottom:8px;">
+
+  <div class="card-body">
+    <h5 class="card-title"><% Response.Write(dt.Rows[i].ItemArray[1].ToString()); %></h5>
+    <p class="card-text"><% Response.Write(dt.Rows[i].ItemArray[2].ToString()); %></p>
+    <a href="ApplyJob.aspx?pid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Apply</a>
+      <br />
+  </div>
+</div>
+
+                </div> <%} %>
+
+
+
+              </div>
+                   
+                        
+            
                 </div>
               </div>
             </div>
 
-           
-        
+            <!-- Pie Chart -->
+            
+          </div>
+
+
+
+            <!-- Earnings (Monthly) Card Example -->
+            
+            <!-- Earnings (Monthly) Card Example -->
+            
+
+            <!-- Earnings (Monthly) Card Example -->
+            
+
+            <!-- Pending Requests Card Example -->
+            
+          <!-- Content Row -->
+         
+
+            <!-- Content Column -->
+            
+
+              <!-- Project Card Example -->
+              
+
+              <!-- Color System -->
+              
+
+            
+
+            
+
+              <!-- Illustrations -->
+              
+        <!-- /.container-fluid -->
+
+     
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright © Careers.com</span>
+            <span>Copyright © Careers.com 2020</span>
           </div>
         </div>
       </footer>
@@ -383,12 +377,10 @@
 
     </div>
     <!-- End of Content Wrapper -->
-
-  </div>
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top" style="display: inline;">
+  <a class="scroll-to-top rounded" href="#page-top" style="display: none;">
     <i class="fas fa-angle-up"></i>
   </a>
 
@@ -405,7 +397,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="RecLogout.aspx">Logout</a>
+          <a class="btn btn-primary" href="Logout.aspx">Logout</a>
         </div>
       </div>
     </div>
@@ -427,6 +419,11 @@
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
+
+
+
+
+    </form>
 
 
 

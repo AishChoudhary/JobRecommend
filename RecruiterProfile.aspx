@@ -14,17 +14,11 @@
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-<style type="text/css">/* Chart.js */
-@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style></head>
-
-<body id="page-top">
-
-  <!-- Page Wrapper -->
-  <div id="wrapper">
+    <p>
+        <br />
+    </p>
+&nbsp;<!-- Custom styles for this template--><link href="css/sb-admin-2.min.css" rel="stylesheet"><style type="text/css">/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style></head><body id="page-top"><!-- Page Wrapper --><div id="wrapper">
 
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -62,6 +56,11 @@
           <span>Add/Post New Jobs </span></a>
       </li>
 
+        <li class="nav-item">
+        <a class="nav-link" href="MyPosts.aspx">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>My Posts </span></a>
+      </li>
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -256,8 +255,10 @@
               <div class="table-responsive">
               
 <div class="form-group row">
-                                <label for="company_name" class="col-md-4 col-form-label text-md-right">Company Name</label>
-                                <div class="col-md-6">
+                                <label for="company_name" class="col-md-4 col-form-label text-md-right">Company Name 
+                                <asp:Label ID="Label1" runat="server" ForeColor="Red" Text="*"></asp:Label>
+                                </label>
+                                &nbsp;<div class="col-md-6">
                                     <asp:TextBox ID="txtCompanyNm" runat="server" class="form-control form-control-user " required="" autofocus=""></asp:TextBox>
 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Please Enter Valid Company Name" ControlToValidate="txtCompanyNm" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{3,30}$"></asp:RegularExpressionValidator>
                                 </div>
@@ -265,15 +266,19 @@
                             </div>
 
 <div class="form-group row">
-      <label for="working_as" class="col-md-4 col-form-label text-md-right">Working As</label>
-                                <div class="col-md-6">
+      <label for="working_as" class="col-md-4 col-form-label text-md-right">Working As
+      <asp:Label ID="Label2" runat="server" ForeColor="Red" Text="*"></asp:Label>
+      </label>
+                                &nbsp;<div class="col-md-6">
            <asp:TextBox ID="txtWorking" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Please Enter Valid Working Post" ControlToValidate="txtWorking" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{3,30}$"></asp:RegularExpressionValidator>
 </div>
                             </div>
 <div class="form-group row">
-      <label for="Company Location" class="col-md-4 col-form-label text-md-right">Company Location</label>
-                                <div class="col-md-6">
+      <label for="Company Location" class="col-md-4 col-form-label text-md-right">Company Location
+      <asp:Label ID="Label3" runat="server" ForeColor="Red" Text="*"></asp:Label>
+      </label>
+                                &nbsp;<div class="col-md-6">
            <asp:TextBox ID="txtCompLoc" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
 <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Please Enter Valid Company Location" ControlToValidate="txtCompLoc" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{3,30}$"></asp:RegularExpressionValidator>
 </div>

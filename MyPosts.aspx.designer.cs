@@ -11,7 +11,7 @@ namespace JobRecommend
 {
 
 
-    public partial class NewRecruiterDashboard
+    public partial class MyPosts
     {
 
         /// <summary>

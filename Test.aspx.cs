@@ -40,7 +40,7 @@ namespace JobRecommend
                     SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sql, connection);
                     DataSet ds = new DataSet();
                     sqlDataAdapter.Fill(ds);
-
+                    
                     dt = ds.Tables[0];
                     connection.Close();
                     generateNumbers();

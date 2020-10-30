@@ -28,7 +28,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" style="height: 184%">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -228,7 +228,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"> <asp:Label ID="lblUname" runat="server" Text="Label"></asp:Label></span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                <img class="img-profile rounded-circle" src="https://www.flaticon.com/svg/static/icons/svg/403/403554.svg">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -264,32 +264,67 @@
               
 
        <div class="form-group row" >
+    <div class="card shadow mb-8">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Select your keyskills to test</h6>
+                </div>
+                <div class="card-body">
     
     <div class="container-fluid">
         
-    <asp:Label ID="lblSerial" class="col-md-4 col-form-label text-md-right" runat="server" Text="Label"></asp:Label>
-    </div>
-    <div class="container-fluid">
-        
-    <asp:Label ID="lblQuestion" class="col-md-4 col-form-label text-md-right" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="lblQuestion" class="col-md-4 col-form-label text-md-right" runat="server" Text="•	choose the below key skills that will be tested"></asp:Label>
     </div>
         
-    <div class="container"><asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+    <div class="container">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
                                 <div class="col-md-6" >
                                     <label class="btn btn-default" >
                                         
             </div>
 
 </div>
+        <!--<div class="form-group-row">  --> 
+            <div class="container-fluid">
         
+    <asp:Label ID="lblSerial" class="co-md-4 col-form-label text-md-right" runat="server" Text="Rules and Regulations" Font-Bold="true" Font-Size="Larger"></asp:Label>
+    </div>
+        <div class="container-fluid">
+              <asp:Label ID="Label1" class="col-md-4 col-form-label text-md-right" runat="server" Text="
+•	Unless you don’t test your skills, jobs can not be recommended to you."></asp:Label>
+          </div>
+           
+        <div class="container-fluid">
+              <asp:Label ID="Label2" class="col-md-4 col-form-label text-md-right" runat="server" Text="
+•	Choose correct answer. Once you select NEXT, you will not be able to go to previous question."></asp:Label>
+            </div>
+              
+              <div class="container-fluid">
+                  <asp:Label ID="Label3" class="col-md-4 col-form-label text-md-right" runat="server" Text="
+•	The test result will be notified after finishing the test."></asp:Label>
+               </div>
+                 <div class="container-fluid">
+                     <asp:Label ID="Label4" class="col-md-4 col-form-label text-md-right" runat="server" Text="
+•	The test result rank will be displayed to your dashboard."></asp:Label>
+                     </div>
+                  <div class="container-fluid">
+                <asp:Label ID="Label5" class="col-md-4 col-form-label text-md-right" runat="server" Text="
+•	The examiner is kindly requested to avoid malpractices or any cheating while giving test."></asp:Label></div>
+                      <div class="container-fluid">
+                <asp:Label ID="Label6" class="col-md-4 col-form-label text-md-right" runat="server" Text="
+•	Examiner is given 3 attempts to improve rank."></asp:Label></div> 
+        
+        
+
           <div class="container my-auto">
           <div class="copyright text-center my-auto">
                 <div class="align-content-center" style="align-self: center;" >
                     
+                    <br />
+                    <br />
+                    
                     <asp:Button ID="btnSubmit" class="align-content-center" runat="server" Text="Next" OnClick="btnSubmit_Click" />
                            
                   
-                     </div></div></div></form><!-- /.container-fluid -->
+                     </div></div></div></div></div></div></div></form><!-- /.container-fluid-->
 
 
       <!-- End of Main Content -->
@@ -303,12 +338,12 @@
         </div>
       </footer>
       <!-- End of Footer -->
-
+         
     </div>
     <!-- End of Content Wrapper -->
 
   </div>
- </form> <!-- End of Page Wrapper -->
+  <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top" style="display: none;">

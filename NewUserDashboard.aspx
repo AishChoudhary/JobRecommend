@@ -2,15 +2,7 @@
 
 
 <% 
-    System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
-    connection.Open();
-     System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select (select KeySkill from KeySkills where id=ksi.key_skill_id)as 'Key_skill_Name',marks from KeySkillInfo ksi where uid=" + Session["uid"], connection);
-                System.Data.DataSet ds = new System.Data.DataSet();
-                sqlDataAdapter.Fill(ds);
-                connection.Close();
-
-                System.Data.DataTable dt = ds.Tables[0];
-
+    
 
     %>
 <!DOCTYPE html>
@@ -36,6 +28,8 @@
 </head>
 
 <body id="page-top">
+
+    <form id="form1" runat="server">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -71,7 +65,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="jobRecommended.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Recommended Jobs</span></a>
       </li>
@@ -143,7 +137,6 @@
           </button>
 
           <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
@@ -152,7 +145,6 @@
                 </button>
               </div>
             </div>
-          </form>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -164,7 +156,6 @@
               </a>
               <!-- Dropdown - Messages -->
               <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                <form class="form-inline mr-auto w-100 navbar-search">
                   <div class="input-group">
                     <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                     <div class="input-group-append">
@@ -173,13 +164,12 @@
                       </button>
                     </div>
                   </div>
-                </form>
               </div>
             </li>
 
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="left: -2px; top: 0px">
                 <i class="fas fa-bell fa-fw"></i>
                 <!-- Counter - Alerts -->
                 <span class="badge badge-danger badge-counter">3+</span>
@@ -297,11 +287,37 @@
                       <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
+                  
+                  
+                      
+
                   </div>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                  
+                             <div class="card shadow mb-8" style="width: 40rem; margin-bottom:8px;">
+
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+      <br />
+  </div>
+</div></div>
+
+                  <div class="card-body">
+                             <div class="card shadow mb-8" style="width: 40rem; margin-bottom:8px;">
+
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+      <br />
+  </div>
+</div></div></div>
+                   
+                        
+            
                 </div>
               </div>
             </div>
@@ -362,7 +378,17 @@
                 </div>
                 <div class="card-body">
                     
-                                     <% for (int i = 0; i < dt.Rows.Count; i++)
+                <% 
+                     System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
+    connection.Open();
+     System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select (select KeySkill from KeySkills where id=ksi.key_skill_id)as 'Key_skill_Name',marks from KeySkillInfo ksi where uid=" + Session["uid"], connection);
+                System.Data.DataSet ds = new System.Data.DataSet();
+                sqlDataAdapter.Fill(ds);
+                connection.Close();
+
+                System.Data.DataTable dt = ds.Tables[0];
+
+                       for (int i = 0; i < dt.Rows.Count; i++)
                         { %>
                   <h4 class="small font-weight-bold"><% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %> <span class="float-right"><% Response.Write(dt.Rows[i].ItemArray[1].ToString()+"%");%></span></h4>
                   <div class="progress mb-4">
@@ -425,10 +451,10 @@
       </footer>
       <!-- End of Footer -->
 
-    </div>
+    
     <!-- End of Content Wrapper -->
 
-  </div>
+  
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
@@ -471,6 +497,11 @@
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
+
+
+
+
+    </form>
 
 
 

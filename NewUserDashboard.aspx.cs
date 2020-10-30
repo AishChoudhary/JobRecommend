@@ -28,10 +28,28 @@ namespace JobRecommend
             {
                 lblUname.Text = username;
                 getResult();
+
+                //loadRecommendedJobs();
             }
 
         }
 
+
+        private void loadRecommendedJobs()
+        {
+            connection.Open();
+            if (connection.State == System.Data.ConnectionState.Open)
+            {
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select (select id from NewRequirement where id =rks.pid)as'pid',(select jobtitle from NewRequirement where id =rks.pid)as'jobtitle',(select WorkExperiance from NewRequirement where id =rks.pid)as'WorkExp' from Requirementkeyskill rks where key_skill_id in (select   key_skill_id  from KeySkillInfo where uid=" + Session["uid"]+ " ) order by  pid desc )", connection);
+                DataSet ds = new DataSet();
+                sqlDataAdapter.Fill(ds);
+                connection.Close();
+                DataTable dt = ds.Tables[0];
+              /*  GridView1.AutoGenerateColumns = true;
+                GridView1.DataSource = dt;
+                GridView1.DataBind();*/
+            }
+        }
         private void getResult()
         {
             connection.Open();

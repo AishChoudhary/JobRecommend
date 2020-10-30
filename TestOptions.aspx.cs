@@ -15,6 +15,18 @@ namespace JobRecommend
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            string email, username;
+            email = (string)Session["email"];
+            username = (string)Session["uname"];
+            
+
+            if (email == null)
+                Response.Redirect("NewUserDashboard.aspx");
+            else
+            {
+                lblUname.Text = username;
+            }
+
             System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
             connection.Open();
             System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select uid,key_skill_id,(select KeySkill from KeySkills where id=ksi.key_skill_id)as'KeySkillName', attempts from KeySkillInfo ksi where uid=" + Session["uid"] +" AND attempts<=3" , connection);
