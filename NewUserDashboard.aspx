@@ -280,41 +280,46 @@
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
+                   
                   
                   
                       
 
                   </div>
+                    
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
+                
+                  <% 
+                      System.Data.SqlClient.SqlConnection connection1 = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
+                      connection1.Open();
+                      System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select (select id from NewRequirement where id =rks.pid)as'pid',(select jobtitle from NewRequirement where id =rks.pid)as'jobtitle',(select JobDescription from NewRequirement where id =rks.pid)as'Jd',(select WorkExperiance from NewRequirement where id =rks.pid)as'WorkExp' from Requirementkeyskill rks where key_skill_id in (select key_skill_id  from KeySkillInfo where uid="+Session["uid"]+") order by  pid desc " , connection1);
+                      System.Data.DataSet ds1 = new System.Data.DataSet();
+                      sqlDataAdapter.Fill(ds1);
+                      connection1.Close();
+
+                      System.Data.DataTable dt1 = ds1.Tables[0];
+
+                      if (dt1.Rows.Count <= 0)
+                          Response.Write(" <p> You have no recommended jobs please update your profile</p>");
+                      else
+                          for (int i = 0; i <3; i++)
+                            {
+                              %>
+                             <div class="card-body">
                              <div class="card shadow mb-8" style="width: 40rem; margin-bottom:8px;">
 
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-      <br />
-  </div>
-</div></div>
+                              <div class="card-body">
+                               <h5 class="card-title"><% Response.Write(dt1.Rows[i].ItemArray[1].ToString()); %></h5>
+                                <p class="card-text"><% Response.Write(dt1.Rows[i].ItemArray[2].ToString()); %></p>
+                                <a href="ApplyJob.aspx?pid=<% Response.Write(dt1.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Apply</a>
+                                  <br />
+                                 </div>
+                              </div>
 
-                  <div class="card-body">
-                             <div class="card shadow mb-8" style="width: 40rem; margin-bottom:8px;">
-
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-      <br />
-  </div>
-</div></div></div>
+                </div> <%} %>
+            </div>
                    
                         
             
@@ -334,7 +339,7 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> <asp:Label ID="lblJava" runat="server" Text="Label"></asp:Label></div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> <asp:Label ID="lblJava" runat="server" Text=""></asp:Label></div>
                       
                     </div>
                     
@@ -379,16 +384,16 @@
                 <div class="card-body">
                     
                 <% 
-                     System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
-    connection.Open();
-     System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select (select KeySkill from KeySkills where id=ksi.key_skill_id)as 'Key_skill_Name',marks from KeySkillInfo ksi where uid=" + Session["uid"], connection);
+                System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
+                connection.Open();
+                System.Data.SqlClient.SqlDataAdapter sqlDataAdapter1 = new System.Data.SqlClient.SqlDataAdapter("select (select KeySkill from KeySkills where id=ksi.key_skill_id)as 'Key_skill_Name',marks from KeySkillInfo ksi where uid=" + Session["uid"], connection);
                 System.Data.DataSet ds = new System.Data.DataSet();
-                sqlDataAdapter.Fill(ds);
+                sqlDataAdapter1.Fill(ds);
                 connection.Close();
 
-                System.Data.DataTable dt = ds.Tables[0];
+                System.Data.DataTable dt = ds.Tables[0]; %>
 
-                       for (int i = 0; i < dt.Rows.Count; i++)
+                       <% for (int i = 0; i < dt.Rows.Count; i++)
                         { %>
                   <h4 class="small font-weight-bold"><% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %> <span class="float-right"><% Response.Write(dt.Rows[i].ItemArray[1].ToString()+"%");%></span></h4>
                   <div class="progress mb-4">
@@ -440,7 +445,7 @@
 
       </div>
       <!-- End of Main Content -->
-
+      </div>
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">

@@ -356,7 +356,7 @@
                                 </div>
                                 </div>
                   <div class="form-group row">
-                                <label for="company_name" class="col-md-4 col-form-label text-md-right">Select Key Skills
+                                <label for="Key skills" class="col-md-4 col-form-label text-md-right">Select Key Skills
                                 <asp:Label ID="Label9" runat="server" ForeColor="Red" Text="*"></asp:Label>
                                 </label>
                                 &nbsp;<div class="col-md-6">
@@ -408,7 +408,7 @@
 
                   <div class ="form-group row">
                       <div class="col-md-12 col-xs-12">
-                          
+                          <asp:Label ID="Label8" runat="server" Text="*" ForeColor="Red"></asp:Label>
                           <asp:CheckBoxList ID="address_consent" runat="server" ><asp:ListItem Text="I hereby confirm that the given information is correct and it can be used for future Communication."></asp:ListItem></asp:CheckBoxList>
                            
           </div>

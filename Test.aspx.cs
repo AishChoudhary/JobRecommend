@@ -19,6 +19,7 @@ namespace JobRecommend
 
         static List<int> listNumbers = new List<int>();
         static int correctAnswers = 0;
+        string questiontype;
        static  int ansFromDb = 0;
 
         //static string uid=;
@@ -168,7 +169,7 @@ namespace JobRecommend
 
             connection.Open();
             string sql = "insert into TestResultInfo(uid,questiontype,correctans) values(" 
-                + Session["uid"] + ",'java'," + correctAnswers+ ")";
+                + Session["uid"] + ",'"+ questiontype + "'," + correctAnswers+ ")";
             SqlCommand sqlcommand = new SqlCommand(sql, connection);
             int x = sqlcommand.ExecuteNonQuery();
             connection.Close();

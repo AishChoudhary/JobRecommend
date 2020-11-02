@@ -1,9 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="jobrecommended.aspx.cs" Inherits="JobRecommend.jobrecommended" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewProfile.aspx.cs" Inherits="JobRecommend.ViewProfile" %>
 
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="en"><head>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Careers.com</title>
+  <title>JobRecom</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -20,11 +18,10 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
-</head>
+<style type="text/css">/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style></head>
 
 <body id="page-top">
-
-    <form id="form1" runat="server">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -45,7 +42,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="NewUserDashboard.aspx">
+        <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -60,24 +57,16 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="jobRecommended.aspx">
+        <a class="nav-link" href="AddJobPost.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Recommended Jobs</span></a>
+          <span>Add/Post New Jobs </span></a>
       </li>
 
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <li class="nav-item">
+        <a class="nav-link" href="MyPosts.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Saved Jobs</span></a>
+          <span>My Posts </span></a>
       </li>
-
-<li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Applied Jobs</span></a>
-      </li>
-
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -85,18 +74,9 @@
       <div class="sidebar-heading">
         Addons
       </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
+       
       <li class="nav-item">
-        <a class="nav-link" href="TestOptions.aspx">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>
-              Test<span></a>
-      </li>
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="ForgotPassword.aspx">
+        <a class="nav-link" href="RecForgotPassword.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Forgot Password</span></a>
       </li>
@@ -117,8 +97,10 @@
       </div>
 
     </ul>
-    
-      <div id="content-wrapper" class="d-flex flex-column">
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
 
       <!-- Main Content -->
       <div id="content">
@@ -132,6 +114,7 @@
           </button>
 
           <!-- Topbar Search -->
+          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
@@ -140,6 +123,7 @@
                 </button>
               </div>
             </div>
+          </form>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -147,10 +131,11 @@
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
+                <i class="fas fa-search fa-fw" style="height: 16px"></i>
               </a>
               <!-- Dropdown - Messages -->
               <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                <form class="form-inline mr-auto w-100 navbar-search">
                   <div class="input-group">
                     <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                     <div class="input-group-append">
@@ -159,12 +144,13 @@
                       </button>
                     </div>
                   </div>
+                </form>
               </div>
             </li>
 
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="left: -2px; top: 0px">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
                 <!-- Counter - Alerts -->
                 <span class="badge badge-danger badge-counter">3+</span>
@@ -214,17 +200,19 @@
             <!-- Nav Item - Messages -->
             
 
-            <div class="topbar-divider d-none d-sm-block"></div>
+            <div class="topbar-divider d-none d-sm-block">
+
+            </div>
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"> <asp:Label ID="lblUname" runat="server" Text="Label"></asp:Label></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><asp:Label ID="lblUname" runat="server" Text="Label"></asp:Label></span>
                 <img class="img-profile rounded-circle" src="https://www.flaticon.com/svg/static/icons/svg/403/403554.svg">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="UserProfile.aspx">
+                <a class="dropdown-item" href="#">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
@@ -254,7 +242,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Applicant's Profile</h1>
             
           </div>
 
@@ -265,82 +253,153 @@
 
           <div class="row">
 
-            <!-- Area Chart -->
+               <div class="container-fluid">
+                <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary"></h6>
+            </div>
+<form class="user" runat="server">
+            <div class="card-body">
+              <div class="table-responsive">
+              
+<div class="form-group row">
+                                <label for="address" class="col-md-4 col-form-label text-md-right">Address</label><div class="col-md-6">
+                                    <asp:TextBox ID="txtAddress" runat="server" class="form-control form-control-user " required="" autofocus=""></asp:TextBox>
+                                </div>
+
+                            </div>
+
+<div class="form-group row">
+      <label for="10th_marks" class="col-md-4 col-form-label text-md-right">10th Marks (%)
+      </label>
+                                &nbsp;<div class="col-md-6">
+           <asp:TextBox ID="txtMarks" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
+ </div>
+                            </div><div class="form-group row">
+                                <label for="12th_marks" class="col-md-4 col-form-label text-md-right">12th/Diploma Marks(%)
+                                </label>
+                                &nbsp;<div class="col-md-6">
+                                    <asp:TextBox ID="txtMarks1" runat="server" Class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
+                                </div>
+                            </div>
+<div class="form-group row">
+                                <label for="current_qualification" class="col-md-4 col-form-label text-md-right">Current Qualification
+                                </label>
+                                &nbsp;<div class="col-md-6">
+                                    <asp:TextBox ID="txtCurrentQualification" runat="server" class="form-control form-control-user"  required="" autofocus=""></asp:TextBox>
+                                </div>
+                            </div><div class="form-group row">
+                                <label for="highest_qualification" class="col-md-4 col-form-label text-md-right">Highest Qualification
+                                </label>
+                                &nbsp;<div class="col-md-6">
+                                    <asp:TextBox ID="txtHighestQualification" runat="server" class="form-control form-control-user"  required="" autofocus=""></asp:TextBox>
+                                </div>
+                            </div>
+<div class="form-group row">
+                                <label for="work_location" class="col-md-4 col-form-label text-md-right">Desired Work Location
+                                </label>
+                                &nbsp;<div class="col-md-6">
+                                   <asp:TextBox ID="txtLocation" runat="server" class="form-control form-control-user"  required="" autofocus=""></asp:TextBox>
+                                </div>
+                                </div>
+<div class="form-group row">
+                                <label for="certifications" class="col-md-4 col-form-label text-md-right">&nbsp;Certifications
+                                </label>
+                                &nbsp;<div class="col-md-6">
+                                  <asp:TextBox ID="txtCertifications" runat="server" class="form-control form-control-user" autofocus=""></asp:TextBox>
+                                </div>
+                                </div><div class="form-group row">
+                                <label for="interests" class="col-md-4 col-form-label text-md-right">Skills/Hobbies/Interests</label><div class="col-md-6">
+                                    <asp:TextBox ID="txtInterests" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
+                                </div>
+                                </div>
+                         
+                  <div class="form-group row">
+                                <label for="company_name" class="col-md-4 col-form-label text-md-right">Key Skills
+                                </label>
+                                &nbsp;<div class="col-md-6">
+                                </div>
+                                </div>
+
+                                <div class="form-group row">
+                                <label for="company_name" class="col-md-4 col-form-label text-md-right">Company Name </label>
+                                &nbsp;<div class="col-md-6">
+                                   <asp:TextBox ID="txtCompName" runat="server" class="form-control form-control-user" required="" autofocus="" AutoPostBack="True"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                <label for="work_duration" class="col-md-4 col-form-label text-md-right">Work Duration
+                                    </label>
+                                &nbsp;<div class="col-md-6">
+                                   <asp:TextBox ID="txtWorkDur" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
+                                    </div>
+                                </div>
+                                 <div class="form-group row">
+                                <label for="Job title" class="col-md-4 col-form-label text-md-right">Job Title
+                                     </label>
+                                &nbsp;<div class="col-md-6">
+        &nbsp;<div class="col-md-6">
+                                    <asp:TextBox ID="txtJobTitle" runat="server" class="form-control form-control-user " required="" autofocus="" AutoPostBack="True"></asp:TextBox>
+                                </div>
+                                     
+                                 </div></div>
+                  <div class="form-group row">
+                                <label for="salary" class="col-md-4 col-form-label text-md-right">Salary
+                                </label>
+                                &nbsp;<div class="col-md-6">
+                                    <asp:TextBox ID="txtSal" runat="server" class="form-control form-control-user " required="" autofocus="" AutoPostBack="True"></asp:TextBox>
+                                </div></div>
+
+                     <div class="form-group row">
+                                <label for="resume" class="col-md-4 col-form-label text-md-right">Resume
+                                </label>
+                                &nbsp;<div class="col-md-6">
+                                    <asp:Button ID="Button1" runat="server" Text="Download" />
+                                </div></div>
+                  <!--<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>-->
+
+                  <div class ="form-group row">
+                      <div class="col-md-12 col-xs-12">
+                           
+          </div>
+    
+
+	<!-- Add more if conditions for various input types here -->
+				  </div>
+                  </div>
+
+                               </div>
+            </div>
+        </form>
+
+
+         
             <div class="col-xl-8 col-lg-7">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Jobs Recommended</h6>
-                  <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  
-                  
-                      
-
-                  </div>
-                </div>
+              
                 <!-- Card Body -->
-
-                    <% 
-                        System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
-                        connection.Open();
-                        System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select (select id from NewRequirement where id =rks.pid)as'pid',(select jobtitle from NewRequirement where id =rks.pid)as'jobtitle',(select JobDescription from NewRequirement where id =rks.pid)as'Jd',(select WorkExperiance from NewRequirement where id =rks.pid)as'WorkExp' from Requirementkeyskill rks where key_skill_id in (select   key_skill_id  from KeySkillInfo where uid="+Session["uid"]+") order by  pid desc " , connection);
-                        System.Data.DataSet ds = new System.Data.DataSet();
-                        sqlDataAdapter.Fill(ds);
-                        connection.Close();
-
-                        System.Data.DataTable dt = ds.Tables[0];
-
-                        for (int i = 0; i < dt.Rows.Count; i++)
-                        {
-                        %>
-                <div class="card-body">
-                             <div class="card shadow mb-8" style="width: 40rem; margin-bottom:8px;">
-
-  <div class="card-body">
-    <h5 class="card-title"><% Response.Write(dt.Rows[i].ItemArray[1].ToString()); %></h5>
-    <p class="card-text"><% Response.Write(dt.Rows[i].ItemArray[2].ToString()); %></p>
-    <a href="ApplyJob.aspx?pid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Apply</a>
-      <br />
-  </div>
-</div>
-
-                </div> <%} %>
-
-              </div>
-                </div>
+                
               </div>
             </div>
-          </div>
 
-     
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
+           
+        
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright © Careers.com 2020</span>
-          </div>
-        </div>
+            <span>Copyright © Careers.com 2020iv>
       </footer>
       <!-- End of Footer -->
 
     </div>
     <!-- End of Content Wrapper -->
+
+  </div>
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top" style="display: none;">
+  <a class="scroll-to-top rounded" href="#page-top" style="display: inline;">
     <i class="fas fa-angle-up"></i>
   </a>
 
@@ -379,11 +438,6 @@
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
-
-
-
-
-    </form>
 
 
 

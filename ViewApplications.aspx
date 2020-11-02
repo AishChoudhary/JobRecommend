@@ -44,7 +44,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="NewRecruiterDashboard.aspx">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -240,53 +240,7 @@
             
           </div>
 
-          <!-- Content Row -->
-          
-
-          <!-- Content Row -->
-
-          
 <div class="row">
-
-            <!-- Earnings (Monthly) Card Example 
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      
-                    
-                  </div>
-                </div>
-              </div>
-            </div> -->            <!-- Earnings (Monthly) Card Example -->
-            
-
-            <!-- Earnings (Monthly) Card Example -->
-            
-
-            <!-- Pending Requests Card Example 
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- Content Row -->
-          
-
-            <!-- Content Column -->
-            
-
-            
-
               <!-- Illustrations -->
                <div class="container-fluid">
               <div class="card shadow mb-4">
@@ -297,15 +251,16 @@
               <div class="table-responsive">
                 <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="dataTable_length"><label>Show <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="dataTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label></div></div></div><div class="row"><div class="col-sm-12"><table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                   <thead>
-                    <tr><th rowspan="1" colspan="1">Job Title</th><th rowspan="1" colspan="1">Opening Date</th><th rowspan="1" colspan="1">Closing Date</th><th rowspan="1" colspan="1">Delete</th><th rowspan="1" colspan="1">View Applications</th></tr>
+                    <tr><th rowspan="1" colspan="1">ID</th><th rowspan="1" colspan="1">Candidate Name</th><th rowspan="1" colspan="1">Applied Date</th><th rowspan="1" colspan="1">View Profile</th></tr>
                   </thead>
                   
                   <tbody>
                     
                       <% 
+                          string pid = Request.QueryString["pid"];
                           System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
                           connection.Open();
-                          System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select * from NewRequirement where rid=" + Session["uid"], connection);
+                          System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select uid,(select FullName from UserInfo where id=aj.uid)as'UserName',appliedDate from ApplyJob aj where pid="+pid, connection);
                           System.Data.DataSet ds = new System.Data.DataSet();
                           sqlDataAdapter.Fill(ds);
                           connection.Close();
@@ -316,11 +271,11 @@
                           { %>
                     
                   <tr role="row" class="odd">
-                      <td class="sorting_1"><%Response.Write(dt.Rows[i].ItemArray[2].ToString()); %></td>
-                      <td><%Response.Write(dt.Rows[i].ItemArray[8].ToString()); %></td>
-                      <td><%Response.Write(dt.Rows[i].ItemArray[9].ToString()); %></td>
-                      <td><a href="DeletePost.aspx?pid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Delete</a></td>
-                      <td><a href="DownloadResume.aspx?pid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Download Resume</a></td>
+                      <td class="sorting_1"><%Response.Write(dt.Rows[i].ItemArray[0].ToString()); %></td>
+                      <td><%Response.Write(dt.Rows[i].ItemArray[1].ToString()); %></td>
+                      <td><%Response.Write(dt.Rows[i].ItemArray[2].ToString()); %></td>
+                      <td><a href="ViewProfile.aspx?uid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">View Profile</a></td>
+                      
                       
                     </tr>
                       <%} %>

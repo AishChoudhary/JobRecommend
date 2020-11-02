@@ -14,7 +14,7 @@ namespace JobRecommend
         SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-            string uid, pid;
+           /* string uid, pid;
             uid = (string)Session["uid"];
             pid = (string)Request.QueryString["pid"];
 
@@ -23,13 +23,8 @@ namespace JobRecommend
             connection.Open();
             SqlCommand sqlcommand = new SqlCommand(sql, connection);
             int x = sqlcommand.ExecuteNonQuery();
-            connection.Close();
+            connection.Close();*/
 
-            if (x > 0)
-                Response.Write("<Script>alert('You have viewed this post please ok to go back');window.location='MyPosts.aspx'</Script>");
-
-            else
-                Response.Write("<Script>alert('Unable to show');</Script>");
 
         }
     }

@@ -49,7 +49,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="NewUserDashboard.aspx">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -64,7 +64,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="jobrecommended.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Recommended Jobs</span></a>
       </li>
@@ -262,7 +262,8 @@
           <form id="form2" class="user" runat="server">
             <div class="card-body">
               
-
+                <div class="container-fluid" style="width:auto">
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
        <div class="form-group row" >
     <div class="card shadow mb-8">
                 <div class="card-header py-3">
@@ -324,7 +325,7 @@
                     <asp:Button ID="btnSubmit" class="align-content-center" runat="server" Text="Next" OnClick="btnSubmit_Click" />
                            
                   
-                     </div></div></div></div></div></div></div></form><!-- /.container-fluid-->
+                     </div></div></div></div></div></div></div></div></div></form><!-- /.container-fluid-->
 
 
       <!-- End of Main Content -->

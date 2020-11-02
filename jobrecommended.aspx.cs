@@ -21,9 +21,7 @@ namespace JobRecommend
             else
             {
                 lblUname.Text = username;
-                
-
-                
+               
             }
         }
     }

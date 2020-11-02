@@ -1772,6 +1772,7 @@
     <Content Include="vendor\jquery\jquery.slim.js" />
     <Content Include="vendor\jquery\jquery.slim.min.js" />
     <Content Include="ViewApplications.aspx" />
+    <Content Include="ViewProfile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1936,6 +1937,13 @@
     </Compile>
     <Compile Include="ViewApplications.aspx.designer.cs">
       <DependentUpon>ViewApplications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProfile.aspx.cs">
+      <DependentUpon>ViewProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewProfile.aspx.designer.cs">
+      <DependentUpon>ViewProfile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

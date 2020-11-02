@@ -18,32 +18,20 @@ namespace JobRecommend
             string uid, pid;
             uid = (string)Session["uid"];
             pid = (string)Request.QueryString["pid"];
+                  
+       
+            connection.Open();
+             string   sql = "delete from ApplyJob where pid = " + pid;
+            SqlCommand sqlcommand = new SqlCommand(sql, connection);
+                  int  x = sqlcommand.ExecuteNonQuery();
 
-            
-                string sql = "delete from ApplyJob where pid="+pid;
-                connection.Open();
+            sql = "delete from NewRequirement where id=" + pid;
+            sqlcommand = new SqlCommand(sql, connection);
+             x = sqlcommand.ExecuteNonQuery();
 
-                SqlCommand sqlcommand = new SqlCommand(sql, connection);
-                int x = sqlcommand.ExecuteNonQuery();
-                
-
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("delete from ApplyJob where pid = "+pid, connection);
-            DataSet ds = new DataSet();
-            sqlDataAdapter.Fill(ds);
             connection.Close();
 
-            System.Data.DataTable dt = ds.Tables[0];
-            for (int i = 0; i < dt.Rows.Count; i++)
-            { 
 
-                    sql = "delete from NewRequirement where id=" +pid;
-
-                    sqlcommand = new SqlCommand(sql, connection);
-                    x = sqlcommand.ExecuteNonQuery();
-
-
-              
-            }
             if (x > 0)
                     Response.Write("<Script>alert('You have deleted this job successfully');window.location='MyPosts.aspx'</Script>");
 
