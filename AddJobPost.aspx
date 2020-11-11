@@ -312,6 +312,15 @@
 <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Please Enter Valid Job Location" ControlToValidate="txtJobLocation" ForeColor="Red" ValidationExpression="[a-zA-Z\,\s]{3,30}$"></asp:RegularExpressionValidator>
 </div>
                             </div>
+                  <div class="form-group row">
+      <label for="Rank" class="col-md-4 col-form-label text-md-right">Minimum Rank/Score<asp:Label ID="Label11" runat="server" ForeColor="Red" Text="*"></asp:Label>
+                      </label>
+                                &nbsp;<div class="col-md-6">
+           <asp:TextBox ID="txtRank" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ErrorMessage="Please Enter Valid Rank" ControlToValidate="txtRank" ForeColor="Red" ValidationExpression="^(100([\.][0]{1,})?$|[0-9]{1,2}([\.][0-9]{1,})?)$"></asp:RegularExpressionValidator>
+</div>
+                            </div>
+
 
                   <div class="form-group row">
       <label for="Roles" class="col-md-4 col-form-label text-md-right">Roles and responsibilities<asp:Label ID="Label7" runat="server" ForeColor="Red" Text="*"></asp:Label>
@@ -330,6 +339,14 @@
 <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Please Enter Valid Qualification" ControlToValidate="txtminQual" ForeColor="Red" ValidationExpression="[a-zA-Z\,\-\s]{3,30}$"></asp:RegularExpressionValidator>
 </div>
                             </div>
+                  <div class="form-group row">
+                                <label for="salary" class="col-md-4 col-form-label text-md-right">Salary
+                                <asp:Label ID="Label13" runat="server" ForeColor="Red" Text="*"></asp:Label>
+                                </label>
+                                &nbsp;<div class="col-md-6">
+                                    <asp:TextBox ID="txtSal" runat="server" class="form-control form-control-user " required="" autofocus="" AutoPostBack="True"></asp:TextBox>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ErrorMessage="Please Enter Salary" ControlToValidate="txtSal" ForeColor="Red" ValidationExpression="^\d{1,6}(?:\.\d{1,10})?$"></asp:RegularExpressionValidator>
+                                </div></div>
                   <div class="form-group row">
       <label for="Opening Date" class="col-md-4 col-form-label text-md-right">Opening Date<asp:Label ID="Label9" runat="server" ForeColor="Red" Text="*"></asp:Label>
                       </label>

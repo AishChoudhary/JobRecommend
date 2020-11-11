@@ -54,16 +54,18 @@
                         <form id="form1" runat="server">
                            
                              <div class="form-group row">
-                                <label for="full Name" class="col-md-4 col-form-label text-md-right">Full Name</label>
-                                <div class="col-md-6">
+                                <label for="full Name" class="col-md-4 col-form-label text-md-right">Full Name<asp:Label ID="Label1" runat="server" ForeColor="Red" Text="*"></asp:Label>
+                                 </label>
+                                &nbsp;<div class="col-md-6">
                                     <asp:TextBox ID="txtFullName" runat="server" class="form-control" required autofocus ></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Enter Characters only" ForeColor="Red" ControlToValidate="txtFullName" ValidationExpression="[a-zA-Z\s]{10,30}$"></asp:RegularExpressionValidator>
                                 </div>
 
                             </div>
                              <div class="form-group row">
-                                <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
-                                <div class="col-md-6">
+                                <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address<asp:Label ID="Label2" runat="server" ForeColor="Red" Text="*"></asp:Label>
+                                 </label>
+                                &nbsp;<div class="col-md-6">
                                     <asp:TextBox ID="txtEmail" runat="server" class="form-control" required autofocus ></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Enter Valid Email Address" ControlToValidate="txtEmail" ForeColor="Red" ValidationExpression="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"></asp:RegularExpressionValidator>
                                 </div>
@@ -71,38 +73,43 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-                                <div class="col-md-6">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">Password<asp:Label ID="Label3" runat="server" ForeColor="Red" Text="*"></asp:Label>
+                                </label>
+                                &nbsp;<div class="col-md-6">
                                     <asp:TextBox ID="txtPassword" runat="server" class="form-control" required TextMode="Password" OnTextChanged="txtPassword_TextChanged"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Minimum 8 characters,1 Alphabet,1 Num,1 Special Character" ControlToValidate="txtPassword" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{8,15}$"></asp:RegularExpressionValidator>                                    
                                 </div>
                             </div>
                                <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">Confirm Password</label><div class="col-md-6">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">Confirm Password<asp:Label ID="Label4" runat="server" ForeColor="Red" Text="*"></asp:Label>
+                                   </label><div class="col-md-6">
                                     <asp:TextBox ID="txtConfirmPassword" runat="server" class="form-control" required TextMode="Password"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Minimum 8 characters,1 Alphabet,1 Num,1 Special Character" ControlToValidate="txtPassword" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{8,15}$"></asp:RegularExpressionValidator> 
                                     <asp:CompareValidator id="comparePasswords" runat="server" ControlToCompare="txtPassword"          ControlToValidate="txtConfirmPassword"            ErrorMessage="Your passwords do not match up!"         ForeColor="Red"  />
                                 </div>
                             </div>
                                <div class="form-group row">
-                                <label for="Mobile No" class="col-md-4 col-form-label text-md-right">Mobile No</label>
-                                <div class="col-md-6">
+                                <label for="Mobile No" class="col-md-4 col-form-label text-md-right">Mobile No<asp:Label ID="Label5" runat="server" ForeColor="Red" Text="*"></asp:Label>
+                                   </label>
+                                &nbsp;<div class="col-md-6">
                                     <asp:TextBox ID="txtMobileNo" runat="server" class="form-control" required autofocus ></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Enter a valid Number" ControlToValidate="txtMobileNo" ValidationExpression="[0-9]{10,10}$" ForeColor="Red"></asp:RegularExpressionValidator>
                                 </div>
 
                                </div>
                             <div class="form-group row">
-                                <label for="City" class="col-md-4 col-form-label text-md-right">City</label>
-                                <div class="col-md-6">
+                                <label for="City" class="col-md-4 col-form-label text-md-right">City<asp:Label ID="Label6" runat="server" ForeColor="Red" Text="*"></asp:Label>
+                                </label>
+                                &nbsp;<div class="col-md-6">
                                     <asp:TextBox ID="txtCity" runat="server" class="form-control" required autofocus ></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ErrorMessage="Enter Valid City Name" ControlToValidate="txtCity" ValidationExpression="[a-zA-Z][a-zA-Z\\s]+$" ForeColor="Red"></asp:RegularExpressionValidator>
                                 </div>
 
                             </div>
                             <div class="form-group row">
-                                <label for="State" class="col-md-4 col-form-label text-md-right">State</label>
-                                <div class="col-md-6">
+                                <label for="State" class="col-md-4 col-form-label text-md-right">State<asp:Label ID="Label7" runat="server" ForeColor="Red" Text="*"></asp:Label>
+                                </label>
+                                &nbsp;<div class="col-md-6">
                                     <asp:TextBox ID="txtState" runat="server" class="form-control" required autofocus ></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ErrorMessage="Enter Valid State Name" ControlToValidate="txtState" ValidationExpression="[a-zA-Z][a-zA-Z\\s]+$" ForeColor="Red"></asp:RegularExpressionValidator>
                                 </div>

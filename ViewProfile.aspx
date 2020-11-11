@@ -259,12 +259,14 @@
               <h6 class="m-0 font-weight-bold text-primary"></h6>
             </div>
 <form class="user" runat="server">
+     <% 
+                           %>
             <div class="card-body">
               <div class="table-responsive">
               
 <div class="form-group row">
                                 <label for="address" class="col-md-4 col-form-label text-md-right">Address</label><div class="col-md-6">
-                                    <asp:TextBox ID="txtAddress" runat="server" class="form-control form-control-user " required="" autofocus=""></asp:TextBox>
+                                    <asp:TextBox ID="txtAddress" runat="server" class="form-control form-control-user " ReadOnly="true" required="" autofocus="" ></asp:TextBox>
                                 </div>
 
                             </div>
@@ -273,54 +275,49 @@
       <label for="10th_marks" class="col-md-4 col-form-label text-md-right">10th Marks (%)
       </label>
                                 &nbsp;<div class="col-md-6">
-           <asp:TextBox ID="txtMarks" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
+           <asp:TextBox ID="txtMarks" runat="server" class="form-control form-control-user" ReadOnly="true" required="" autofocus=""></asp:TextBox>
  </div>
                             </div><div class="form-group row">
                                 <label for="12th_marks" class="col-md-4 col-form-label text-md-right">12th/Diploma Marks(%)
                                 </label>
                                 &nbsp;<div class="col-md-6">
-                                    <asp:TextBox ID="txtMarks1" runat="server" Class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
+                                    <asp:TextBox ID="txtMarks1" runat="server" Class="form-control form-control-user" ReadOnly="true" required="" autofocus=""></asp:TextBox>
                                 </div>
                             </div>
 <div class="form-group row">
                                 <label for="current_qualification" class="col-md-4 col-form-label text-md-right">Current Qualification
                                 </label>
                                 &nbsp;<div class="col-md-6">
-                                    <asp:TextBox ID="txtCurrentQualification" runat="server" class="form-control form-control-user"  required="" autofocus=""></asp:TextBox>
+                                    <asp:TextBox ID="txtCurrentQualification" runat="server" class="form-control form-control-user"  required="" autofocus="" ReadOnly="true"></asp:TextBox>
                                 </div>
                             </div><div class="form-group row">
                                 <label for="highest_qualification" class="col-md-4 col-form-label text-md-right">Highest Qualification
                                 </label>
                                 &nbsp;<div class="col-md-6">
-                                    <asp:TextBox ID="txtHighestQualification" runat="server" class="form-control form-control-user"  required="" autofocus=""></asp:TextBox>
+                                    <asp:TextBox ID="txtHighestQualification" runat="server" class="form-control form-control-user"  required="" autofocus="" ReadOnly="true"></asp:TextBox>
                                 </div>
                             </div>
 <div class="form-group row">
                                 <label for="work_location" class="col-md-4 col-form-label text-md-right">Desired Work Location
                                 </label>
                                 &nbsp;<div class="col-md-6">
-                                   <asp:TextBox ID="txtLocation" runat="server" class="form-control form-control-user"  required="" autofocus=""></asp:TextBox>
+                                   <asp:TextBox ID="txtLocation" runat="server" class="form-control form-control-user"  required="" autofocus="" ReadOnly="true"></asp:TextBox>
                                 </div>
                                 </div>
 <div class="form-group row">
                                 <label for="certifications" class="col-md-4 col-form-label text-md-right">&nbsp;Certifications
                                 </label>
                                 &nbsp;<div class="col-md-6">
-                                  <asp:TextBox ID="txtCertifications" runat="server" class="form-control form-control-user" autofocus=""></asp:TextBox>
+                                  <asp:TextBox ID="txtCertifications" runat="server" class="form-control form-control-user" autofocus="" ReadOnly="true"></asp:TextBox>
                                 </div>
-                                </div><div class="form-group row">
+                                </div>
+                  <div class="form-group row">
                                 <label for="interests" class="col-md-4 col-form-label text-md-right">Skills/Hobbies/Interests</label><div class="col-md-6">
-                                    <asp:TextBox ID="txtInterests" runat="server" class="form-control form-control-user" required="" autofocus=""></asp:TextBox>
+                                    <asp:TextBox ID="txtInterests" runat="server" class="form-control form-control-user" required="" autofocus="" ReadOnly="true"></asp:TextBox>
                                 </div>
                                 </div>
                          
-                  <div class="form-group row">
-                                <label for="company_name" class="col-md-4 col-form-label text-md-right">Key Skills
-                                </label>
-                                &nbsp;<div class="col-md-6">
-                                </div>
-                                </div>
-
+                 
                                 <div class="form-group row">
                                 <label for="company_name" class="col-md-4 col-form-label text-md-right">Company Name </label>
                                 &nbsp;<div class="col-md-6">
@@ -339,7 +336,7 @@
                                      </label>
                                 &nbsp;<div class="col-md-6">
         &nbsp;<div class="col-md-6">
-                                    <asp:TextBox ID="txtJobTitle" runat="server" class="form-control form-control-user " required="" autofocus="" AutoPostBack="True"></asp:TextBox>
+                                    <asp:TextBox ID="txtJobTitle" runat="server" class="form-control form-control-user " required="" autofocus="" AutoPostBack="True" ReadOnly="true"></asp:TextBox>
                                 </div>
                                      
                                  </div></div>
@@ -347,16 +344,18 @@
                                 <label for="salary" class="col-md-4 col-form-label text-md-right">Salary
                                 </label>
                                 &nbsp;<div class="col-md-6">
-                                    <asp:TextBox ID="txtSal" runat="server" class="form-control form-control-user " required="" autofocus="" AutoPostBack="True"></asp:TextBox>
+                                    <asp:TextBox ID="txtSal" runat="server" class="form-control form-control-user " required="" autofocus="" AutoPostBack="True" ReadOnly="true"></asp:TextBox>
                                 </div></div>
 
                      <div class="form-group row">
-                                <label for="resume" class="col-md-4 col-form-label text-md-right">Resume
+                                <label for="resume" class="col-md-4 col-form-label text-md-right">Upload Resume
+                                <asp:Label ID="Label14" runat="server" ForeColor="Red" Text="*"></asp:Label>
                                 </label>
                                 &nbsp;<div class="col-md-6">
-                                    <asp:Button ID="Button1" runat="server" Text="Download" />
+                                    <asp:LinkButton ID="LinkButton1" class="btn btn-primary" runat="server" OnClick="LinkButton1_Click">LinkButton</asp:LinkButton>
+                                   
                                 </div></div>
-                  <!--<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>-->
+                  
 
                   <div class ="form-group row">
                       <div class="col-md-12 col-xs-12">
