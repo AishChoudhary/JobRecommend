@@ -1,10 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NewUserDashboard.aspx.cs" Inherits="JobRecommend.NewUserDashboard" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AppliedJobs.aspx.cs" Inherits="JobRecommend.AppliedJobs" %>
 
-
-<% 
-    
-
-    %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,7 +45,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="NewUserDashboard.aspx">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -72,13 +67,13 @@
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="SavedJobs.aspx">
+        <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Saved Jobs</span></a>
       </li>
 
 <li class="nav-item">
-        <a class="nav-link" href="AppliedJobs.aspx">
+        <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Applied Jobs</span></a>
       </li>
@@ -259,7 +254,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Applied Jobs</h1>
             
           </div>
 
@@ -280,173 +275,57 @@
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                     </a>
-                   
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                      <div class="dropdown-header">Dropdown Header:</div>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
                   
                   
                       
 
                   </div>
-                    
                 </div>
                 <!-- Card Body -->
+
+                    <% 
+                        System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
+                        connection.Open();
+                        System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select (select id from NewRequirement where id =rks.jobid)as'pid',(select jobtitle from NewRequirement where id =rks.jobid)as'jobtitle',(select JobDescription from NewRequirement where id =rks.jobid)as'Jd',(select WorkExperiance from NewRequirement where id =rks.jobid)as'WorkExp' from savedjobs rks  where uid="+Session["uid"], connection);
+                        System.Data.DataSet ds = new System.Data.DataSet();
+                        sqlDataAdapter.Fill(ds);
+                        connection.Close();
+
+                        System.Data.DataTable dt = ds.Tables[0];
+
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                        %>
                 <div class="card-body">
-                
-                  <% 
-                      System.Data.SqlClient.SqlConnection connection1 = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
-                      connection1.Open();
-                      System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select (select id from NewRequirement where id =rks.pid)as'pid',(select jobtitle from NewRequirement where id =rks.pid)as'jobtitle',(select JobDescription from NewRequirement where id =rks.pid)as'Jd',(select WorkExperiance from NewRequirement where id =rks.pid)as'WorkExp' from Requirementkeyskill rks where key_skill_id in (select key_skill_id  from KeySkillInfo where uid="+Session["uid"]+") order by  pid desc " , connection1);
-                      System.Data.DataSet ds1 = new System.Data.DataSet();
-                      sqlDataAdapter.Fill(ds1);
-                      connection1.Close();
-
-                      System.Data.DataTable dt1 = ds1.Tables[0];
-
-                      if (dt1.Rows.Count <= 0)
-                          Response.Write(" <p> You have no recommended jobs please update your profile</p>");
-                      else
-                          for (int i = 0; i <3; i++)
-                            {
-                              %>
-                             <div class="card-body">
                              <div class="card shadow mb-8" style="width: 40rem; margin-bottom:8px;">
 
-                              <div class="card-body">
-                               <h5 class="card-title"><% Response.Write(dt1.Rows[i].ItemArray[1].ToString()); %></h5>
-                                <p class="card-text"><% Response.Write(dt1.Rows[i].ItemArray[2].ToString()); %></p>
-                                <a href="ApplyJob.aspx?pid=<% Response.Write(dt1.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Apply</a>
-                                  <a href="SaveJob.aspx?pid=<% Response.Write(dt1.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Save job</a>
-                                  <br />
-                                 </div>
-                              </div>
+  <div class="card-body">
+    <h5 class="card-title"><% Response.Write(dt.Rows[i].ItemArray[1].ToString()); %></h5>
+    <p class="card-text"><% Response.Write(dt.Rows[i].ItemArray[2].ToString()); %></p>
+   <a href="DeleteJob.aspx?pid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Delete</a>
+ 
+      <br />
+  </div>
+</div>
 
                 </div> <%} %>
-            </div>
-                   
-                        
-            
-                </div>
+
               </div>
-            </div>
-
-            <!-- Pie Chart -->
-            
-          </div>
-
-<div class="row">
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> <asp:Label ID="lblJava" runat="server" Text=""></asp:Label></div>
-                      
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-            
-
-            <!-- Earnings (Monthly) Card Example -->
-            
-
-            <!-- Pending Requests Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Your Key Skills</div>
-                      
-                    </div>
-                    
-                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Content Row -->
-          <div class="row">
-
-            <!-- Content Column -->
-            <div class="col-lg-6 mb-4">
-
-              <!-- Project Card Example -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Ranking Based On Skills Tested</h6>
-                </div>
-                <div class="card-body">
-                    
-                <% 
-                System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
-                connection.Open();
-                System.Data.SqlClient.SqlDataAdapter sqlDataAdapter1 = new System.Data.SqlClient.SqlDataAdapter("select (select KeySkill from KeySkills where id=ksi.key_skill_id)as 'Key_skill_Name',marks from KeySkillInfo ksi where uid=" + Session["uid"], connection);
-                System.Data.DataSet ds = new System.Data.DataSet();
-                sqlDataAdapter1.Fill(ds);
-                connection.Close();
-
-                System.Data.DataTable dt = ds.Tables[0]; %>
-
-                       <% for (int i = 0; i < dt.Rows.Count; i++)
-                        { %>
-                  <h4 class="small font-weight-bold"><% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %> <span class="float-right"><% Response.Write(dt.Rows[i].ItemArray[1].ToString()+"%");%></span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar" role="progressbar" style="width: <% Response.Write(dt.Rows[i].ItemArray[1].ToString()+"%");%>" aria-valuenow=" <% Response.Write(dt.Rows[i].ItemArray[1].ToString()+"%");%>" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                 <%} %>
-                </div>
-              </div>
-
-              <!-- Color System -->
-              
-
-            </div>
-
-            <div class="col-lg-6 mb-4">
-
-              <!-- Illustrations -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Approach to Job Search</h6>
-                </div>
-                <div class="card-body">
-                  <div class="text-center">
-                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="img/undraw_posting_photo.svg" alt="">
-                  </div>
-                    <div style="text-align: justify;">
-                        <span style="font-size: 10pt; font-family: verdana, geneva, sans-serif;">The search for a job has a lifecycle of its own starting with the desire to make a move to finding the right job that will contribute to an individual’s larger goals in life. The fact is that job hunting is an anxiety ridden and often lengthy process, always riddled with uncertainty. Careers.com acts as an advisory and helps you formulate better career decisions by offering numerous career tips till a job is locked; the offer received and the appointment accepted. But before the champagne is popped, a job search requires a systematic and strategic process of scouting with reasonable time and energy investment.&nbsp;</span></div>
-                    <div style="text-align: justify;">
-                    </div>
-                    
-                </div>
-              </div>
-
-              <!-- Approach -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Online Job Hunting</h6>
-                </div>
-                <div class="card-body">
-                  <p><span style="font-size: 10pt; font-family: verdana, geneva, sans-serif;">It is recommended to register and build profiles with popular job portals like Careers.com. These help in making a seeker’s updated profile a personalised experience to the recruiter with the right key words for better visibility. Using the multitude of online apps and tools for specific needs or instant notifications also helps. They go a long way in pushing a seeker’s profile amongst the first reviewed in the online abyss of millions.&nbsp;</span></p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-        <!-- /.container-fluid -->
-
-      </div>
+     
       <!-- End of Main Content -->
-      </div>
+
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
@@ -457,10 +336,8 @@
       </footer>
       <!-- End of Footer -->
 
-    
+    </div>
     <!-- End of Content Wrapper -->
-
-  
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
