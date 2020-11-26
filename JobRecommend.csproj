@@ -72,6 +72,7 @@
     <Content Include="ApplyJob.aspx" />
     <Content Include="Background\background1.jpg" />
     <Content Include="Background\d22eed19-8b41-41ca-b6b8-35522608a8b6_200x200.png" />
+    <Content Include="ChangeNotStatus.aspx" />
     <Content Include="css\sb-admin-2.css" />
     <Content Include="css\sb-admin-2.min.css" />
     <Content Include="Database\ApplyJob.sql" />
@@ -92,6 +93,7 @@
     <Content Include="img\close.png" />
     <Content Include="img\undraw_posting_photo.svg" />
     <Content Include="index.aspx" />
+    <Content Include="invite.aspx" />
     <Content Include="jobrecommended.aspx" />
     <Content Include="js\demo\chart-area-demo.js" />
     <Content Include="js\demo\chart-bar-demo.js" />
@@ -1801,6 +1803,13 @@
     <Compile Include="ApplyJob.aspx.designer.cs">
       <DependentUpon>ApplyJob.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ChangeNotStatus.aspx.cs">
+      <DependentUpon>ChangeNotStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangeNotStatus.aspx.designer.cs">
+      <DependentUpon>ChangeNotStatus.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DeleteJob.aspx.cs">
       <DependentUpon>DeleteJob.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1828,6 +1837,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="invite.aspx.cs">
+      <DependentUpon>invite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="invite.aspx.designer.cs">
+      <DependentUpon>invite.aspx</DependentUpon>
     </Compile>
     <Compile Include="jobrecommended.aspx.cs">
       <DependentUpon>jobrecommended.aspx</DependentUpon>

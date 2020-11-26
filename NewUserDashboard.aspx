@@ -167,6 +167,9 @@
               </div>
             </li>
 
+
+
+
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="left: -2px; top: 0px">
@@ -179,17 +182,36 @@
                 <h6 class="dropdown-header">
                   Alerts Center
                 </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+
+                   <% 
+                       System.Data.SqlClient.SqlConnection connection1 = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
+                       connection1.Open();
+                       System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select * from notification where uid="+Session["uid"] + " And user_flag=2", connection1);
+                       System.Data.DataSet ds1 = new System.Data.DataSet();
+                       sqlDataAdapter.Fill(ds1);
+                       connection1.Close();
+
+                       System.Data.DataTable dt1 = ds1.Tables[0];
+
+                       if (dt1.Rows.Count <= 0)
+                           Response.Write(" <p> You have no recommended jobs please update your profile</p>");
+                       else
+                           for (int i = 0; i < dt1.Rows.Count; i++)
+                           {
+                 %>
+                <a class="dropdown-item d-flex align-items-center" href="ChangeNotStatus.aspx?id=<%Response.Write(dt1.Rows[i].ItemArray[0].ToString()); %>&notflag=<% Response.Write(dt1.Rows[i].ItemArray[6].ToString());%> ">
                   <div class="mr-3">
                     <div class="icon-circle bg-primary">
                       <i class="fas fa-file-alt text-white"></i>
                     </div>
                   </div>
                   <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                    <div class="small text-gray-500"><% Response.Write(dt1.Rows[i].ItemArray[4].ToString()); %></div>
+                    <span class="font-weight-bold"><% Response.Write(dt1.Rows[i].ItemArray[3].ToString()); %></span>
                   </div>
                 </a>
+
+                  <%} %>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
                     <div class="icon-circle bg-success">
@@ -292,14 +314,14 @@
                 <div class="card-body">
                 
                   <% 
-                      System.Data.SqlClient.SqlConnection connection1 = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
+                      
                       connection1.Open();
-                      System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select (select id from NewRequirement where id =rks.pid)as'pid',(select jobtitle from NewRequirement where id =rks.pid)as'jobtitle',(select JobDescription from NewRequirement where id =rks.pid)as'Jd',(select WorkExperiance from NewRequirement where id =rks.pid)as'WorkExp' from Requirementkeyskill rks where key_skill_id in (select key_skill_id  from KeySkillInfo where uid="+Session["uid"]+") order by  pid desc " , connection1);
-                      System.Data.DataSet ds1 = new System.Data.DataSet();
+                       sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select (select id from NewRequirement where id =rks.pid)as'pid',(select jobtitle from NewRequirement where id =rks.pid)as'jobtitle',(select JobDescription from NewRequirement where id =rks.pid)as'Jd',(select WorkExperiance from NewRequirement where id =rks.pid)as'WorkExp' from Requirementkeyskill rks where key_skill_id in (select key_skill_id  from KeySkillInfo where uid="+Session["uid"]+") order by  pid desc " , connection1);
+                       ds1 = new System.Data.DataSet();
                       sqlDataAdapter.Fill(ds1);
                       connection1.Close();
 
-                      System.Data.DataTable dt1 = ds1.Tables[0];
+                       dt1 = ds1.Tables[0];
 
                       if (dt1.Rows.Count <= 0)
                           Response.Write(" <p> You have no recommended jobs please update your profile</p>");

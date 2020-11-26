@@ -156,17 +156,45 @@
                 <h6 class="dropdown-header">
                   Alerts Center
                 </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+
+                  <% 
+                       System.Data.SqlClient.SqlConnection connection1 = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
+                       connection1.Open();
+                       System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select * from notification where rid="+Session["uid"] + " and user_flag=1" , connection1);
+                       System.Data.DataSet ds1 = new System.Data.DataSet();
+                       sqlDataAdapter.Fill(ds1);
+                       connection1.Close();
+
+                       System.Data.DataTable dt1 = ds1.Tables[0];
+
+                           for (int i = 0; i < dt1.Rows.Count; i++)
+                           { %>
+
+                <a class="dropdown-item d-flex align-items-center" href="ChangeNotStatus.aspx?id=<%Response.Write(dt1.Rows[i].ItemArray[0].ToString()); %>&notflag=<% Response.Write(dt1.Rows[i].ItemArray[6].ToString());%> ">
                   <div class="mr-3">
                     <div class="icon-circle bg-primary">
                       <i class="fas fa-file-alt text-white"></i>
                     </div>
                   </div>
                   <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                    <div class="small text-gray-500"><% Response.Write(dt1.Rows[i].ItemArray[4].ToString()); %></div>
+
+                      <% if (dt1.Rows[i].ItemArray[5].ToString() == "UNREAD")
+                          {
+                              %>
+                    <span class="font-weight-bold"><% Response.Write(dt1.Rows[i].ItemArray[3].ToString()); %></span>
+                      <%}
+
+    else
+    {%>
+                      <% Response.Write(dt1.Rows[i].ItemArray[3].ToString());
+    } %>
+
+                      
                   </div>
                 </a>
+
+                         <%} %>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
                     <div class="icon-circle bg-success">
@@ -192,6 +220,7 @@
                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
               </div>
             </li>
+
 
             <!-- Nav Item - Messages -->
             
