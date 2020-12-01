@@ -30,7 +30,7 @@ namespace JobRecommend
                 SqlCommand sqlcommand = new SqlCommand(sql, connection);
                 int x = sqlcommand.ExecuteNonQuery();
 
-                sql = "insert into notification(rid,uid,not_text,not_date,status,not_flag)"+"values("+getRidFromPid(pid)+","+uid+",'A user has applied to job',GETDATE(),'UNREAD',1)";
+                sql = "insert into notification(rid,uid,not_text,not_date,status,not_flag,user_flag)"+"values("+getRidFromPid(pid)+","+uid+",'A user has applied to job',GETDATE(),'UNREAD',1,1)";
                  sqlcommand = new SqlCommand(sql, connection);
                  x = sqlcommand.ExecuteNonQuery();
 

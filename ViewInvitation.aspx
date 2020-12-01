@@ -1,7 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NewRecruiterDashboard.aspx.cs" Inherits="JobRecommend.NewRecruiterDashboard" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewInvitation.aspx.cs" Inherits="JobRecommend.ViewInvitation" %>
 
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+
+<head>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +11,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>JobRecom</title>
+  <title>Careers.com</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -18,8 +20,7 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
-<style type="text/css">/* Chart.js */
-@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style></head>
+</head>
 
 <body id="page-top">
 
@@ -44,7 +45,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="NewUserDashboard.aspx">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -59,16 +60,24 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="AddJobPost.aspx">
+        <a class="nav-link" href="jobRecommended.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Add/Post New Jobs </span></a>
+          <span>Recommended Jobs</span></a>
       </li>
 
-        <li class="nav-item">
-        <a class="nav-link" href="MyPosts.aspx">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>My Posts </span></a>
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="fas fa-fw fa-chart-area">SavedJobs.aspx</i>
+          <span>Saved Jobs</span></a>
       </li>
+
+<li class="nav-item">
+        <a class="nav-link" href="AppliedJobs.aspx">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Applied Jobs</span></a>
+      </li>
+
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -76,9 +85,18 @@
       <div class="sidebar-heading">
         Addons
       </div>
-       
+
+      <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="RecForgotPassword.aspx">
+        <a class="nav-link" href="TestOptions.aspx">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>
+              Test<span></a>
+      </li>
+
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="ForgotPassword.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Forgot Password</span></a>
       </li>
@@ -99,8 +117,8 @@
       </div>
 
     </ul>
-    <!-- End of Sidebar -->
-<div id="content-wrapper" class="d-flex flex-column">
+    
+      <div id="content-wrapper" class="d-flex flex-column">
 
       <!-- Main Content -->
       <div id="content">
@@ -146,7 +164,7 @@
 
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="left: -2px; top: 0px">
                 <i class="fas fa-bell fa-fw"></i>
                 <!-- Counter - Alerts -->
                 <span class="badge badge-danger badge-counter">3+</span>
@@ -156,45 +174,17 @@
                 <h6 class="dropdown-header">
                   Alerts Center
                 </h6>
-
-                  <% 
-                       System.Data.SqlClient.SqlConnection connection1 = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
-                       connection1.Open();
-                       System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select * from notification where rid="+Session["uid"] + " and user_flag=1 order by id desc" , connection1);
-                       System.Data.DataSet ds1 = new System.Data.DataSet();
-                       sqlDataAdapter.Fill(ds1);
-                       connection1.Close();
-
-                       System.Data.DataTable dt1 = ds1.Tables[0];
-
-                           for (int i = 0; i < dt1.Rows.Count; i++)
-                           { %>
-
-                <a class="dropdown-item d-flex align-items-center" href="ChangeNotStatus.aspx?id=<%Response.Write(dt1.Rows[i].ItemArray[0].ToString()); %>&notflag=<% Response.Write(dt1.Rows[i].ItemArray[6].ToString());%> ">
+                <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
                     <div class="icon-circle bg-primary">
                       <i class="fas fa-file-alt text-white"></i>
                     </div>
                   </div>
                   <div>
-                    <div class="small text-gray-500"><% Response.Write(dt1.Rows[i].ItemArray[4].ToString()); %></div>
-
-                      <% if (dt1.Rows[i].ItemArray[5].ToString() == "UNREAD")
-                          {
-                              %>
-                    <span class="font-weight-bold"><% Response.Write(dt1.Rows[i].ItemArray[3].ToString()); %></span>
-                      <%}
-
-    else
-    {%>
-                      <% Response.Write(dt1.Rows[i].ItemArray[3].ToString());
-    } %>
-
-                      
+                    <div class="small text-gray-500">December 12, 2019</div>
+                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
                   </div>
                 </a>
-
-                         <%} %>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
                     <div class="icon-circle bg-success">
@@ -221,7 +211,6 @@
               </div>
             </li>
 
-
             <!-- Nav Item - Messages -->
             
 
@@ -235,7 +224,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="RecruiterProfile.aspx">
+                <a class="dropdown-item" href="UserProfile.aspx">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
@@ -248,7 +237,7 @@
                   Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="RecLogout.aspx" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="Logout.aspx" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
@@ -265,7 +254,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Recruiter Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Invitations</h1>
             
           </div>
 
@@ -281,7 +270,7 @@
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Jobs posted</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Your Invitations</h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
@@ -293,89 +282,47 @@
                       <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
+                  
+                  
+                      
+
                   </div>
                 </div>
                 <!-- Card Body -->
-                <div class="card-body">
                   
-                </div>
-              </div>
-            </div>
+                    <% 
+                        System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
+                        connection.Open();
+                        System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select * from invitations" , connection);
+                        System.Data.DataSet ds = new System.Data.DataSet();
+                        sqlDataAdapter.Fill(ds);
+                        connection.Close();
 
-            <!-- Pie Chart -->
-            
-          </div>
+                        System.Data.DataTable dt = ds.Tables[0];
 
-<div class="row">
-
-            <!-- Earnings (Monthly) Card Example 
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                        %>
                 <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      
-                    
-                  </div>
+                             <div class="card shadow mb-8" style="width: 40rem; margin-bottom:8px;">
+
+  <div class="card-body">
+    <h5 class="card-title"><% Response.Write(dt.Rows[i].ItemArray[1].ToString()); %></h5>
+    <p class="card-text"><% Response.Write(dt.Rows[i].ItemArray[2].ToString()); %></p>
+    <a href="viewInvitation.aspx?pid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary" style="width: 69px">Accept</a>
+      <br />
+  </div>
+</div>
+
+                </div> <%} %>
+
+              </div>
                 </div>
               </div>
-            </div> -->            <!-- Earnings (Monthly) Card Example -->
-            
-
-            <!-- Earnings (Monthly) Card Example -->
-            
-
-            <!-- Pending Requests Card Example 
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- Content Row -->
-          <div class="row">
-
-            <!-- Content Column -->
-            
-
-            <div class="col-lg-6 mb-4">
-
-              <!-- Illustrations -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Approach to&nbsp; Seek Employees</h6>
-                </div>
-                <div class="card-body">
-                  <div class="text-center">
-                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="img/undraw_posting_photo.svg" alt="">
-                  </div>
-                  <p>E-recruitment has become ever more popular web-based recruiting systems automates the process of publishing positions and receiving resumes electronically. Though this improvement in process has had a vastly positive impact on electronic human resource management and e-recruitment however causes a large number of applicants who do not match the specific job requirements to apply for a posted position.</p>
-                </div>
-              </div>
-
-              <!-- Approach -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">&nbsp;</h6>
-                </div>
-                <div class="card-body">
-                </div>
-              </div>
-
             </div>
           </div>
 
-        </div>
-        <!-- /.container-fluid -->
-
-      </div>
+     
       <!-- End of Main Content -->
 
       <!-- Footer -->
@@ -390,8 +337,6 @@
 
     </div>
     <!-- End of Content Wrapper -->
-
-  </div>
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
@@ -412,7 +357,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="RecLogout.aspx">Logout</a>
+          <a class="btn btn-primary" href="Logout.aspx">Logout</a>
         </div>
       </div>
     </div>
