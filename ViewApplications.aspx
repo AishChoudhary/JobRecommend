@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>JobRecom</title>
+  <title>Careers.com</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -277,6 +277,7 @@
                       <td><a href="ViewProfile.aspx?uid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">View Profile</a></td>
                       <td><a href="invite.aspx?uid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">invite</a></td>
                       
+
                       
                     </tr>
                       <%} %>

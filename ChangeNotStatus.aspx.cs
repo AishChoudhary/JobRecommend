@@ -31,10 +31,10 @@ namespace JobRecommend
 
             }
 
-            if(not_flag==2)
+            if(not_flag==1)
             Response.Redirect("MyPosts.aspx");
 
-            if (not_flag == 1)
+            if (not_flag == 2)
                 Response.Redirect("ViewInvitation.aspx");
 
 

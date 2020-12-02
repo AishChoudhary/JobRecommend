@@ -18,7 +18,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
-    <title>JobRecommender</title>
+    <title>Careers.com</title>
     <style type="text/css">
         #form1 {
             height: 511px;

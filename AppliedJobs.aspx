@@ -67,13 +67,13 @@
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="SavedJobs.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Saved Jobs</span></a>
       </li>
 
 <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="AppliedJobs.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Applied Jobs</span></a>
       </li>
