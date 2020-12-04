@@ -294,7 +294,7 @@
               <div class="table-responsive">
                 <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="dataTable_length"><label>Show <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="dataTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label></div></div></div><div class="row"><div class="col-sm-12"><table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                   <thead>
-                    <tr><th rowspan="1" colspan="1">Recruiter Details</th><th rowspan="1" colspan="1">Opening Date</th><th rowspan="1" colspan="1">Closing Date</th><th rowspan="1" colspan="1">Delete</th><th rowspan="1" colspan="1">Action </th><th rowspan="1" colspan="1">View </th></tr>
+                    <tr><th rowspan="1" colspan="1"> Details</th><th rowspan="1" colspan="1">Opening Date</th><th rowspan="1" colspan="1">Closing Date</th><th rowspan="1" colspan="1">Delete</th><th rowspan="1" colspan="1">Action </th></tr>
                   </thead>
                   
                   <tbody>
@@ -302,7 +302,7 @@
                       <% 
                           System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
                           connection.Open();
-                          System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select * from notification where rid=" + Session["uid"], connection);
+                          System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select * from invitations where rid=" + Session["uid"], connection);
                           System.Data.DataSet ds = new System.Data.DataSet();
                           sqlDataAdapter.Fill(ds);
                           connection.Close();
@@ -317,9 +317,8 @@
                       <td><%Response.Write(dt.Rows[i].ItemArray[8].ToString()); %></td>
                       <td><%Response.Write(dt.Rows[i].ItemArray[9].ToString()); %></td>
                       <td><a href="DeletePost.aspx?pid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Delete</a></td>
-                      <td><a href="ViewInvitation.aspx?pid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">View</a></td>
-                      <td><a href="ViewInvitation.aspx?pid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">View</a></td>
-                      
+                      <td><a href="ViewInvitation.aspx?pid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Accept</a></td>
+                     
                       
                     </tr>
                       <%} %>

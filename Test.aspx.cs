@@ -117,6 +117,7 @@ namespace JobRecommend
                     correctAnswers = 0;
                     ansFromDb = 0;
 
+
                 }
                 else
                     loadQuestion();
@@ -133,6 +134,25 @@ namespace JobRecommend
             int x = sqlcommand.ExecuteNonQuery();
             connection.Close();
 
+            // 
+            //total uid row count 4
+            //int tcount=4;
+            //
+
+
+            //
+            //int acount = 2
+
+            /*
+             * 
+             * if(tcount==acount)
+            {
+
+            int avg =
+
+            update avg in profile sitescore 
+            }
+            */
         }
 
         private int getUserAns()

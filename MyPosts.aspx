@@ -321,6 +321,7 @@
                       <td><%Response.Write(dt.Rows[i].ItemArray[9].ToString()); %></td>
                       <td><a href="DeletePost.aspx?pid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Delete</a></td>
                       <td><a href="ViewApplications.aspx?pid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">View</a></td>
+
                       
                     </tr>
                       <%} %>

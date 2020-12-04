@@ -65,7 +65,7 @@
       </li>
 
          <li class="nav-item">
-        <a class="nav-link" href="invite.aspx">
+        <a class="nav-link" href="SentInvitation.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Sent Invitations </span></a>
       </li>

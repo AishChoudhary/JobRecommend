@@ -1,14 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NewUserDashboard.aspx.cs" Inherits="JobRecommend.NewUserDashboard" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SentInvitation.aspx.cs" Inherits="JobRecommend.SentInvitation" %>
 
 
-<% 
-    
-
-    %>
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="en"><head>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Careers.com</title>
+  <title>JobRecom</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -25,7 +19,8 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
-</head>
+<style type="text/css">/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style></head>
 
 <body id="page-top">
 
@@ -50,7 +45,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="NewUserDashboard.aspx">
+        <a class="nav-link" href="NewRecruiterDashboard.aspx">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -65,30 +60,22 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="jobRecommended.aspx">
+        <a class="nav-link" href="AddJobPost.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Recommended Jobs</span></a>
+          <span>Add/Post New Jobs </span></a>
       </li>
 
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link" href="SavedJobs.aspx">
+         <li class="nav-item">
+        <a class="nav-link" href="SentInvitation.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Saved Jobs</span></a>
+          <span>Sent Invitations </span></a>
       </li>
 
-<li class="nav-item">
-        <a class="nav-link" href="AppliedJobs.aspx">
+        <li class="nav-item">
+        <a class="nav-link" href="MyPosts.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Applied Jobs</span></a>
+          <span>My Posts </span></a>
       </li>
-
-   <li class="nav-item">
-        <a class="nav-link" href="ReceivedInvitation.aspx">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Received Invitations</span></a>
-      </li>
-
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -96,18 +83,9 @@
       <div class="sidebar-heading">
         Addons
       </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
+       
       <li class="nav-item">
-        <a class="nav-link" href="TestOptions.aspx">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>
-              Test<span></a>
-      </li>
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="ForgotPassword.aspx">
+        <a class="nav-link" href="RecForgotPassword.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Forgot Password</span></a>
       </li>
@@ -128,8 +106,8 @@
       </div>
 
     </ul>
-    
-      <div id="content-wrapper" class="d-flex flex-column">
+    <!-- End of Sidebar -->
+<div id="content-wrapper" class="d-flex flex-column">
 
       <!-- Main Content -->
       <div id="content">
@@ -173,12 +151,9 @@
               </div>
             </li>
 
-
-
-
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="left: -2px; top: 0px">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
                 <!-- Counter - Alerts -->
                 <span class="badge badge-danger badge-counter">3+</span>
@@ -189,22 +164,19 @@
                   Alerts Center
                 </h6>
 
-                   <% 
+                  <% 
                        System.Data.SqlClient.SqlConnection connection1 = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
                        connection1.Open();
-                       System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select * from notification where uid="+Session["uid"] + " And user_flag=2", connection1);
+                       System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select * from notification where rid="+Session["uid"] , connection1);
                        System.Data.DataSet ds1 = new System.Data.DataSet();
                        sqlDataAdapter.Fill(ds1);
                        connection1.Close();
 
                        System.Data.DataTable dt1 = ds1.Tables[0];
 
-                       if (dt1.Rows.Count <= 0)
-                           Response.Write(" <p> You have no recommended jobs please update your profile</p>");
-                       else
                            for (int i = 0; i < dt1.Rows.Count; i++)
-                           {
-                 %>
+                           { %>
+
                 <a class="dropdown-item d-flex align-items-center" href="ChangeNotStatus.aspx?id=<%Response.Write(dt1.Rows[i].ItemArray[0].ToString()); %>&notflag=<% Response.Write(dt1.Rows[i].ItemArray[6].ToString());%> ">
                   <div class="mr-3">
                     <div class="icon-circle bg-primary">
@@ -213,11 +185,23 @@
                   </div>
                   <div>
                     <div class="small text-gray-500"><% Response.Write(dt1.Rows[i].ItemArray[4].ToString()); %></div>
+
+                      <% if (dt1.Rows[i].ItemArray[5].ToString() == "UNREAD")
+                          {
+                              %>
                     <span class="font-weight-bold"><% Response.Write(dt1.Rows[i].ItemArray[3].ToString()); %></span>
+                      <%}
+
+    else
+    {%>
+                      <% Response.Write(dt1.Rows[i].ItemArray[3].ToString());
+    } %>
+
+                      
                   </div>
                 </a>
 
-                  <%} %>
+                         <%} %>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
                     <div class="icon-circle bg-success">
@@ -244,6 +228,7 @@
               </div>
             </li>
 
+
             <!-- Nav Item - Messages -->
             
 
@@ -257,7 +242,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="UserProfile.aspx">
+                <a class="dropdown-item" href="RecruiterProfile.aspx">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
@@ -270,7 +255,7 @@
                   Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="Logout.aspx" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="RecLogout.aspx" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
@@ -287,7 +272,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Recruiter Dashboard</h1>
             
           </div>
 
@@ -303,168 +288,62 @@
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Jobs Recommended</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Jobs posted</h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                     </a>
-                   
-                  
-                  
-                      
-
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                      <div class="dropdown-header">Dropdown Header:</div>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
                   </div>
-                    
                 </div>
                 <!-- Card Body -->
-                <div class="card-body">
-                
-                  <% 
-                      
-                      connection1.Open();
-                       sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select (select id from NewRequirement where id =rks.pid)as'pid',(select jobtitle from NewRequirement where id =rks.pid)as'jobtitle',(select JobDescription from NewRequirement where id =rks.pid)as'Jd',(select WorkExperiance from NewRequirement where id =rks.pid)as'WorkExp' from Requirementkeyskill rks where key_skill_id in (select key_skill_id  from KeySkillInfo where uid="+Session["uid"]+") order by  pid desc " , connection1);
-                       ds1 = new System.Data.DataSet();
-                      sqlDataAdapter.Fill(ds1);
-                      connection1.Close();
-
-                       dt1 = ds1.Tables[0];
-
-                      if (dt1.Rows.Count <= 0)
-                          Response.Write(" <p> You have no recommended jobs please update your profile</p>");
-                      else
-                          for (int i = 0; i <3; i++)
-                            {
-                              %>
-                             <div class="card-body">
-                             <div class="card shadow mb-8" style="width: 40rem; margin-bottom:8px;">
-
-                              <div class="card-body">
-                               <h5 class="card-title"><% Response.Write(dt1.Rows[i].ItemArray[1].ToString()); %></h5>
-                                <p class="card-text"><% Response.Write(dt1.Rows[i].ItemArray[2].ToString()); %></p>
-                                <a href="ApplyJob.aspx?pid=<% Response.Write(dt1.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Apply</a>
-                                  <a href="SaveJob.aspx?pid=<% Response.Write(dt1.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Save job</a>
-                                  <br />
-                                 </div>
-                              </div>
-
-                </div> <%} %>
-            </div>
-                   
-                        
-            
-                </div>
-              </div>
-            </div>
-
-            <!-- Pie Chart -->
-            
-          </div>
-
-<div class="row">
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> <asp:Label ID="lblJava" runat="server" Text=""></asp:Label></div>
-                      
-                    </div>
+        
+                  <div class="card-body">
+              <div class="table-responsive">
+                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="dataTable_length"><label>Show <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="dataTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label></div></div></div><div class="row"><div class="col-sm-12"><table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                  <thead>
+                    <tr><th rowspan="1" colspan="1">Details</th><th rowspan="1" colspan="1">Message</th><th rowspan="1" colspan="1">Status</th><th rowspan="1" colspan="1">Delete</th></tr>
+                  </thead>
+                  
+                  <tbody>
                     
-                  </div>
-                </div>
-              </div>
-            </div>
+                      <% 
+                          System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
+                          connection.Open();
+                          System.Data.SqlClient.SqlDataAdapter sqlDataAdapter1 = new System.Data.SqlClient.SqlDataAdapter("select * from invitations where rid=" + Session["uid"], connection);
+                          System.Data.DataSet ds = new System.Data.DataSet();
+                          sqlDataAdapter1.Fill(ds);
+                          connection.Close();
 
-            <!-- Earnings (Monthly) Card Example -->
-            
+                          System.Data.DataTable dt = ds.Tables[0];
 
-            <!-- Earnings (Monthly) Card Example -->
-            
-
-            <!-- Pending Requests Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Your Key Skills</div>
-                      
-                    </div>
+                          for (int i = 0; i < dt.Rows.Count; i++)
+                          { %>
                     
-                  </div>
-                </div>
+                  <tr role="row" class="odd">
+                      <td class="sorting_1"><%Response.Write(dt.Rows[i].ItemArray[2].ToString()); %></td>
+                      <td><%Response.Write(dt.Rows[i].ItemArray[3].ToString()); %></td>
+                      <td><%Response.Write(dt.Rows[i].ItemArray[4].ToString()); %></td>
+                      <td><a href="DeletePost.aspx?pid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Delete</a></td>
+                      
+                      
+                    </tr>
+                      <%} %>
+                  </tbody>
+                </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="dataTable_previous"><a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="dataTable_next"><a href="#" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
               </div>
             </div>
           </div>
-
-          <!-- Content Row -->
-          <div class="row">
-
-            <!-- Content Column -->
-            <div class="col-lg-6 mb-4">
-
-              <!-- Project Card Example -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Ranking Based On Skills Tested</h6>
-                </div>
-                <div class="card-body">
-                    
-                <% 
-                System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
-                connection.Open();
-                System.Data.SqlClient.SqlDataAdapter sqlDataAdapter1 = new System.Data.SqlClient.SqlDataAdapter("select (select KeySkill from KeySkills where id=ksi.key_skill_id)as 'Key_skill_Name',marks from KeySkillInfo ksi where uid=" + Session["uid"], connection);
-                System.Data.DataSet ds = new System.Data.DataSet();
-                sqlDataAdapter1.Fill(ds);
-                connection.Close();
-
-                System.Data.DataTable dt = ds.Tables[0]; %>
-
-                       <% for (int i = 0; i < dt.Rows.Count; i++)
-                        { %>
-                  <h4 class="small font-weight-bold"><% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %> <span class="float-right"><% Response.Write(dt.Rows[i].ItemArray[1].ToString()+"%");%></span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar" role="progressbar" style="width: <% Response.Write(dt.Rows[i].ItemArray[1].ToString()+"%");%>" aria-valuenow=" <% Response.Write(dt.Rows[i].ItemArray[1].ToString()+"%");%>" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                 <%} %>
-                </div>
-              </div>
-
-              <!-- Color System -->
-              
-
-            </div>
-
-            <div class="col-lg-6 mb-4">
-
-              <!-- Illustrations -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Approach to Job Search</h6>
-                </div>
-                <div class="card-body">
-                  <div class="text-center">
-                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="img/undraw_posting_photo.svg" alt="">
-                  </div>
-                    <div style="text-align: justify;">
-                        <span style="font-size: 10pt; font-family: verdana, geneva, sans-serif;">The search for a job has a lifecycle of its own starting with the desire to make a move to finding the right job that will contribute to an individual’s larger goals in life. The fact is that job hunting is an anxiety ridden and often lengthy process, always riddled with uncertainty. Careers.com acts as an advisory and helps you formulate better career decisions by offering numerous career tips till a job is locked; the offer received and the appointment accepted. But before the champagne is popped, a job search requires a systematic and strategic process of scouting with reasonable time and energy investment.&nbsp;</span></div>
-                    <div style="text-align: justify;">
-                    </div>
-                    
-                </div>
-              </div>
+                   </div>
 
               <!-- Approach -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Online Job Hunting</h6>
-                </div>
-                <div class="card-body">
-                  <p><span style="font-size: 10pt; font-family: verdana, geneva, sans-serif;">It is recommended to register and build profiles with popular job portals like Careers.com. These help in making a seeker’s updated profile a personalised experience to the recruiter with the right key words for better visibility. Using the multitude of online apps and tools for specific needs or instant notifications also helps. They go a long way in pushing a seeker’s profile amongst the first reviewed in the online abyss of millions.&nbsp;</span></p>
-                </div>
-              </div>
+              
 
             </div>
           </div>
@@ -475,6 +354,50 @@
       </div>
       <!-- End of Main Content -->
       </div>
+                
+
+<div class="row">
+
+            <!-- Earnings (Monthly) Card Example 
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      
+                    
+                  </div>
+                </div>
+              </div>
+            </div> -->            <!-- Earnings (Monthly) Card Example -->
+            
+
+            <!-- Earnings (Monthly) Card Example -->
+            
+
+            <!-- Pending Requests Card Example 
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- Content Row -->
+          
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
@@ -485,10 +408,10 @@
       </footer>
       <!-- End of Footer -->
 
-    
+    </div>
     <!-- End of Content Wrapper -->
 
-  
+  </div>
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
@@ -509,12 +432,30 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="Logout.aspx">Logout</a>
+          <a class="btn btn-primary" href="RecLogout.aspx">Logout</a>
         </div>
       </div>
     </div>
   </div>
 
+
+      <div class="modal fade" id="sendInviteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="RecLogout.aspx">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

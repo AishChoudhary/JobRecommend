@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Accept.aspx" />
     <Content Include="AddJobPost.aspx" />
     <Content Include="AppliedJobs.aspx" />
     <Content Include="ApplyJob.aspx" />
@@ -86,6 +87,7 @@
     <Content Include="Database\TestResultInfo.sql" />
     <Content Include="Database\UserInfo.sql" />
     <Content Include="Database\UserProfile.sql" />
+    <Content Include="DeleteInv.aspx" />
     <Content Include="DeleteJob.aspx" />
     <Content Include="DeletePost.aspx" />
     <Content Include="ForgotPassword.aspx" />
@@ -106,6 +108,7 @@
     <Content Include="mystyle.css" />
     <Content Include="NewRecruiterDashboard.aspx" />
     <Content Include="NewUserDashboard.aspx" />
+    <Content Include="ReceivedInvitation.aspx" />
     <Content Include="RecForgotPassword.aspx" />
     <Content Include="RecLogout.aspx" />
     <Content Include="RecruiterLogin.aspx" />
@@ -113,6 +116,7 @@
     <Content Include="RecruiterSignUp.aspx" />
     <Content Include="SavedJobs.aspx" />
     <Content Include="SaveJob.aspx" />
+    <Content Include="SentInvitation.aspx" />
     <Content Include="Test.aspx" />
     <Content Include="TestOptions.aspx" />
     <Content Include="TestPage.aspx" />
@@ -1783,6 +1787,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accept.aspx.cs">
+      <DependentUpon>Accept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accept.aspx.designer.cs">
+      <DependentUpon>Accept.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddJobPost.aspx.cs">
       <DependentUpon>AddJobPost.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1810,6 +1821,13 @@
     </Compile>
     <Compile Include="ChangeNotStatus.aspx.designer.cs">
       <DependentUpon>ChangeNotStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteInv.aspx.cs">
+      <DependentUpon>DeleteInv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteInv.aspx.designer.cs">
+      <DependentUpon>DeleteInv.aspx</DependentUpon>
     </Compile>
     <Compile Include="DeleteJob.aspx.cs">
       <DependentUpon>DeleteJob.aspx</DependentUpon>
@@ -1882,6 +1900,13 @@
       <DependentUpon>NewUserDashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceivedInvitation.aspx.cs">
+      <DependentUpon>ReceivedInvitation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReceivedInvitation.aspx.designer.cs">
+      <DependentUpon>ReceivedInvitation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RecForgotPassword.aspx.cs">
       <DependentUpon>RecForgotPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1930,6 +1955,13 @@
     </Compile>
     <Compile Include="SaveJob.aspx.designer.cs">
       <DependentUpon>SaveJob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SentInvitation.aspx.cs">
+      <DependentUpon>SentInvitation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SentInvitation.aspx.designer.cs">
+      <DependentUpon>SentInvitation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Test.aspx.cs">
       <DependentUpon>Test.aspx</DependentUpon>

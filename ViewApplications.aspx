@@ -275,7 +275,7 @@
                       <td><%Response.Write(dt.Rows[i].ItemArray[1].ToString()); %></td>
                       <td><%Response.Write(dt.Rows[i].ItemArray[2].ToString()); %></td>
                       <td><a href="ViewProfile.aspx?uid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">View Profile</a></td>
-                      <td><a href="invite.aspx?uid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">invite</a></td>
+                      <td><a href="invite.aspx?uid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>&pid=<%Response.Write(pid); %>" class="btn btn-primary">invite</a></td>
                       
 
                       

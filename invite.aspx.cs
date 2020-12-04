@@ -19,21 +19,28 @@ namespace JobRecommend
             rid = (string)Session["uid"];
             uid = (string)Request.QueryString["uid"];
 
+
+        }
+
+        protected void btnSend_Click(object sender, EventArgs e)
+        {
             connection.Open();
-            string sql = "insert into notification(rid,uid,not_text,not_date,status,not_flag,user_flag)" + "values(" + rid + "," + uid + ",'A Job Invitation from Recruiter',GETDATE(),'UNREAD',2,2)";
+            string sql = "insert into notification(rid,uid,not_text,not_date,status,not_flag,user_flag)" + "values(" + Session["uid"] + "," + Request.QueryString["uid"] + ",'A Job Invitation from Recruiter',GETDATE(),'UNREAD',2,2)";
             SqlCommand sqlcommand = new SqlCommand(sql, connection);
             int x = sqlcommand.ExecuteNonQuery();
+
+            sql = "insert into invitations(rid,uid,message,status)" + "values(" + Session["uid"] + "," + Request.QueryString["uid"] + ",'" + txtMsg.Text + "','PENDING')";
+            sqlcommand = new SqlCommand(sql, connection);
+             x = sqlcommand.ExecuteNonQuery();
 
             connection.Close();
 
 
             if (x > 0)
-                Response.Write("<Script>alert('Invitation sent Successfully ');</Script>");
+                Response.Write("<Script>alert('Invitation sent Successfully '); window.location('ViewApplications.aspx?pid="+ Request.QueryString["pid"] +"');</Script>");
 
             else
                 Response.Write("<Script>alert('Unable to Invite');</Script>");
         }
-
     }
-
 }

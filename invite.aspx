@@ -164,17 +164,19 @@
                 </h6>
 
                   <% 
-                       System.Data.SqlClient.SqlConnection connection1 = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
-                       connection1.Open();
-                       System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select * from invitations where rid="+Session["uid"] , connection1);
-                       System.Data.DataSet ds = new System.Data.DataSet();
-                       sqlDataAdapter.Fill(ds);
-                       connection1.Close();
+    try
+    {
+        System.Data.SqlClient.SqlConnection connection1 = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
+        connection1.Open();
+        System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select * from invitations where rid=" + Session["uid"], connection1);
+        System.Data.DataSet ds = new System.Data.DataSet();
+        sqlDataAdapter.Fill(ds);
+        connection1.Close();
 
-                       System.Data.DataTable dt1 = ds.Tables[0];
+        System.Data.DataTable dt1 = ds.Tables[0];
 
-                           for (int i = 0; i < dt1.Rows.Count; i++)
-                           { %>
+        for (int i = 0; i < dt1.Rows.Count; i++)
+        { %>
 
                 <a class="dropdown-item d-flex align-items-center" href="ChangeNotStatus.aspx?id=<%Response.Write(dt1.Rows[i].ItemArray[0].ToString()); %>&notflag=<% Response.Write(dt1.Rows[i].ItemArray[6].ToString());%> ">
                   <div class="mr-3">
@@ -186,7 +188,7 @@
                     <div class="small text-gray-500"><% Response.Write(dt1.Rows[i].ItemArray[4].ToString()); %></div>
 
                       <% if (dt1.Rows[i].ItemArray[5].ToString() == "UNREAD")
-                          {
+    {
                               %>
                     <span class="font-weight-bold"><% Response.Write(dt1.Rows[i].ItemArray[3].ToString()); %></span>
                       <%}
@@ -200,7 +202,10 @@
                   </div>
                 </a>
 
-                         <%} %>
+                         <%}
+
+    }
+    catch (Exception ex) { }%>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
                     <div class="icon-circle bg-success">
@@ -303,7 +308,8 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                  
+                    <asp:TextBox ID="txtMsg" runat="server" TextMode="MultiLine"></asp:TextBox>
+                    <asp:Button ID="btnSend" class="btn-primary" runat="server" Text="Send" OnClick="btnSend_Click"  />
                 </div>
               </div>
             </div>
