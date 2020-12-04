@@ -292,25 +292,31 @@
 
                     <% 
 
-                          System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
+                        System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
                         connection.Open();
-                        System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select SiteScore from userprofile where uid="+Session["uid"] , connection); 
+                        System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select SiteScore from userprofile where uid="+Session["uid"] , connection);
                         System.Data.DataSet ds = new System.Data.DataSet();
                         sqlDataAdapter.Fill(ds);
 
                         string siteScore = ds.Tables[0].Rows[0].ItemArray[0].ToString();
 
-                        
-                       
-                        sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select (select id from NewRequirement where id =rks.pid and criteria>"+siteScore+")as'pid',(select jobtitle from NewRequirement where id =rks.pid)as'jobtitle',(select JobDescription from NewRequirement where id =rks.pid)as'Jd',(select WorkExperiance from NewRequirement where id =rks.pid)as'WorkExp' from Requirementkeyskill rks where key_skill_id in (select   key_skill_id  from KeySkillInfo where uid="+Session["uid"]+") order by  pid desc " , connection); 
+
+
+                        sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select (select id from NewRequirement where id =rks.pid and criteria<"+siteScore+")as'pid',(select jobtitle from NewRequirement where id =rks.pid)as'jobtitle',(select JobDescription from NewRequirement where id =rks.pid)as'Jd',(select WorkExperiance from NewRequirement where id =rks.pid)as'WorkExp' from Requirementkeyskill rks where key_skill_id in (select   key_skill_id  from KeySkillInfo where uid="+Session["uid"]+") order by  pid desc " , connection);
                         ds = new System.Data.DataSet();
                         sqlDataAdapter.Fill(ds);
                         connection.Close();
 
                         System.Data.DataTable dt = ds.Tables[0];
 
+                        bool isJobsAvailable = true;
+
                         for (int i = 0; i < dt.Rows.Count; i++)
                         {
+
+                            if (dt.Rows[i].ItemArray[0].ToString() != "")
+                            {
+                                isJobsAvailable = false;
                         %>
                 <div class="card-body">
                              <div class="card shadow mb-8" style="width: 40rem; margin-bottom:8px;">
@@ -323,7 +329,11 @@
   </div>
 </div>
 
-                </div> <%} %>
+                </div> <%}
+        }
+        if (isJobsAvailable)
+            Response.Write("<p>No Jobs recommended</p>");
+     %>
 
               </div>
                 </div>

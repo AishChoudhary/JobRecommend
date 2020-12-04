@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NewUserDashboard.aspx.cs" Inherits="JobRecommend.NewUserDashboard" %>
+﻿Jobs Recommended<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NewUserDashboard.aspx.cs" Inherits="JobRecommend.NewUserDashboard" %>
 
 
 <% 
@@ -320,19 +320,53 @@
                 <div class="card-body">
                 
                   <% 
-                      
+
                       connection1.Open();
-                       sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select (select id from NewRequirement where id =rks.pid)as'pid',(select jobtitle from NewRequirement where id =rks.pid)as'jobtitle',(select JobDescription from NewRequirement where id =rks.pid)as'Jd',(select WorkExperiance from NewRequirement where id =rks.pid)as'WorkExp' from Requirementkeyskill rks where key_skill_id in (select key_skill_id  from KeySkillInfo where uid="+Session["uid"]+") order by  pid desc " , connection1);
-                       ds1 = new System.Data.DataSet();
+                      string sql = "Select SiteScore from userprofile where uid=" + Session["uid"];
+
+                      sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter(sql, connection1);
+                      ds1 = new System.Data.DataSet();
                       sqlDataAdapter.Fill(ds1);
                       connection1.Close();
+                      dt1 = ds1.Tables[0];
+                      //  System.Diagnostics.Debug.Print("count=" + dt1.Rows.Count);
 
-                       dt1 = ds1.Tables[0];
+                      if(dt1.Rows.Count==0)
+                      {
+                          %>
+                    <div class="alert alert-danger" role="alert">
+  Please update your profile first
+</div>
+                    <%
 
-                      if (dt1.Rows.Count <= 0)
-                          Response.Write(" <p> You have no recommended jobs please update your profile</p>");
-                      else
-                          for (int i = 0; i <3; i++)
+                      }
+                        else
+                      if (Convert.ToInt32(dt1.Rows[0].ItemArray[0].ToString())== 0 || dt1.Rows[0].ItemArray[0].ToString()=="")
+                      {
+
+                          %>
+
+                    <div class="alert alert-danger" role="alert">
+  Please attend tests to receive recommended jobs
+</div>
+                    <%
+                        }
+
+                        else
+                        { 
+
+                        connection1.Open();
+                        sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select (select id from NewRequirement where id =rks.pid)as'pid',(select jobtitle from NewRequirement where id =rks.pid)as'jobtitle',(select JobDescription from NewRequirement where id =rks.pid)as'Jd',(select WorkExperiance from NewRequirement where id =rks.pid)as'WorkExp' from Requirementkeyskill rks where key_skill_id in (select key_skill_id  from KeySkillInfo where uid="+Session["uid"]+") order by  pid desc " , connection1);
+                        ds1 = new System.Data.DataSet();
+                        sqlDataAdapter.Fill(ds1);
+                        connection1.Close();
+
+                        dt1 = ds1.Tables[0];
+
+                        if (dt1.Rows.Count <= 0)
+                            Response.Write(" <p> You have no recommended jobs please update your profile</p>");
+                        else
+                            for (int i = 0; i <3; i++)
                             {
                               %>
                              <div class="card-body">
@@ -347,7 +381,7 @@
                                  </div>
                               </div>
 
-                </div> <%} %>
+                </div> <%}} %>
             </div>
                    
                         

@@ -132,27 +132,38 @@ namespace JobRecommend
                 + Session["uid"] + " and key_skill_id=" + Session["ksi"];
             SqlCommand sqlcommand = new SqlCommand(sql, connection);
             int x = sqlcommand.ExecuteNonQuery();
-            connection.Close();
-
-            // 
-            //total uid row count 4
-            //int tcount=4;
-            //
 
 
-            //
-            //int acount = 2
+            SqlDataAdapter adapter = new SqlDataAdapter("select count(uid)as 'tcount' from KeySkillInfo where uid=" + Session["uid"], connection);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
 
-            /*
-             * 
-             * if(tcount==acount)
+            int tcount = Convert.ToInt32(ds.Tables[0].Rows[0].ItemArray[0]);
+
+            adapter = new SqlDataAdapter("select count(uid)as 'acount' from KeySkillInfo where uid=" + Session["uid"] + " and attempts>=1", connection);
+            ds = new DataSet();
+            adapter.Fill(ds);
+
+            int acount = Convert.ToInt32(ds.Tables[0].Rows[0].ItemArray[0]);
+
+
+            
+
+if(tcount==acount)
             {
 
-            int avg =
+                adapter = new SqlDataAdapter("select AVG(marks) from KeySkillInfo where uid="+Session["uid"], connection);
+                ds = new DataSet();
+                adapter.Fill(ds);
+                int avg = Convert.ToInt32(ds.Tables[0].Rows[0].ItemArray[0]);
 
-            update avg in profile sitescore 
+                SqlCommand cmd = new SqlCommand("Update userprofile set SiteScore=" + avg + " where uid=" + Session["uid"], connection);
+                x = cmd.ExecuteNonQuery();
+
+
+
             }
-            */
+
         }
 
         private int getUserAns()
