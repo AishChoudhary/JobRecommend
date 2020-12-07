@@ -67,6 +67,11 @@
           <i class="fas fa-fw fa-chart-area"></i>
           <span>My Posts </span></a>
       </li>
+        <li class="nav-item">
+        <a class="nav-link" href="SentInvitation.aspx">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Sent Invitations </span></a>
+      </li>
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -214,14 +219,7 @@
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a>
+                
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="Logout.aspx" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>

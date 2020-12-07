@@ -42,7 +42,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="NewRecruiterDashboard.aspx">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -348,11 +348,11 @@
                                 </div></div>
 
                      <div class="form-group row">
-                                <label for="resume" class="col-md-4 col-form-label text-md-right">Upload Resume
+                                <label for="resume" class="col-md-4 col-form-label text-md-right">Resume
                                 <asp:Label ID="Label14" runat="server" ForeColor="Red" Text="*"></asp:Label>
                                 </label>
                                 &nbsp;<div class="col-md-6">
-                                    <asp:LinkButton ID="LinkButton1" class="btn btn-primary" runat="server" OnClick="LinkButton1_Click">LinkButton</asp:LinkButton>
+                                    <asp:LinkButton ID="LinkButton1" class="btn btn-primary" runat="server" OnClick="LinkButton1_Click">Download Resume</asp:LinkButton>
                                    
                                 </div></div>
                   
