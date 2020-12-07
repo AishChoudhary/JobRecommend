@@ -14,6 +14,19 @@ namespace JobRecommend
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            string email, username;
+            email = (string)Session["email"];
+            username = (string)Session["uname"];
+
+
+            if (email == null)
+                Response.Redirect("UserLogin.aspx");
+            else
+            {
+                lblUname.Text = username;
+
+            }
+
             // string uid = (string)Session["uid"];
             // string status = (string)Request.QueryString["status"];
             //int not_flag = Convert.ToInt32((string)Request.QueryString["notflag"]);
@@ -27,6 +40,7 @@ namespace JobRecommend
             // connection.Close();
 
             //}
+
         }
 
     }

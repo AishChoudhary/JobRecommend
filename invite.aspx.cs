@@ -19,6 +19,14 @@ namespace JobRecommend
             rid = (string)Session["uid"];
             uid = (string)Request.QueryString["uid"];
 
+            string email, username;
+            email = (string)Session["email"];
+            username = (string)Session["uname"];
+            if (email == null)
+                Response.Redirect("RecruiterLogin.aspx");
+            else
+                lblUname.Text = username;
+
 
         }
 

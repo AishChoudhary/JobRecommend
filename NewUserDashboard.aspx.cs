@@ -62,13 +62,6 @@ namespace JobRecommend
 
                 DataTable dt = ds.Tables[0];
 
-                if (dt.Rows.Count > 0)
-                    lblJava.Text = "Java Score: " + dt.Rows[0].ItemArray[2].ToString();
-                else
-                {
-                    lblJava.Text = "Not Attended";
-                    Session["uid"] = uid;
-                }
             }
         }
     }

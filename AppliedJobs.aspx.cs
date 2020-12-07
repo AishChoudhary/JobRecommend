@@ -11,7 +11,18 @@ namespace JobRecommend
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string email, username;
+            email = (string)Session["email"];
+            username = (string)Session["uname"];
 
+
+            if (email == null)
+                Response.Redirect("UserLogin.aspx");
+            else
+            {
+                lblUname.Text = username;
+
+            }
         }
     }
 }

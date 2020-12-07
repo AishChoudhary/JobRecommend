@@ -59,7 +59,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="AddJobPost.aspx">
+        <a class="nav-link" href="AddJob.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Add/Post New Jobs </span></a>
       </li>
@@ -292,7 +292,7 @@
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Jobs posted</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Invitation Message</h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>

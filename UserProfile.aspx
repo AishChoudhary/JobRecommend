@@ -328,7 +328,7 @@
                                 </label>
                                 &nbsp;<div class="col-md-6">
                                    <asp:TextBox ID="txtLocation" runat="server" class="form-control form-control-user"  required="" autofocus=""></asp:TextBox>
-                              <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Please Enter Desired Work Location" ControlToValidate="txtLocation" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{2,30}$"></asp:RegularExpressionValidator>  </div>
+                              <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Please Enter Desired Work Location" ControlToValidate="txtLocation" ForeColor="Red" ValidationExpression="^[a-zA-Z #,-]{2,30}$"></asp:RegularExpressionValidator>  </div>
                                 </div>
 <div class="form-group row">
                                 <label for="certifications" class="col-md-4 col-form-label text-md-right">&nbsp;Certifications

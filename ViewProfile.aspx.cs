@@ -14,7 +14,15 @@ namespace JobRecommend
         static string link="";
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+
+            string email, username;
+            email = (string)Session["email"];
+            username = (string)Session["uname"];
+            if (email == null)
+                Response.Redirect("RecruiterLogin.aspx");
+            else
+                lblUname.Text = username;
+
             connection.Open();
             System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select * from UserProfile where uid=" + Request.QueryString["uid"], connection);
             System.Data.DataSet ds = new System.Data.DataSet();

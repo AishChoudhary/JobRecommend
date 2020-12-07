@@ -1,10 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NewUserDashboard.aspx.cs" Inherits="JobRecommend.NewUserDashboard" %>
 
 
-<% 
-    
-
-    %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -218,28 +214,7 @@
                 </a>
 
                   <%} %>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
+                
                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
               </div>
             </li>
@@ -302,10 +277,6 @@
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                     </a>
                    
-                  
-                  
-                      
-
                   </div>
                     
                 </div>
@@ -376,54 +347,14 @@
 
                 </div> <%}} %>
             </div>
-                   
-                        
             
                 </div>
               </div>
             </div>
-
-            <!-- Pie Chart -->
-            
-          </div>
+         </div>
 
 <div class="row">
 
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> <asp:Label ID="lblJava" runat="server" Text=""></asp:Label></div>
-                      
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-            
-
-            <!-- Earnings (Monthly) Card Example -->
-            
-
-            <!-- Pending Requests Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Your Key Skills</div>
-                      
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
           <!-- Content Row -->

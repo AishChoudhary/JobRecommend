@@ -14,19 +14,19 @@ namespace JobRecommend
         SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-            string uid, pid;
+            string uid;
             uid = (string)Session["uid"];
-            pid = (string)Request.QueryString["pid"];
+            //pid = (string)Request.QueryString["pid"];
 
 
             connection.Open();
-            string sql = "delete from ApplyJob where pid = " + pid;
+            string sql = "delete from invitations where uid=" + uid;
             SqlCommand sqlcommand = new SqlCommand(sql, connection);
             int x = sqlcommand.ExecuteNonQuery();
 
-            sql = "delete from NewRequirement where id=" + pid;
-            sqlcommand = new SqlCommand(sql, connection);
-            x = sqlcommand.ExecuteNonQuery();
+            //sql = 
+            //sqlcommand = new SqlCommand(sql, connection);
+            //x = sqlcommand.ExecuteNonQuery();
 
             connection.Close();
 

@@ -79,11 +79,13 @@
           <span>Applied Jobs</span></a>
       </li>
 
-   <li class="nav-item">
-        <a class="nav-link" href="ViewInvitation.aspx">
+        <li class="nav-item">
+        <a class="nav-link" href="ReceivedInvitation.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Received Invitations</span></a>
       </li>
+
+
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -214,28 +216,7 @@
                 </a>
 
                   <%} %>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
+                
                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
               </div>
             </li>
@@ -257,14 +238,7 @@
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a>
+                
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="Logout.aspx" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -317,7 +291,7 @@
                               {
                                   %>
                       <a href="Accept.aspx?iid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Accept</a><%} %></td>
-                      <td><a href="DeletePost.aspx?pid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Delete</a></td>
+                      <td><a href="DeleteInv.aspx?pid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Delete</a></td>
                       
                       
                     </tr>

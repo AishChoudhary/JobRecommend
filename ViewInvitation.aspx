@@ -78,6 +78,12 @@
           <span>Applied Jobs</span></a>
       </li>
 
+        <li class="nav-item">
+        <a class="nav-link" href="ReceivedInvitation.aspx">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Received Invitations</span></a>
+      </li>
+
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -164,7 +170,7 @@
 
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="left: -2px; top: 0px">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
                 <!-- Counter - Alerts -->
                 <span class="badge badge-danger badge-counter">3+</span>
@@ -174,42 +180,46 @@
                 <h6 class="dropdown-header">
                   Alerts Center
                 </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+
+                  <% 
+                       System.Data.SqlClient.SqlConnection connection1 = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
+                       connection1.Open();
+                       System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select * from notification where rid="+Session["uid"] + " and user_flag=1 order by id desc" , connection1);
+                       System.Data.DataSet ds1 = new System.Data.DataSet();
+                       sqlDataAdapter.Fill(ds1);
+                       connection1.Close();
+
+                       System.Data.DataTable dt1 = ds1.Tables[0];
+
+                           for (int i = 0; i < dt1.Rows.Count; i++)
+                           { %>
+
+                <a class="dropdown-item d-flex align-items-center" href="ChangeNotStatus.aspx?id=<%Response.Write(dt1.Rows[i].ItemArray[0].ToString()); %>&notflag=<% Response.Write(dt1.Rows[i].ItemArray[6].ToString());%> ">
                   <div class="mr-3">
                     <div class="icon-circle bg-primary">
                       <i class="fas fa-file-alt text-white"></i>
                     </div>
                   </div>
                   <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                    <div class="small text-gray-500"><% Response.Write(dt1.Rows[i].ItemArray[4].ToString()); %></div>
+
+                      <% if (dt1.Rows[i].ItemArray[5].ToString() == "UNREAD")
+                          {
+                              %>
+                    <span class="font-weight-bold"><% Response.Write(dt1.Rows[i].ItemArray[3].ToString()); %></span>
+                      <%}
+
+    else
+    {%>
+                      <% Response.Write(dt1.Rows[i].ItemArray[3].ToString());
+    } %>
+
+                      
                   </div>
                 </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-              </div>
-            </li>
+
+                         <%} %>
+                <!--<a class="dropdown-item d-flex align-items-center" href="#">
 
             <!-- Nav Item - Messages -->
             
@@ -275,18 +285,8 @@
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  
-                  
-                      
-
-                  </div>
+                    
+                   </div>
                 </div>
                 <!-- Card Body -->
                 
@@ -302,9 +302,9 @@
                       <% 
                           System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
                           connection.Open();
-                          System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select * from invitations where rid=" + Session["uid"], connection);
+                          System.Data.SqlClient.SqlDataAdapter sqlDataAdapter1 = new System.Data.SqlClient.SqlDataAdapter("select * from invitations where rid=" + Session["uid"], connection);
                           System.Data.DataSet ds = new System.Data.DataSet();
-                          sqlDataAdapter.Fill(ds);
+                          sqlDataAdapter1.Fill(ds);
                           connection.Close();
 
                           System.Data.DataTable dt = ds.Tables[0];
@@ -397,12 +397,5 @@
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
 
-
-
-
     </form>
-
-
-
-
 </body></html>

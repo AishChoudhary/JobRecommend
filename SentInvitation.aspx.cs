@@ -16,21 +16,27 @@ namespace JobRecommend
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           // string uid = (string)Session["uid"];
-           // string status = (string)Request.QueryString["status"];
+            // string uid = (string)Session["uid"];
+            // string status = (string)Request.QueryString["status"];
             //int not_flag = Convert.ToInt32((string)Request.QueryString["notflag"]);
 
             //connection.Open();
-           // if (connection.State == System.Data.ConnectionState.Open)
-           // {
-              //  SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("update invitations set status='Accepted'", connection);
-              //  DataSet ds = new DataSet();
-               // sqlDataAdapter.Fill(ds);
-               // connection.Close();
+            // if (connection.State == System.Data.ConnectionState.Open)
+            // {
+            //  SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("update invitations set status='Accepted'", connection);
+            //  DataSet ds = new DataSet();
+            // sqlDataAdapter.Fill(ds);
+            // connection.Close(); }
+
+            string email, username;
+            email = (string)Session["email"];
+            username = (string)Session["uname"];
+            if (email == null)
+                Response.Redirect("RecruiterLogin.aspx");
+            else
+                lblUname.Text = username;
 
 
-
-            //}
         }
     }
 }

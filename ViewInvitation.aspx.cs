@@ -14,25 +14,33 @@ namespace JobRecommend
         /*SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString); */
         protected void Page_Load(object sender, EventArgs e)
         {
-/*            string rid, uid, not_id;
-            rid = (string)Session["uid"];
-            uid = (string)Request.QueryString["uid"];
-            not_id = (string)Request.QueryString["not_id"];
-
-            connection.Open();
-            //string sql = "insert into invitations(uid,rid,not_id,message,status)" + "values(" + rid + "," + uid + ","+ not_id +",'A Job Invitation from Recruiter','UNREAD')";
-            string sql = "insert into notification(rid,uid,not_text,not_date,status,not_flag,user_flag)" + "values(" + rid + "," + uid + ",'A Job Invitation from Recruiter',GETDATE(),'UNREAD',2,2)";
-            SqlCommand sqlcommand = new SqlCommand(sql, connection);
-            int x = sqlcommand.ExecuteNonQuery();
-
-            connection.Close();
-
-
-            if (x > 0)
-                Response.Write("<Script>alert('Invitation accepted Successfully');</Script>");
-
+            string email, username;
+            email = (string)Session["email"];
+            username = (string)Session["uname"];
+            if (email == null)
+                Response.Redirect("UserLogin.aspx");
             else
-                Response.Write("<Script>alert('Unable to Accept');</Script>"); */
+                lblUname.Text = username;
+
+            /*          string rid, uid, not_id;
+                        rid = (string)Session["uid"];
+                        uid = (string)Request.QueryString["uid"];
+                        not_id = (string)Request.QueryString["not_id"];
+
+                        connection.Open();
+                        //string sql = "insert into invitations(uid,rid,not_id,message,status)" + "values(" + rid + "," + uid + ","+ not_id +",'A Job Invitation from Recruiter','UNREAD')";
+                        string sql = "insert into notification(rid,uid,not_text,not_date,status,not_flag,user_flag)" + "values(" + rid + "," + uid + ",'A Job Invitation from Recruiter',GETDATE(),'UNREAD',2,2)";
+                        SqlCommand sqlcommand = new SqlCommand(sql, connection);
+                        int x = sqlcommand.ExecuteNonQuery();
+
+                        connection.Close();
+
+
+                        if (x > 0)
+                            Response.Write("<Script>alert('Invitation accepted Successfully');</Script>");
+
+                        else
+                            Response.Write("<Script>alert('Unable to Accept');</Script>"); */
         }
     }
 }

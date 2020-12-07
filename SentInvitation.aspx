@@ -64,17 +64,15 @@
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Add/Post New Jobs </span></a>
       </li>
-
-         <li class="nav-item">
-        <a class="nav-link" href="SentInvitation.aspx">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Sent Invitations </span></a>
-      </li>
-
         <li class="nav-item">
         <a class="nav-link" href="MyPosts.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>My Posts </span></a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="SentInvitation.aspx">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Sent Invitations </span></a>
       </li>
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -167,7 +165,7 @@
                   <% 
                        System.Data.SqlClient.SqlConnection connection1 = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
                        connection1.Open();
-                       System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select * from notification where rid="+Session["uid"] , connection1);
+                       System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select * from notification where rid="+Session["uid"] + " and user_flag=1 order by id desc" , connection1);
                        System.Data.DataSet ds1 = new System.Data.DataSet();
                        sqlDataAdapter.Fill(ds1);
                        connection1.Close();
@@ -202,28 +200,7 @@
                 </a>
 
                          <%} %>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
+                                
                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
               </div>
             </li>
@@ -246,14 +223,7 @@
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a>
+                
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="RecLogout.aspx" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -290,23 +260,16 @@
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Jobs posted</h6>
                   <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
+                                        
                   </div>
                 </div>
                 <!-- Card Body -->
-        
+                  
+                  <div class="container-fluid">
+
                   <div class="card-body">
               <div class="table-responsive">
-                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="dataTable_length"><label>Show <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="dataTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label></div></div></div><div class="row"><div class="col-sm-12"><table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="dataTable_length"></div></div><div class="col-sm-12 col-md-6"><div id="dataTable_filter" class="dataTables_filter"></div></div></div><div class="row"><div class="col-sm-12"><table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                   <thead>
                     <tr><th rowspan="1" colspan="1">Details</th><th rowspan="1" colspan="1">Message</th><th rowspan="1" colspan="1">Status</th><th rowspan="1" colspan="1">Delete</th></tr>
                   </thead>

@@ -61,6 +61,12 @@
           <i class="fas fa-fw fa-chart-area"></i>
           <span>My Posts </span></a>
       </li>
+
+        <li class="nav-item">
+        <a class="nav-link" href="SentInvitation.aspx">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Sent Invitations </span></a>
+      </li>
       <!-- Divider -->
       <hr class="sidebar-divider">
 
