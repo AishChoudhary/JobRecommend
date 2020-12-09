@@ -204,7 +204,14 @@ if(tcount==acount)
             SqlCommand sqlcommand = new SqlCommand(sql, connection);
             int x = sqlcommand.ExecuteNonQuery();
             connection.Close();
-
+            if (x > 0)
+            {
+                Response.Write("<script>alert('Data inserted successfully');</script>");
+            }
+            else
+            {
+                Response.Write("<script>alert('Unable to insert');</script>");
+            }
            
 
         }
