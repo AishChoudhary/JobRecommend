@@ -270,9 +270,9 @@
                           string pid = Request.QueryString["pid"];
                           System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
                           connection.Open();
-                          System.Data.SqlClient.SqlDataAdapter sqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter("select uid,(select FullName from UserInfo where id=aj.uid)as'UserName',appliedDate from ApplyJob aj where pid="+pid, connection);
+                          System.Data.SqlClient.SqlDataAdapter sqlDataAdapter1 = new System.Data.SqlClient.SqlDataAdapter("select uid,(select FullName from UserInfo where id=aj.uid)as'UserName',appliedDate from ApplyJob aj where pid="+pid, connection);
                           System.Data.DataSet ds = new System.Data.DataSet();
-                          sqlDataAdapter.Fill(ds);
+                          sqlDataAdapter1.Fill(ds);
                           connection.Close();
 
                           System.Data.DataTable dt = ds.Tables[0];
