@@ -116,6 +116,7 @@
     <Content Include="RecruiterSignUp.aspx" />
     <Content Include="SavedJobs.aspx" />
     <Content Include="SaveJob.aspx" />
+    <Content Include="SearchStudents.aspx" />
     <Content Include="SentInvitation.aspx" />
     <Content Include="Test.aspx" />
     <Content Include="TestOptions.aspx" />
@@ -1955,6 +1956,13 @@
     </Compile>
     <Compile Include="SaveJob.aspx.designer.cs">
       <DependentUpon>SaveJob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchStudents.aspx.cs">
+      <DependentUpon>SearchStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchStudents.aspx.designer.cs">
+      <DependentUpon>SearchStudents.aspx</DependentUpon>
     </Compile>
     <Compile Include="SentInvitation.aspx.cs">
       <DependentUpon>SentInvitation.aspx</DependentUpon>

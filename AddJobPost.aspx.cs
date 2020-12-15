@@ -60,7 +60,7 @@ namespace JobRecommend
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             connection.Open();
-            if (connection.State == System.Data.ConnectionState.Open)
+            if (connection.State == ConnectionState.Open)
             {
 
                 string uid = (string)Session["uid"];
