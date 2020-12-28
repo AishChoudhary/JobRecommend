@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>JobRecom</title>
+  <title>Careers</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -42,7 +42,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="NewUserDashboard.aspx">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -64,15 +64,21 @@
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="SavedJobs.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Saved Jobs</span></a>
       </li>
 
 <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="AppliedJobs.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Applied Jobs</span></a>
+      </li>
+
+   <li class="nav-item">
+        <a class="nav-link" href="ReceivedInvitation.aspx">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Received Invitations</span></a>
       </li>
 
       <!-- Divider -->
@@ -165,53 +171,7 @@
             </li>
 
             <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
-                <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">3+</span>
-              </a>
-              <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header">
-                  Alerts Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-              </div>
-            </li>
+            
 
             <!-- Nav Item - Messages -->
             
@@ -378,7 +338,7 @@
                                      </label>
                                 &nbsp;<div class="col-md-6">
                                     <asp:TextBox ID="txtJobTitle" runat="server" class="form-control form-control-user " required="" autofocus="" AutoPostBack="True"></asp:TextBox>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator11" runat="server" ErrorMessage="Please Enter Job title" ControlToValidate="txtJobTitle" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{3,20}$"></asp:RegularExpressionValidator>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator11" runat="server" ErrorMessage="Please Enter Job title" ControlToValidate="txtJobTitle" ForeColor="Red" ValidationExpression="[a-zA-Z\s]{3,50}$"></asp:RegularExpressionValidator>
                                 </div>
                                      
                                  </div>
@@ -402,47 +362,18 @@
                   <div class ="form-group row">
                       <div class="col-md-12 col-xs-12">
                           <asp:Label ID="Label8" runat="server" Text="*" ForeColor="Red"></asp:Label>
-                          <asp:CheckBoxList ID="address_consent" runat="server" ><asp:ListItem Text="I hereby confirm that the given information is correct and it can be used for future Communication."></asp:ListItem></asp:CheckBoxList>
+                          <asp:CheckBoxList ID="address_consent" runat="server" required="" autofocus=""><asp:ListItem Text="  I hereby confirm that the given information is correct and it can be used for future Communication."></asp:ListItem></asp:CheckBoxList>
                            
-          </div>
-    
-
-	<!-- Add more if conditions for various input types here -->
-				  </div>
+                          </div>
+                  </div>
                   </div>
 
                   <div class="col-md-6 offset-md-4">
                     <asp:Button ID="btnSubmit" runat="server" class="btn btn-primary" Text="Submit" OnClick="btnSubmit_Click" />       
                             </div>
- 
               </div>
             </div>
         </form>
-
-
-         
-            <div class="col-xl-8 col-lg-7">
-              <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Update Profile</h6>
-                  <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                  
-                </div>
               </div>
             </div>
 

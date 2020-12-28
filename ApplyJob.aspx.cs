@@ -34,8 +34,10 @@ namespace JobRecommend
                  sqlcommand = new SqlCommand(sql, connection);
                  x = sqlcommand.ExecuteNonQuery();
 
+                bool b = new NetworkCom().SendEmail(getEmailFromUid(uid), "Job Application", "You have applied to job recently");
+                bool a = new NetworkCom().SendEmail(getEmailFromUidRecruiter(getRidFromPid(pid)), "Job Application", "A User has applied to your job recently");
                 connection.Close();
-
+                
 
                 if (x > 0)
                     Response.Write("<Script>alert('You have applied to this job successfully');window.location='jobrecommended.aspx'</Script>");
@@ -60,7 +62,49 @@ namespace JobRecommend
 
         }
 
-            private int isAlreadyApplied(string uid, string pid)
+        private string getEmailFromUid(string uid)
+        {
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select email from UserInfo where id=" + uid, connection);
+            DataSet ds = new DataSet();
+            sqlDataAdapter.Fill(ds);
+
+
+            DataTable dt = ds.Tables[0];
+
+            return dt.Rows[0].ItemArray[0].ToString();
+
+        }
+
+        private string getEmailFromUidRecruiter(string uid)
+        {
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select email from Recruiter where id=" + uid, connection);
+            DataSet ds = new DataSet();
+            sqlDataAdapter.Fill(ds);
+
+
+            DataTable dt = ds.Tables[0];
+
+            return dt.Rows[0].ItemArray[0].ToString();
+
+        }
+
+        /*private string getjobdetailsfrompid(string rid)
+        {
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select Jobtitle,JobDescription,WorkExperiance,Salary from NewRequirement where rid=" + rid, connection);
+            DataSet ds = new DataSet();
+            sqlDataAdapter.Fill(ds);
+
+
+            DataTable dt = ds.Tables[0];
+
+            return dt.Rows[0].ItemArray[0].ToString();
+
+        } */
+
+        private int isAlreadyApplied(string uid, string pid)
             {
             connection.Open();
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select * from ApplyJob where uid="+uid+ " and pid="+pid, connection);

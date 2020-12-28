@@ -274,7 +274,7 @@
                                
                                 &nbsp;<div class="col-md-6">
                                     <asp:ListBox ID="lstQual" runat="server" SelectionMode="Multiple" autofocus=""></asp:ListBox>
-                                </div>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You can select multiple options</div>
                                 </div>
 
                                 
@@ -286,16 +286,17 @@
                                 </label>
                                 &nbsp;<div class="col-md-6">
                                     <asp:ListBox ID="lstskills" runat="server" SelectionMode="Multiple"  autofocus=""></asp:ListBox>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You can select multiple options</div>
                                 </div>
-                                </div>
-                                  <asp:RadioButton ID="RadioButton4" runat="server" GroupName="criteria"></asp:RadioButton><h5 class="card-title">Search by score</h5>
+                                  <asp:RadioButton ID="RadioButton4" runat="server" GroupName="criteria"></asp:RadioButton>
+                                  <h5 class="card-title">Search by score</h5>
                                 <div class="form-group row">
                                 <label for="Key skills" class="col-md-4 col-form-label text-md-right">Select score
                                 <asp:Label ID="lblscore" runat="server" ForeColor="Red" Text="*"></asp:Label>
                                 </label>
                                 &nbsp;<div class="col-md-6">
                                     <asp:ListBox ID="lstscore" runat="server" SelectionMode="Multiple" autofocus=""></asp:ListBox>
-                                </div>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You can select multiple options</div>
                                 </div>
 
                                  </div>

@@ -1886,6 +1886,7 @@
     <Compile Include="MyPosts.aspx.designer.cs">
       <DependentUpon>MyPosts.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NetworkCom.cs" />
     <Compile Include="NewRecruiterDashboard.aspx.cs">
       <DependentUpon>NewRecruiterDashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

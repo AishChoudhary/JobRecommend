@@ -98,6 +98,7 @@ namespace JobRecommend
 
                     }
                 }
+
                 connection.Close();
                 if (x > 0)
                     Response.Write("<Script>alert('User Profile Created successfully');window.location='NewUserDashboard.aspx'</Script>");
@@ -119,6 +120,10 @@ namespace JobRecommend
 
 
 
+        }
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = CheckBox1.Checked;
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net.Mail;
+using System.Net;
 
 namespace JobRecommend
 {
@@ -26,9 +28,6 @@ namespace JobRecommend
                 DataSet ds = new DataSet();
                 sqlDataAdapter.Fill(ds);
                 connection.Close();
-
-                
-
             }
 
             if(not_flag==1)

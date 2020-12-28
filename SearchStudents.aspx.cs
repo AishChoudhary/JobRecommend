@@ -143,14 +143,21 @@ namespace JobRecommend
             {
                 sql = "select fullname,Email,MobileNo from userinfo where id in (select distinct id from Userprofile where highestqual IN";
                 string keyword = "(";
-
+                int counter = 0;
                 foreach (ListItem li in lstQual.Items)
                 {
                     if (li.Selected)
                     {
+                        counter++;
                         keyword += "'" + li.Value + "',";
                     }
                     //MessageBox.Show(item.ToString());
+                }
+                if(counter==0)
+                {
+                    sql = "";
+                    Response.Write("<script>alert('Please select an option');</script>");
+                    return;
                 }
                 keyword = keyword.Remove(keyword.Length - 1, 1);
 
@@ -162,23 +169,28 @@ namespace JobRecommend
 
             if (RadioButton3.Checked)
             {
+                int count = 0;
                 sql = "select fullname,Email,MobileNo from userinfo where id in (select distinct uid from KeySkillInfo where key_skill_id in";
                 string keyword = "(";
-                int count = 0;
+                
                 foreach (ListItem li in lstskills.Items)
                 {
                     if (li.Selected)
                     {
-                        keyword +=   li.Value + ",";
                         count++;
+                        keyword +=   li.Value + ",";
                     }
                     
-                    if (count == 0)
-                    {
-                        Response.Write("<script>alert('Please select an option');</script>");
-                    }
                     //MessageBox.Show(item.ToString());
                 }
+
+                if (count == 0)
+                {
+                    sql = "";
+                    Response.Write("<script>alert('Please select an option');</script>");
+                    return;
+                }
+
                 keyword = keyword.Remove(keyword.Length - 1, 1);
 
                 keyword += "))";
@@ -189,14 +201,21 @@ namespace JobRecommend
             {
                 sql = "select fullname,Email,MobileNo from userinfo where id in (select id from UserProfile where SiteScore IN";
                 string keyword = "(";
-
+                int count = 0;
                 foreach (ListItem li in lstscore.Items)
                 {
                     if (li.Selected)
                     {
+                        count++;
                         keyword += "'" + li.Value + "',";
                     }
                     //MessageBox.Show(item.ToString());
+                }
+                if (count == 0)
+                {
+                    sql = "";
+                    Response.Write("<script>alert('Please select an option');</script>");
+                    return;
                 }
                 keyword = keyword.Remove(keyword.Length - 1, 1);
 
@@ -204,7 +223,6 @@ namespace JobRecommend
 
                 sql = sql + keyword;
             }
-
             //SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sql, conn);
 
         }
