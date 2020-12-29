@@ -1,7 +1,7 @@
 USE [JobRecommenderDb]
 GO
 
-/****** Object:  Table [dbo].[TestInfo]    Script Date: 29-12-2020 17:15:50 ******/
+/****** Object:  Table [dbo].[TestInfo]    Script Date: 29-12-2020 17:51:33 ******/
 SET ANSI_NULLS ON
 GO
 
