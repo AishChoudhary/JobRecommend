@@ -362,7 +362,10 @@
                   <div class ="form-group row">
                       <div class="col-md-12 col-xs-12">
                           <asp:Label ID="Label8" runat="server" Text="*" ForeColor="Red"></asp:Label>
-                          <asp:CheckBoxList ID="address_consent" runat="server" required="" autofocus=""><asp:ListItem Text="  I hereby confirm that the given information is correct and it can be used for future Communication."></asp:ListItem></asp:CheckBoxList>
+                          
+                          <asp:CheckBox ID="address_consent" runat="server"  Text="I hereby confirm that the given information is correct and it can be used for future Communication." />
+
+                          
                            
                           </div>
                   </div>

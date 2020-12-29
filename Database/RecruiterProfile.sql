@@ -1,7 +1,7 @@
 USE [JobRecommenderDb]
 GO
 
-/****** Object:  Table [dbo].[RecruiterProfile]    Script Date: 29-09-2020 21:44:22 ******/
+/****** Object:  Table [dbo].[RecruiterProfile]    Script Date: 29-12-2020 17:15:05 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -19,6 +19,7 @@ CREATE TABLE [dbo].[RecruiterProfile](
 	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
+
 GO
 
 ALTER TABLE [dbo].[RecruiterProfile]  WITH CHECK ADD  CONSTRAINT [FK_RecruiterProfile_RecruiterProfile] FOREIGN KEY([uid])

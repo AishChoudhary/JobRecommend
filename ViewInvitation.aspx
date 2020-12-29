@@ -96,8 +96,7 @@
       <li class="nav-item">
         <a class="nav-link" href="TestOptions.aspx">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>
-              Test<span></a>
+          <span>Test<span></a>
       </li>
 
       <!-- Nav Item - Charts -->

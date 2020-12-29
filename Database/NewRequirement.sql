@@ -1,7 +1,7 @@
 USE [JobRecommenderDb]
 GO
 
-/****** Object:  Table [dbo].[NewRequirement]    Script Date: 30-10-2020 23:01:57 ******/
+/****** Object:  Table [dbo].[NewRequirement]    Script Date: 29-12-2020 17:14:15 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -18,10 +18,13 @@ CREATE TABLE [dbo].[NewRequirement](
 	[JobDescription] [nvarchar](1000) NULL,
 	[WorkExperiance] [nvarchar](50) NULL,
 	[JobLocation] [nchar](50) NULL,
+	[Rank] [int] NULL,
 	[Roles] [nvarchar](1000) NULL,
 	[MinQual] [nvarchar](50) NULL,
+	[Salary] [numeric](18, 2) NULL,
 	[OpeningDate] [varchar](10) NULL,
 	[ClosingDate] [varchar](10) NULL,
+	[criteria] [int] NULL,
  CONSTRAINT [PK_NewRequirement] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC

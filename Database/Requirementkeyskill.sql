@@ -1,7 +1,7 @@
 USE [JobRecommenderDb]
 GO
 
-/****** Object:  Table [dbo].[Requirementkeyskill]    Script Date: 30-10-2020 23:02:56 ******/
+/****** Object:  Table [dbo].[Requirementkeyskill]    Script Date: 29-12-2020 17:15:21 ******/
 SET ANSI_NULLS ON
 GO
 

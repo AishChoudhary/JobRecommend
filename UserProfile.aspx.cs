@@ -58,74 +58,74 @@ namespace JobRecommend
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            connection.Open();
-            if (connection.State == System.Data.ConnectionState.Open)
+            if (address_consent.Checked)
             {
-
-                string uid = (string) Session["uid"];
-                int sal = 0;
-
-                if (DropDownList1.SelectedIndex == 1)
-                    sal = Convert.ToInt32(txtSal.Text);
-
-
-                if (FileUpload1.HasFile)
+                connection.Open();
+                if (connection.State == System.Data.ConnectionState.Open)
                 {
-                    try
+
+                    string uid = (string)Session["uid"];
+                    int sal = 0;
+
+                    if (DropDownList1.SelectedIndex == 1)
+                        sal = Convert.ToInt32(txtSal.Text);
+
+
+                    if (FileUpload1.HasFile)
                     {
-                        string filename = Path.GetFileName(FileUpload1.FileName);
-                        FileUpload1.SaveAs(Server.MapPath("~/files/") + filename);
-                        
-                   
-            string sql = "insert into UserProfile(uid,Address,Marks10,Marks12,CurrentQual,HighestQual,DesiredLoc,Certifications,Interests,CompanyName,WorkDuration,JobTitle,Salary,ResumePath)" + 
-"values("+uid+",'"+txtAddress.Text+"', "+txtMarks.Text+","+txtMarks1.Text+", '"+txtCurrentQualification.Text+"', '"+txtHighestQualification.Text+"', '"+txtLocation.Text+"', '"+txtCertifications.Text+"', '"+txtInterests.Text+"', '"+txtCompName.Text+"', '"+txtWorkDur.Text+"', '"+txtJobTitle.Text+"', "+sal+",'"+filename + "')";
-               // System.Diagnostics.Debug.Print(sql);
-                SqlCommand sqlcommand = new SqlCommand(sql, connection);
-                int x = sqlcommand.ExecuteNonQuery();
-
-                foreach(ListItem li in lstKeySkills.Items)
-                {
-                    if(li.Selected)
-                    {
-                        string key_skill_id = li.Value;
-
-                        sql = "insert into KeySkillInfo(uid,key_skill_id)" +
-        "values(" + uid + "," + key_skill_id + ")";
-
-                        sqlcommand = new SqlCommand(sql, connection);
-                         x = sqlcommand.ExecuteNonQuery();
+                        try
+                        {
+                            string filename = Path.GetFileName(FileUpload1.FileName);
+                            FileUpload1.SaveAs(Server.MapPath("~/files/") + filename);
 
 
+                            string sql = "insert into UserProfile(uid,Address,Marks10,Marks12,CurrentQual,HighestQual,DesiredLoc,Certifications,Interests,CompanyName,WorkDuration,JobTitle,Salary,ResumePath)" +
+                "values(" + uid + ",'" + txtAddress.Text + "', " + txtMarks.Text + "," + txtMarks1.Text + ", '" + txtCurrentQualification.Text + "', '" + txtHighestQualification.Text + "', '" + txtLocation.Text + "', '" + txtCertifications.Text + "', '" + txtInterests.Text + "', '" + txtCompName.Text + "', '" + txtWorkDur.Text + "', '" + txtJobTitle.Text + "', " + sal + ",'" + filename + "')";
+                            // System.Diagnostics.Debug.Print(sql);
+                            SqlCommand sqlcommand = new SqlCommand(sql, connection);
+                            int x = sqlcommand.ExecuteNonQuery();
+
+                            foreach (ListItem li in lstKeySkills.Items)
+                            {
+                                if (li.Selected)
+                                {
+                                    string key_skill_id = li.Value;
+
+                                    sql = "insert into KeySkillInfo(uid,key_skill_id)" +
+                    "values(" + uid + "," + key_skill_id + ")";
+
+                                    sqlcommand = new SqlCommand(sql, connection);
+                                    x = sqlcommand.ExecuteNonQuery();
+
+
+                                }
+                            }
+
+                            connection.Close();
+                            if (x > 0)
+                                Response.Write("<Script>alert('User Profile Created successfully');window.location='NewUserDashboard.aspx'</Script>");
+
+                            else
+                                Response.Write("<Script>alert('Unable to create');</Script>");
+
+
+
+                        }
+                        catch (Exception ex)
+                        {
+                            System.Diagnostics.Debug.Print(ex.ToString());
+                            Response.Write("<script>alert('The file could not be uploaded');</script>");
+                        }
                     }
+
                 }
 
-                connection.Close();
-                if (x > 0)
-                    Response.Write("<Script>alert('User Profile Created successfully');window.location='NewUserDashboard.aspx'</Script>");
-
-                else
-                    Response.Write("<Script>alert('Unable to create');</Script>");
-
-
-
-                    }
-                    catch (Exception ex)
-                    {
-                        System.Diagnostics.Debug.Print(ex.ToString());
-                        Response.Write("<script>alert('The file could not be uploaded');</script>");
-                    }
-                }
 
             }
-
-
-
+            else
+                Response.Write("<script>alert('Please accept the terms');</script>");
         }
-        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            args.IsValid = CheckBox1.Checked;
-        }
-
+        
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (DropDownList1.SelectedIndex == 1)

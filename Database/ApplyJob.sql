@@ -1,7 +1,7 @@
 USE [JobRecommenderDb]
 GO
 
-/****** Object:  Table [dbo].[ApplyJob]    Script Date: 30-10-2020 23:01:20 ******/
+/****** Object:  Table [dbo].[ApplyJob]    Script Date: 29-12-2020 16:06:43 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -29,5 +29,3 @@ GO
 
 ALTER TABLE [dbo].[ApplyJob] CHECK CONSTRAINT [FK_ApplyJob_UserInfo]
 GO
-
-

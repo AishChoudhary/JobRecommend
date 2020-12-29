@@ -77,12 +77,15 @@
     <Content Include="css\sb-admin-2.css" />
     <Content Include="css\sb-admin-2.min.css" />
     <Content Include="Database\ApplyJob.sql" />
+    <Content Include="Database\invitations.sql" />
     <Content Include="Database\KeySkillInfo.sql" />
     <Content Include="Database\KeySkills.sql" />
     <Content Include="Database\NewRequirement.sql" />
+    <Content Include="Database\notification.sql" />
     <Content Include="Database\Recruiter.sql" />
     <Content Include="Database\RecruiterProfile.sql" />
     <Content Include="Database\Requirementkeyskill.sql" />
+    <Content Include="Database\Savedjobs.sql" />
     <Content Include="Database\TestInfo.sql" />
     <Content Include="Database\TestResultInfo.sql" />
     <Content Include="Database\UserInfo.sql" />
