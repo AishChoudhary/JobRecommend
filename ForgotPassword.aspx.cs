@@ -8,12 +8,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Net.Mail;
 using System.Net;
+using System.Configuration;
 
 namespace JobRecommend
 {
     public partial class ForgotPassword : System.Web.UI.Page
     {
-        SqlConnection connection = new SqlConnection("Server=(Local);Database=JobRecommenderDb;Integrated Security=true");
+        SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
 
         string Email, Password, NewPassword;
 
@@ -32,7 +33,7 @@ namespace JobRecommend
             Image1.ImageUrl = "~/img/close.png";
             if (IsValidEmail(txtEmail.Text))
             {
-                if(isEmailExist(txtEmail.Text))
+                if (isEmailExist(txtEmail.Text))
                 {
                     Image1.ImageUrl = "~/img/check.png";
                     txtOtp.Enabled = true;
@@ -41,8 +42,8 @@ namespace JobRecommend
                     otp = rnd.Next(1111, 9999);
 
                     sendEmail();
-                   // txtOtp.Text = otp+"";
-                    System.Diagnostics.Debug.Print(""+otp);
+                    // txtOtp.Text = otp+"";
+                    System.Diagnostics.Debug.Print("" + otp);
 
 
                 }
@@ -53,10 +54,10 @@ namespace JobRecommend
         {
 
             connection.Open();
-               if(connection.State==ConnectionState.Open)
+            if (connection.State == ConnectionState.Open)
             {
 
-                SqlCommand cmd = new SqlCommand("update userinfo set password='" + txtNewPwd.Text + "'", connection);
+                SqlCommand cmd = new SqlCommand("update userinfo set password='" + txtNewPwd.Text + "' where email='"+ txtEmail.Text+"'", connection);
                 int x = cmd.ExecuteNonQuery();
 
                 if (x > 0)
@@ -88,7 +89,7 @@ namespace JobRecommend
             smt.EnableSsl = true;
             smt.Send(msg);
 
-            
+
             return true;
         }
 
@@ -102,7 +103,7 @@ namespace JobRecommend
         private bool isEmailExist(string email)
         {
             connection.Open();
-            if (connection.State == System.Data.ConnectionState.Open)
+            if (connection.State == ConnectionState.Open)
             {
 
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select * from Userinfo where email='" + email + "'", connection);
@@ -115,21 +116,13 @@ namespace JobRecommend
 
                 if (recordCount > 0)
                 {
-                    /*string uname = dt.Rows[0].ItemArray[1].ToString();
-                    //string uid = dt.Rows[0].ItemArray[0].ToString();
-                    Session["email"] = txtEmail.Text;
-                    //Session["uname"] = uname;
-                    //Session["uid"] = uid;
-
-                    Response.Write("<script>alert('Login Successfull Click Ok to Proceed');window.location='NewUserDashboard.aspx?uname=" + uname + "';</script>");*/
-
-                    return true;
+                   return true;
                 }
 
                 else
                     return false;
                 //Response.Write("<Script>alert('Connection Failed');</Script>");
-               
+
             }
 
             return false;
@@ -137,7 +130,7 @@ namespace JobRecommend
 
         protected void txtOtp_TextChanged(object sender, EventArgs e)
         {
-            if(isValidOtp(txtOtp.Text))
+            if (isValidOtp(txtOtp.Text))
             {
                 System.Diagnostics.Debug.Print("opt:" + otp + "--" + "uotp" + txtOtp.Text);
                 if (txtOtp.Text == otp.ToString())
@@ -149,17 +142,17 @@ namespace JobRecommend
 
         }
 
-        private bool isValidOtp(string sOtp)
+        private bool isValidOtp(string otp)
         {
-            if (sOtp.All(char.IsDigit))
+            if (otp.All(char.IsDigit))
                 return true;
-            else 
+            else
                 return false;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if(txtNewPwd.Text==txtNewPwd1.Text)
+            if (txtNewPwd.Text == txtNewPwd1.Text)
             {
                 updatePassword();
             }
@@ -172,7 +165,7 @@ namespace JobRecommend
         {
             try
             {
-                var addr = new System.Net.Mail.MailAddress(email);
+                var addr = new MailAddress(email);
                 return addr.Address == email;
             }
             catch

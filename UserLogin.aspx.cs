@@ -30,7 +30,7 @@ namespace JobRecommend
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             connection.Open();
-            if (connection.State == System.Data.ConnectionState.Open)
+            if (connection.State == ConnectionState.Open)
             {
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select * from Userinfo where email='" + txtEmail.Text + "' and Password='" + txtPassword.Text + "'", connection);
                 DataSet ds = new DataSet();

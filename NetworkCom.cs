@@ -12,7 +12,7 @@ namespace JobRecommend
 
         public NetworkCom()
         {
-            
+
         }
 
         public bool SendEmail(string to, string subject, string mesg)
@@ -27,7 +27,7 @@ namespace JobRecommend
 
             SmtpClient smt = new SmtpClient();
             smt.Host = "smtp.gmail.com";
-            System.Net.NetworkCredential ntwd = new NetworkCredential();
+            NetworkCredential ntwd = new NetworkCredential();
             ntwd.UserName = email; //Your Email ID  
             ntwd.Password = "arnav205"; // Your Password  
             smt.UseDefaultCredentials = true;
@@ -39,6 +39,4 @@ namespace JobRecommend
             return true;
         }
     }
-
-   
 }

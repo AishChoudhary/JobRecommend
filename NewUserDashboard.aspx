@@ -314,7 +314,7 @@
   Please attend tests to receive recommended jobs
 </div>
                     <%
-                        }
+                      }
 
                         else
                         { 
@@ -328,7 +328,7 @@
                         dt1 = ds1.Tables[0];
 
                         if (dt1.Rows.Count <= 0)
-                            Response.Write(" <p> You have no recommended jobs please update your profile</p>");
+                            Response.Write(" <p> You have no recommended jobs please update your profile and complete your test</p>");
                         else
                             for (int i = 0; i <3; i++)
                             {

@@ -13,10 +13,10 @@ namespace JobRecommend
     public partial class invite : System.Web.UI.Page
     {
         SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
-
+        string rid, uid;
         protected void Page_Load(object sender, EventArgs e)
         {
-            string rid, uid;
+            
             rid = (string)Session["uid"];
             uid = (string)Request.QueryString["uid"];
 
@@ -34,8 +34,8 @@ namespace JobRecommend
         protected void btnSend_Click(object sender, EventArgs e)
         {
             connection.Open();
-            string uid, pid;
-            uid = (string)Session["uid"];
+            string  pid;
+            //uid = (string)Session["uid"];
             pid = (string)Request.QueryString["pid"];
             string sql = "insert into notification(rid,uid,not_text,not_date,status,not_flag,user_flag)" + "values(" + Session["uid"] + "," + Request.QueryString["uid"] + ",'A Job Invitation from Recruiter',GETDATE(),'UNREAD',2,2)";
             SqlCommand sqlcommand = new SqlCommand(sql, connection);
@@ -67,6 +67,7 @@ namespace JobRecommend
 
 
             DataTable dt = ds.Tables[0];
+
 
             return dt.Rows[0].ItemArray[0].ToString();
 

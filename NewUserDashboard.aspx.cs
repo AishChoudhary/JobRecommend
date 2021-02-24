@@ -45,9 +45,7 @@ namespace JobRecommend
                 sqlDataAdapter.Fill(ds);
                 connection.Close();
                 DataTable dt = ds.Tables[0];
-              /*  GridView1.AutoGenerateColumns = true;
-                GridView1.DataSource = dt;
-                GridView1.DataBind();*/
+              
             }
         }
         private void getResult()

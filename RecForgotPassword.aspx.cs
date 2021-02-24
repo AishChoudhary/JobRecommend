@@ -57,7 +57,7 @@ namespace JobRecommend
             if (connection.State == ConnectionState.Open)
             {
 
-                SqlCommand cmd = new SqlCommand("update Recruiter set password='" + txtNewPwd.Text + "'", connection);
+                SqlCommand cmd = new SqlCommand("update Recruiter set password='" + txtNewPwd.Text + "' where email='" + txtEmail.Text + "'", connection);
                 int x = cmd.ExecuteNonQuery();
 
                 if (x > 0)

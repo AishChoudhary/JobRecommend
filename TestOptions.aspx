@@ -307,10 +307,10 @@
                      </div>
                   <div class="container-fluid">
                 <asp:Label ID="Label5" class="col-md-4 col-form-label text-md-right" runat="server" Text="
-•	The examiner is kindly requested to avoid malpractices or any cheating while giving test."></asp:Label></div>
+•	The candidate is kindly requested to avoid malpractices or any cheating while giving test."></asp:Label></div>
                       <div class="container-fluid">
                 <asp:Label ID="Label6" class="col-md-4 col-form-label text-md-right" runat="server" Text="
-•	Examiner is given 3 attempts to improve rank."></asp:Label></div> 
+•	Candidate is given 3 attempts to improve rank."></asp:Label></div> 
         
         
 

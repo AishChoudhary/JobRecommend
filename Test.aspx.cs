@@ -35,7 +35,7 @@ namespace JobRecommend
 
                 attempts = Convert.ToInt32((string)Session["attempts"]);
                 connection.Open();
-                if (connection.State == System.Data.ConnectionState.Open)
+                if (connection.State == ConnectionState.Open)
                 {
                     string sql = "select * from TestInfo where key_skill_id=" + Session["ksi"];
                     SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sql, connection);
