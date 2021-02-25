@@ -303,7 +303,7 @@
   <div class="card-body">
     <h5 class="card-title"><% Response.Write(dt.Rows[i].ItemArray[1].ToString()); %></h5>
     <p class="card-text"><% Response.Write(dt.Rows[i].ItemArray[2].ToString()); %></p>
-   <a href="DeleteJob.aspx?pid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Delete</a>
+   <a href="DeleteJ<a href="AppliedJobs.aspx">AppliedJobs.aspx</a>ob.aspx?pid=<% Response.Write(dt.Rows[i].ItemArray[0].ToString()); %>" class="btn btn-primary">Delete</a>
  
       <br />
   </div>

@@ -363,7 +363,7 @@
                       <div class="col-md-12 col-xs-12">
                           <asp:Label ID="Label8" runat="server" Text="*" ForeColor="Red"></asp:Label>
                           
-                          <asp:CheckBox ID="address_consent" runat="server"  Text="I hereby confirm that the given information is correct and it can be used for future Communication." />
+                          <asp:CheckBox ID="address_consent" runat="server" required="" Text="I hereby confirm that the given information is correct and it can be used for future Communication." />
 
                           
                            

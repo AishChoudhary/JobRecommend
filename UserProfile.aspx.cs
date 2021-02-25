@@ -55,7 +55,6 @@ namespace JobRecommend
             lstKeySkills.DataValueField = "id";
             lstKeySkills.DataBind();
 
-            
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -63,15 +62,14 @@ namespace JobRecommend
             if (isUpdateOrSave)
             {
 
-                string sql = "update UserProfile set Address='"+txtAddress+"',Marks10='"+txtMarks+"',Marks12='"+txtMarks1+ "'and CurrentQual='" + txtCurrentQualification.Text + "'and HighestQual='"+ txtHighestQualification.Text + "'where uid=" + (string)Session["uid"];
-   // "values(" + uid + ",'" + txtAddress.Text + "', " + txtMarks.Text + "," + txtMarks1.Text + ", '" + txtCurrentQualification.Text + "', '" + txtHighestQualification.Text + "', '" + txtLocation.Text + "', '" + txtCertifications.Text + "', '" + txtInterests.Text + "', '" + txtCompName.Text + "', '" + txtWorkDur.Text + "', '" + txtJobTitle.Text + "', " + sal + ",'" + filename + "')";
+                string sql = "update UserProfile set Address='"+txtAddress.Text+"',Marks10='"+txtMarks.Text+"',Marks12='"+txtMarks1.Text+ "',CurrentQual='" + txtCurrentQualification.Text + "',HighestQual='"+ txtHighestQualification.Text + "' where uid=" + (string)Session["uid"];
+                // "values(" + uid + ",'" + txtAddress.Text + "', " + txtMarks.Text + "," + txtMarks1.Text + ", '" + txtCurrentQualification.Text + "', '" + txtHighestQualification.Text + "', '" + txtLocation.Text + "', '" + txtCertifications.Text + "', '" + txtInterests.Text + "', '" + txtCompName.Text + "', '" + txtWorkDur.Text + "', '" + txtJobTitle.Text + "', " + sal + ",'" + filename + "')";
                 // System.Diagnostics.Debug.Print(sql);
+                connection.Open();
                 SqlCommand sqlcommand = new SqlCommand(sql, connection);
                 sqlcommand.CommandType = CommandType.Text;
-                connection.Close();
-
-                Label1.Text = "Profile Successfully updated";
-                
+                sqlcommand.ExecuteNonQuery();
+                connection.Close();        
 
                 Response.Write("<script>alert('Profile Updated');</script>");
 
