@@ -54,8 +54,6 @@ namespace JobRecommend
                 else
                     Response.Write("<script>alert('Invalid Credentials');</script>");
 
-
-
             }
         }
     }

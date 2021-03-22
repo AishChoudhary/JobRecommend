@@ -326,7 +326,7 @@
 </div>
 
                 </div> <%}
-        }
+                        }
         if (isJobsAvailable)
             Response.Write("<p>No jobs recommended. Upgrade your test score.</p>");
      %>
@@ -395,12 +395,5 @@
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
 
-
-
-
-    </form>
-
-
-
-
-</body></html>
+      </form>
+    </body></html>

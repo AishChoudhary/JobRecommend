@@ -67,7 +67,7 @@ namespace JobRecommend
 
 
                 string sql = "insert into NewRequirement(rid,Jobtitle, JobDescription,  WorkExperiance, JobLocation, Roles,Rank, MinQual, Salary, OpeningDate, ClosingDate)" +
-                "values(" + uid + ",'" + txtJobTitle.Text + "', '" + txtJobDescription.Text + "','" + txtworkexp.Text + "','" + txtJobLocation.Text + "','" + txtRank.Text + "','" + txtRoles.Text + "','" + txtminQual.Text + "',"+txtSal.Text+",'" + txtDate.Text + "','" + TxtClosingDate.Text + "')";
+                "values(" + uid + ",'" + txtJobTitle.Text + "', '" + txtJobDescription.Text + "','" + txtworkexp.Text + "','" + txtJobLocation.Text + "','" + txtRoles.Text + "','" + txtRank.Text + "','" + txtminQual.Text + "',"+txtSal.Text+",'" + txtDate.Text + "','" + TxtClosingDate.Text + "')";
                 SqlCommand sqlcommand = new SqlCommand(sql, connection);
                 int x = sqlcommand.ExecuteNonQuery();
 
